@@ -8,6 +8,7 @@
   nixpkgs.config.allowUnfree = true;
 
   time.timeZone = "Europe/Helsinki";
+  console.keyMap = "fi";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fi_FI.UTF-8";
