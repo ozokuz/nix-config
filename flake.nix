@@ -15,6 +15,13 @@
 
     nixosSystem = import ./lib/nixosSystem.nix;
 
+    saturn_modules = {
+      nixos-modules = [
+        ./hosts/saturn
+      ];
+      home-module = import ./home/saturn.nix;
+    };
+
     nixvm_modules = {
       nixos-modules = [
         ./hosts/nixvm
@@ -39,6 +46,7 @@
         specialArgs = x64_specialArgs;
       };
     in {
+      saturn = nixosSystem (saturn_modules // base_args);
       nixvm = nixosSystem (nixvm_modules // base_args);
     };
 

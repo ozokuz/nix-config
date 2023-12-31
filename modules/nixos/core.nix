@@ -34,6 +34,10 @@
     curl
     wget
     git
+    ripgrep
+    fd
+    gcc
+    gnumake
   ];
 
   environment.variables.EDITOR = "nvim";
