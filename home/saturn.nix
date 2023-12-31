@@ -11,6 +11,7 @@
       brave
       discord
       spotify
+      pulsemixer
     ];
 
     stateVersion = "23.11";
