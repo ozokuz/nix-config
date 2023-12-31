@@ -42,6 +42,8 @@
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
+
+    ckb-next.enable = true;
   };
 
   services = {
