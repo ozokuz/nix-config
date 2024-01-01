@@ -14,7 +14,7 @@
   # Popup Widgets
   programs.eww = {
     enable = true;
-    configDir = ./configs/eww;
+    configDir = ../configs/eww;
     package = pkgs.eww-wayland;
   };
 
