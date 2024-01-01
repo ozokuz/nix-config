@@ -9,6 +9,7 @@
     borderRadius = 8;
     defaultTimeout = 5000;
     ignoreTimeout = true;
+    margin = "20";
   };
 
   # Popup Widgets
