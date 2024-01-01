@@ -3,6 +3,7 @@
 - SDDM Theme
 - SDDM Monitor Order
 - xwaylandvideobridge
+- swaylock
 - Setup Tmux
 - Setup VSCode
 - Better screenshots with grimblast + custom uploader script
