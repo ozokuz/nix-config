@@ -77,42 +77,42 @@
 
         ## Screenshot
         # Area
-        "$superKey, less, exec, scrsht area"
+        "$mod, less, exec, scrsht area"
         # Current Window
-        "$superKey SHIFT, less, exec, scrsht window"
+        "$mod SHIFT, less, exec, scrsht window"
         # Current Screen
-        "$superKey ALT, less, exec, scrsht screen"
+        "$mod ALT, less, exec, scrsht screen"
 
         # Move focus with Super + hjkl
-        "$superKey, h, movefocus, l"
-        "$superKey, j, movefocus, d"
-        "$superKey, k, movefocus, u"
-        "$superKey, l, movefocus, r"
+        "$mod, h, movefocus, l"
+        "$mod, j, movefocus, d"
+        "$mod, k, movefocus, u"
+        "$mod, l, movefocus, r"
 
-        # Switch workspaces with superKey + [0-9]
-        "$superKey, 1, exec, hyprsome workspace 1"
-        "$superKey, 2, exec, hyprsome workspace 2"
-        "$superKey, 3, exec, hyprsome workspace 3"
-        "$superKey, 4, exec, hyprsome workspace 4"
-        "$superKey, 5, exec, hyprsome workspace 5"
-        "$superKey, 6, exec, hyprsome workspace 6"
-        "$superKey, 7, exec, hyprsome workspace 7"
-        "$superKey, 8, exec, hyprsome workspace 8"
-        "$superKey, 9, exec, hyprsome workspace 9"
+        # Switch workspaces with mod + [0-9]
+        "$mod, 1, exec, hyprsome workspace 1"
+        "$mod, 2, exec, hyprsome workspace 2"
+        "$mod, 3, exec, hyprsome workspace 3"
+        "$mod, 4, exec, hyprsome workspace 4"
+        "$mod, 5, exec, hyprsome workspace 5"
+        "$mod, 6, exec, hyprsome workspace 6"
+        "$mod, 7, exec, hyprsome workspace 7"
+        "$mod, 8, exec, hyprsome workspace 8"
+        "$mod, 9, exec, hyprsome workspace 9"
 
-        # Move active window to a workspace with superKey + SHIFT + [0-9]
-        "$superKey SHIFT, 1, exec, hyprsome move 1"
-        "$superKey SHIFT, 2, exec, hyprsome move 2"
-        "$superKey SHIFT, 3, exec, hyprsome move 3"
-        "$superKey SHIFT, 4, exec, hyprsome move 4"
-        "$superKey SHIFT, 5, exec, hyprsome move 5"
-        "$superKey SHIFT, 6, exec, hyprsome move 6"
-        "$superKey SHIFT, 7, exec, hyprsome move 7"
-        "$superKey SHIFT, 8, exec, hyprsome move 8"
-        "$superKey SHIFT, 9, exec, hyprsome move 9"
+        # Move active window to a workspace with mod + SHIFT + [0-9]
+        "$mod SHIFT, 1, exec, hyprsome move 1"
+        "$mod SHIFT, 2, exec, hyprsome move 2"
+        "$mod SHIFT, 3, exec, hyprsome move 3"
+        "$mod SHIFT, 4, exec, hyprsome move 4"
+        "$mod SHIFT, 5, exec, hyprsome move 5"
+        "$mod SHIFT, 6, exec, hyprsome move 6"
+        "$mod SHIFT, 7, exec, hyprsome move 7"
+        "$mod SHIFT, 8, exec, hyprsome move 8"
+        "$mod SHIFT, 9, exec, hyprsome move 9"
 
         # Move active window to special workspace
-        "$superKey SHIFT, minus, movetoworkspacesilent, special"
+        "$mod SHIFT, minus, movetoworkspacesilent, special"
 
         # Global Shortcuts
         # Discord
@@ -121,19 +121,19 @@
       ];
 
       bindm = [
-        # Move/resize windows with superKey + LMB/RMB and dragging
-        "$superKey, mouse:272, movewindow"
-        "$superKey, mouse:273, resizewindow"
+        # Move/resize windows with mod + LMB/RMB and dragging
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
       ];
     };
 
     extraConfig = ''
       # Temp Hotkey Disabling
-      bind = $superKey ALT SHIFT, p, submap, disabled
+      bind = $mod ALT SHIFT, p, submap, disabled
 
       submap = disabled
 
-      bind = $superKey, escape, submap, reset
+      bind = $mod, escape, submap, reset
 
       submap = reset
     '';
