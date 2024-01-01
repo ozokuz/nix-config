@@ -19,14 +19,14 @@
       nixos-modules = [
         ./hosts/saturn
       ];
-      home-module = import ./home/saturn.nix;
+      home-module = import ./home;
     };
 
     nixvm_modules = {
       nixos-modules = [
         ./hosts/nixvm
       ];
-      home-module = import ./home/nixvm.nix;
+      home-module = import ./home;
     };
 
     x64_specialArgs =

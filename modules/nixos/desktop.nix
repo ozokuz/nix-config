@@ -12,44 +12,17 @@
 
   environment.systemPackages = with pkgs; [
     psmisc
-    mako
     libsForQt5.polkit-kde-agent
     gnome.gnome-keyring
     gnome.seahorse
-    waybar
-    eww-wayland
-    hyprpaper
-    tofi
-    gammastep
     blueberry
-    playerctl
-    kitty
   ];
 
   security.rtkit.enable = true;
 
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
-
-    ckb-next.enable = true;
-  };
-
   services = {
     xserver = {
       enable = true;
-      videoDrivers = ["nvidia"];
       displayManager.sddm.enable = true;
     };
 
@@ -100,4 +73,9 @@
     enable = true;
     xwayland.enable = true;
   };
+
+  programs.steam.enable = true;
+
+  programs.dconf.enable = true;
+  services.udisks2.enable = true;
 }

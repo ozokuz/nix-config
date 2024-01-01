@@ -1,6 +1,13 @@
 { username, ... }:
 {
-  imports = [];
+  imports = [
+    ./environment.nix
+    ./desktop/hyprland
+    ./desktop/apps.nix
+    ./shell/fish.nix
+    ./shell/prompt.nix
+    ./shell/apps.nix
+  ];
 
   home = {
     username = username;

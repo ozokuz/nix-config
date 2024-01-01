@@ -1,0 +1,50 @@
+* {
+  all: unset;
+  font-family: Noto Sans;
+  font-size: 13.333333px;
+}
+
+#workspaces,
+#window,
+#mpris,
+#tray,
+#hardware,
+#clock {
+  background-color: #333;
+  border-radius: 20px;
+  padding: 0 18px;
+}
+
+#workspaces {
+  padding: 0 14px;
+}
+
+#workspaces button {
+  padding: 0 4px;
+}
+
+#workspaces button.empty {
+  color: #555;
+}
+
+#workspaces button.active {
+  color: #09f;
+}
+
+window#waybar.empty #window {
+  opacity: 0;
+}
+
+#wireplumber {
+  padding: 0 12px;
+}
+
+#hardware {
+  padding-right: 14px;
+}
+
+#tray menu {
+  background-color: #333;
+  padding: 12px;
+  border-radius: 12px;
+}
