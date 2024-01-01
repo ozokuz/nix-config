@@ -1,5 +1,8 @@
 # TODO
 
+- SDDM Theme
+- SDDM Monitor Order
+- xwaylandvideobridge
 - Setup Tmux
 - Setup VSCode
 - Better screenshots with grimblast + custom uploader script
