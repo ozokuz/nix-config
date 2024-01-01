@@ -7,6 +7,7 @@
     ./shell/fish.nix
     ./shell/prompt.nix
     ./shell/apps.nix
+    ./shell/programming.nix
   ];
 
   home = {
