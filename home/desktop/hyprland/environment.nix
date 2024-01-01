@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    libsForQt5.polkit-kde-agent
+  ];
+
   wayland.windowManager.hyprland.settings = {
     env = [
       # Wayland
