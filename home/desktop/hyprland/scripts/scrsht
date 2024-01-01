@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 url="$(cat ~/.local/upload_url.txt)"
 screenshot_path="$(xdg-user-dir PICTURES)/screenshot.png"
