@@ -15,7 +15,7 @@
     };
     iconTheme = {
       package = pkgs.libsForQt5.breeze-icons;
-      name = "Breeze";
+      name = "breeze-dark";
     };
     theme = {
       package = pkgs.adw-gtk3;
