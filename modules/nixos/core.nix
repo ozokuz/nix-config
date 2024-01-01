@@ -38,6 +38,7 @@
     fd
     gcc
     gnumake
+    unzip
   ];
 
   environment.variables.EDITOR = "nvim";
