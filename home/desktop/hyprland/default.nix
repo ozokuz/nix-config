@@ -21,6 +21,7 @@
     wl-clipboard
     wl-clip-persist
     playerctl
+    bc
     hyprsome.packages.${pkgs.system}.default
   ]; 
 
