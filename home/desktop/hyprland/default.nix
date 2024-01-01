@@ -76,12 +76,6 @@
 
   xdg.configFile."tofi/config".source = ../configs/tofi/config;
 
-  home.file.".local/bin/ode_toggle_widget" = {
-    source = ./scripts/ode_toggle_widget;
-    executable = true;
-  };
-  home.file.".local/bin/scrsht" = {
-    source = ./scripts/scrsht;
-    executable = true;
-  };
+  home.file.".local/bin/ode_toggle_widget".source = ./scripts/ode_toggle_widget;
+  home.file.".local/bin/scrsht".source = ./scripts/scrsht;
 }
