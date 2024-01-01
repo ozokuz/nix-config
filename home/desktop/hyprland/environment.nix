@@ -55,6 +55,9 @@
       # Widgets
       "eww daemon"
 
+      # clipboard persist
+      "wl-clip-persist --clipboard regular"
+
       # Apps
       "flatpak run com.discordapp.Discord"
       "spotify"

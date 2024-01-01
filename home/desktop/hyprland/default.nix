@@ -18,6 +18,8 @@
     slurp
     jq
     xdg-user-dirs
+    wl-clipboard
+    wl-clip-persist
   ]; 
 
   wayland.windowManager.hyprland = {
