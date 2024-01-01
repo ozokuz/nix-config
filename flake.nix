@@ -59,6 +59,9 @@
 
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprsome.url = "github:sopa0/hyprsome";
+    hyprsome.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {

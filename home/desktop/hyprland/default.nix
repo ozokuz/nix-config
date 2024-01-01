@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hyprsome, ... }:
 {
   imports = [
     ./workspaces.nix
@@ -21,6 +21,7 @@
     wl-clipboard
     wl-clip-persist
     playerctl
+    hyprsome.packages.${pkgs.system}.default
   ]; 
 
   wayland.windowManager.hyprland = {
