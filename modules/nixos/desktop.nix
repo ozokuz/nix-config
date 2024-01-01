@@ -16,6 +16,11 @@
     gnome.gnome-keyring
     gnome.seahorse
     blueberry
+    (lutris.override {
+      extraPkgs = pkgs: [
+        pkgs.wineWowPackages.stagingFull
+      ];
+    })
   ];
 
   security.rtkit.enable = true;
