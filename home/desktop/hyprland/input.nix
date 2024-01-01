@@ -18,7 +18,7 @@
           natural_scroll = "no";
         };
 
-        sensivity = 0;
+        sensitivity = 0;
       };
 
       "$mod" = "SUPER";
@@ -49,7 +49,7 @@
         # Terminal File Manager
         "$mod, E, exec, $TERMINAL -e lf"
         # GUI File Manager
-        "$mod SHIFT, exec, nautilus -w"
+        "$mod SHIFT, E, exec, nautilus -w"
         # Web Browser
         "$mod, W, exec, $BROWSER"
         # Overlay 2FA
