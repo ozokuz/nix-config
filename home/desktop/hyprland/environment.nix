@@ -46,7 +46,7 @@
       "blueberry-tray"
 
       # Password Manager
-      "bitwarden-desktop"
+      "bitwarden"
 
       # Apps
       "flatpak run com.discordapp.Discord"
