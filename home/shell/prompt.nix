@@ -14,7 +14,7 @@
 
       username = {
         show_always = true;
-        format = "[\ue0b6](#5c73e6)[$user ]($style)";
+        format = "[](#5c73e6)[$user ]($style)";
         style_user = "bold bg:#5c73e6 #29d916";
       };
 
