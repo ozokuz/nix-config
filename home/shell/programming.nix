@@ -8,4 +8,6 @@
     opam
     rustup
   ];
+
+  xdg.configFile."npm/npmrc".source = ./npmrc;
 }
