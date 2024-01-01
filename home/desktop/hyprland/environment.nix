@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    libsForQt5.polkit-kde-agent
-  ];
-
   wayland.windowManager.hyprland.settings = {
     env = [
       # Wayland
@@ -38,7 +34,7 @@
 
     exec-once = [
       # Privilege Elevation
-      "${pkgs.libsForQt5.polkit-kde-agent}/lib/polkit-kde-authentication-agent-1"
+      "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
 
       # Wallpaper
       "hyprpaper"
