@@ -49,7 +49,7 @@
       "bitwarden-desktop"
 
       # Apps
-      "discord"
+      "flatpak run com.discordapp.Discord"
       "spotify"
     ];
   };

@@ -2,8 +2,9 @@
 {
   home.packages = with pkgs; [
     brave
-    discord
     spotify
+    bitwarden
+    authy
     pulsemixer
     nsxiv
     gnome.nautilus
