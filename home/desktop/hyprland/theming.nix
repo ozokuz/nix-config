@@ -11,7 +11,7 @@
     enable = true;
     font = {
       name = "Noto Sans";
-      size = "10";
+      size = 10;
     };
     iconTheme = {
       package = pkgs.libsForQt5.breeze-icons;
