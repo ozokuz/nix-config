@@ -20,6 +20,7 @@
     xdg-user-dirs
     wl-clipboard
     wl-clip-persist
+    playerctl
   ]; 
 
   wayland.windowManager.hyprland = {
