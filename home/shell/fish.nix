@@ -23,6 +23,11 @@
       gps = "git push";
     };
 
+    shellInit = ''
+      # OPAM
+      source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+    '';
+
     interactiveShellInit = ''
       # Disable Greeting
       set fish_greeting
