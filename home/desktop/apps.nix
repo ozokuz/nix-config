@@ -25,7 +25,7 @@
       };
       mouse.hide_when_typing = true;
       hints.enabled = [{
-        regex = "(mailto:|https:|http:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+";
+        regex = "(mailto:|https:|http:|file:|git:|ssh:|ftp:)[^\\u0000-\\u001F\\u007F-\\u009F<>\"\\\\s{-}\\\\^⟨⟩`]+";
         command = "xdg-open";
         post_processing = true;
         mouse.enabled = true;
