@@ -76,7 +76,7 @@
 
 (defwidget musicpop []
   (eventbox
-    :onhoverlost "ew_toggle_window music"
+    :onhoverlost "ode_toggle_window music"
     :class "bg rounded"
     (box
       (coverart)

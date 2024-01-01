@@ -6,17 +6,17 @@
     :class "bg rounded-lg"
     (button
       :class "powerbutton poweroff"
-      :onclick "ew_toggle_window powermenu && systemctl poweroff"
+      :onclick "ode_toggle_window powermenu && systemctl poweroff"
       "󰐥"
     )
     (button
       :class "powerbutton reboot"
-      :onclick "ew_toggle_window powermenu && systemctl reboot"
+      :onclick "ode_toggle_window powermenu && systemctl reboot"
       ""
     )
     (button
       :class "powerbutton logout"
-      :onclick "ew_toggle_window powermenu && hyprctl dispatch exit"
+      :onclick "ode_toggle_window powermenu && hyprctl dispatch exit"
       ""
     )
   )

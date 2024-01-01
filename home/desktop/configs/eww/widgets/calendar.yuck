@@ -20,7 +20,7 @@
 
 (defwidget calpop []
   (eventbox
-    :onhoverlost "ew_toggle_window calendar"
+    :onhoverlost "ode_toggle_window calendar"
     (box
       :orientation "vertical"
       :spacing 20
