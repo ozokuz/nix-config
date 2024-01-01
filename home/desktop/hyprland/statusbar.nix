@@ -12,11 +12,7 @@
       margin-right = 20;
       modules-left = ["hyprland/workspaces" "hyprland/window"];
       modules-center = ["mpris"];
-      modules-right = ["tray" "group/hardware" "clock"];
-      "group/hardware" = {
-        orientation = "horizontal";
-        modules = ["hyprland/submap" "hyprland/language" "network"];
-      };
+      modules-right = ["tray" "hyprland/submap" "hyprland/language" "network" "clock"];
       "hyprland/workspaces" = {
         format = "{icon}";
         format-icons = {
