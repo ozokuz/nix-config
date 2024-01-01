@@ -52,6 +52,9 @@
       # Password Manager
       "bitwarden"
 
+      # Widgets
+      "eww daemon"
+
       # Apps
       "flatpak run com.discordapp.Discord"
       "spotify"
