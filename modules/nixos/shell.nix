@@ -1,4 +1,4 @@
-{lib, pkgs, ...}:
+{ lib, pkgs, ... }:
 {
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
@@ -29,6 +29,16 @@
     };
   };
 
+  environment.shells = with pkgs; [
+    bash
+    fish
+    nushell
+  ];
+
+  programs.fish.enable = true;
+
+  users.defaultUserShell = pkgs.fish;
+
   environment.systemPackages = with pkgs; [
     neovim
     curl
@@ -39,6 +49,8 @@
     gcc
     gnumake
     unzip
+    zip
+    psmisc
   ];
 
   environment.variables.EDITOR = "nvim";

@@ -1,17 +1,6 @@
 { config, lib, pkgs, pkgs-unstable, ... }:
 {
-  environment.shells = with pkgs; [
-    bash
-    fish
-    nushell
-  ];
-
-  programs.fish.enable = true;
-
-  users.defaultUserShell = pkgs.fish;
-
   environment.systemPackages = with pkgs; [
-    psmisc
     libsForQt5.polkit-kde-agent
     gnome.gnome-keyring
     gnome.seahorse
