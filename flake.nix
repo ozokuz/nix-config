@@ -19,7 +19,7 @@
       nixos-modules = [
         ./hosts/saturn
       ];
-      home-module = import ./home;
+      home-module = import ./home/graphical.nix;
     };
 
     nixvm_modules = {

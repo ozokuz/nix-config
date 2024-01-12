@@ -1,6 +1,7 @@
 { username, ... }:
 {
   imports = [
+    ./base.nix
     ./environment.nix
     ./desktop/hyprland
     ./desktop/apps.nix
@@ -9,13 +10,5 @@
     ./shell/apps.nix
     ./shell/programming.nix
   ];
-
-  home = {
-    username = username;
-    homeDirectory = "/home/${username}";
-
-    stateVersion = "23.11";
-  };
-
-  programs.home-manager.enable = true;
 }
+
