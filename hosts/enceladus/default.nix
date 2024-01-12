@@ -1,9 +1,8 @@
-{config, ...} @ args:
-
+{ config, ... } @ args:
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos/core.nix
+    ../../modules/nixos/shell.nix
     ../../modules/nixos/users.nix
   ];
 
@@ -23,7 +22,7 @@
   };
 
   networking = {
-    hostName = "nixvm";
+    hostName = "enceladus";
     networkmanager.enable = true;
     enableIPv6 = false;
   };
