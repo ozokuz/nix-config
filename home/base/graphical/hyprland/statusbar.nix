@@ -16,24 +16,11 @@
         modules-right = ["tray" "group/hardware" "clock"];
         "group/hardware" = {
           orientation = "horizontal";
-          modules = ["hyprland/submap" "hyprland/language" "network"];
+          modules = ["hyprland/submap" "hyprland/language" "wireplumber" "network" "battery"];
         };
         "hyprland/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            "11" = "1";
-            "12" = "2";
-            "13" = "3";
-            "14" = "4";
-            "15" = "5";
-            "16" = "6";
-            "17" = "7";
-            "18" = "8";
-            "19" = "9";
-          };
           persistent-workspaces = {
-            DP-2 = [1 2 3 4 5 6 7 8 9];
-            DP-3 = [11 12 13 14 15 16 17 18 19];
+            eDP-1 = [1 2 3 4 5 6 7 8 9];
           };
         };
         "hyprland/window".separate-outputs = true;
@@ -60,6 +47,15 @@
           format-icons = ["" "" ""];
         };
         network.format = "{essid}   ";
+        battery = {
+          interval = 5;
+          format = "{icon}";
+          format-time = "{H}h {M}min left";
+          format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+          "format-not charging" = "󱉝";
+          format-charging = "󰂄";
+          tooltip-format = "{timeTo} - {capacity}%";
+        };
         clock = {
           format = "{:%a, %b %d | %H:%M:%S}";
           interval = 1;

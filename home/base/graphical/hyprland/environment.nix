@@ -7,12 +7,6 @@
       "XDG_SESSION_DESKTOP, Hyprland"
       "XDG_SESSION_TYPE, wayland"
 
-      # NVIDIA
-      "LIBVA_DRIVER_NAME, nvidia"
-      "GBM_BACKEND, nvidia-drm"
-      "__GLX_VENDOR_LIBRARY_NAME, nvidia"
-      "WLR_NO_HARDWARE_CURSORS, 1"
-
       # QT
       "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
       "QT_QPA_PLATFORM, wayland;xcb"
@@ -21,6 +15,7 @@
 
       # GTK
       "GDK_BACKEND, wayland,x11"
+      "GDK_SCALE, 2"
 
       # GNOME Keyring SSH
       "SSH_AUTH_SOCK, $XDG_RUNTIME_DIR/gcr/ssh"
@@ -39,12 +34,6 @@
       # Wallpaper
       "hyprpaper"
 
-      # Hardware
-      "ckb-next --background"
-
-      # Bluetooth
-      "blueberry-tray"
-
       # Password Manager
       "bitwarden"
 
@@ -55,7 +44,7 @@
       "wl-clip-persist --clipboard regular"
 
       # Apps
-      "flatpak run com.discordapp.Discord"
+      "discord"
       "spotify"
     ];
   };

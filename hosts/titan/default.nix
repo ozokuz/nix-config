@@ -1,4 +1,4 @@
-{ config, ... } @ args:
+{ config, pkgs, ... } @ args:
 {
   # TODO: Complete configuration
 
@@ -8,6 +8,13 @@
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/users.nix
   ];
+
+  fileSystems = {
+    "/".options = ["compress=zstd"];
+    "/home".options = ["compress=zstd"];
+    "/nix".options = ["compress=zstd" "noatime"];
+    "/files".options = ["dmask=0000" "fmask=0111" "nofail"];
+  };
 
   boot.loader = {
     efi = {
@@ -21,6 +28,9 @@
       useOSProber = true;
     };
   };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  zramSwap.enable = true;
 
   networking = {
     hostName = "titan";
@@ -29,11 +39,13 @@
   };
 
   services.xserver.videoDrivers = ["nvidia"];
+  services.upower.enable = true;
+  services.tlp.enable = true;
 
   hardware = {
     bluetooth = {
       enable = true;
-      powerOnBoot = true;
+      powerOnBoot = false;
     };
 
     opengl = {
@@ -57,8 +69,8 @@
           enable = true;
           enableOffloadCmd = true;
         };
-        intelBusId = "";
-        nvidiaBusId = "";
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
       };
     };
   };

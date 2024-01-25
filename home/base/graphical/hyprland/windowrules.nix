@@ -2,9 +2,8 @@
 {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
-      # Side Screen 
-      "workspace 11,class:(discord)"
-      "workspace 19,class:(Spotify)"
+      "workspace 8 silent,class:(discord)"
+      "workspace 9 silent,class:(Spotify)"
 
       # XWaylandVideoBridge
       "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"

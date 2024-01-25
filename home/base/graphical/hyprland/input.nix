@@ -5,6 +5,7 @@
       input = {
         # Keyboard
         kb_layout = "fi,us";
+        kb_options = "caps:escape";
 
         numlock_by_default = true;
 
@@ -15,11 +16,14 @@
         follow_mouse = 1;
 
         touchpad = {
-          natural_scroll = "no";
+          natural_scroll = true;
+          scroll_factor = 0.2;
         };
 
         sensitivity = 0;
       };
+
+      gestures.workspace_swipe = true;
 
       "$mod" = "SUPER";
       bind = [
@@ -31,13 +35,13 @@
         # Script Runner
         "$mod SHIFT, space, exec, ls ~/.local/bin | tofi | xargs hyprctl dispatch exec --"
         # Screen Lock
-        "$mod, X, exec, swaylock"
+        "$mod, X, exec, swaylock -i /home/ozoku/.local/wallpaper.png"
         # Overlay Audio Mixer
         "$mod, A, togglespecialworkspace, audiomixer"
         # Overlay Network Manager
         "$mod SHIFT, W, togglespecialworkspace, networkmanager"
         # Switch Keyboard Layout
-        "$mod, B, exec, hyprctl switchxkblayout, ckb1:-corsair-k95-rgb-gaming-keyboard-vkb next"
+        "$mod, B, exec, hyprctl switchxkblayout, at-translated-set-2-keyboard next"
         # Scratchpad
         "$mod, minus, togglespecialworkspace, scratchpad"
         # Overlay Resource Monitor
@@ -63,11 +67,21 @@
         # Next
         ", XF86AudioNext, exec, playerctl -p spotify next"
         # Raise Volume
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+"
+        ", XF86AudioRaiseVolume, exec, volumectl -u up"
         # Lower Volume
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
+        ", XF86AudioLowerVolume, exec, volumectl -u down"
         # Mute
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioMute, exec, volumectl toggle-mute"
+        # Mic Mute
+        ", XF86AudioMicMute, exec, volumectl -m toggle-mute"
+
+        ## Display
+        # Raise Brightness
+        ", XF86MonBrightnessUp, exec, lightctl up"
+        # Lower Brightness
+        ", XF86MonBrightnessDown, exec, lightctl down"
+        # Toggle Wifi
+        ", XF86RFKill, exec, rfkill toggle 0"
 
         ## Window
         # Close

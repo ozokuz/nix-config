@@ -29,6 +29,13 @@
     };
   };
 
+  services.fstrim.enable = true;
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "monthly";
+    fileSystems = ["/"];
+  };
+
   environment.shells = with pkgs; [
     bash
     fish
@@ -51,6 +58,8 @@
     unzip
     zip
     psmisc
+    lshw
+    file
   ];
 
   environment.variables.EDITOR = "nvim";

@@ -33,15 +33,3 @@
   :exclusive false
   (powermenu)
 )
-
-(defwindow powermenu1
-  :monitor 1
-  :geometry (geometry
-    :width "1280px"
-    :height "480px"
-    :anchor "center center"
-  )
-  :stacking "fg"
-  :exclusive false
-  (powermenu)
-)

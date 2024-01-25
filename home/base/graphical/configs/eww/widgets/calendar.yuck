@@ -44,17 +44,3 @@
   :exclusive false
   (calpop)
 )
-
-(defwindow calendar1
-  :monitor 1
-  :geometry (geometry
-    :x "20px"
-    :y "20px"
-    :width "400px"
-    :height "390px"
-    :anchor "top right"
-  )
-  :stacking "fg"
-  :exclusive false
-  (calpop)
-)

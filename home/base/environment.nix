@@ -33,5 +33,6 @@ in {
     "${vars.CHD_BIN_HOME}"
     "${vars.CARGO_HOME}/bin"
     "${vars.GOPATH}/bin"
+    "${vars.XDG_DATA_HOME}/npm/bin"
   ];
 }

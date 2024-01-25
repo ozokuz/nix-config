@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   home.packages = with pkgs; [
     brave
@@ -6,10 +6,15 @@
     bitwarden
     authy
     pulsemixer
+    alsa-utils
+    nvtop
     nsxiv
     gnome.nautilus
     gnome.sushi
+    discord
     nautilus-open-any-terminal
+    pkgs-unstable.vscode
+    pkgs-unstable.jetbrains-toolbox
   ];
 
   programs.alacritty = {

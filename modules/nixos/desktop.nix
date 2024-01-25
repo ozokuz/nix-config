@@ -1,23 +1,32 @@
 { config, lib, pkgs, pkgs-unstable, ... }:
+let
+  sddm-themes = pkgs.callPackage ../../pkgs/sddm-themes.nix {};
+in 
 {
   environment.systemPackages = with pkgs; [
     libsForQt5.polkit-kde-agent
     gnome.gnome-keyring
     gnome.seahorse
-    blueberry
     (lutris.override {
       extraPkgs = pkgs: [
         pkgs.wineWowPackages.stagingFull
       ];
     })
+    sddm-themes.sddm-sober
+    libsForQt5.sddm
   ];
 
   security.rtkit.enable = true;
+  security.pam.services.swaylock = {};
 
   services = {
     xserver = {
       enable = true;
-      displayManager.sddm.enable = true;
+      displayManager.sddm = {
+        enable = true;
+        enableHidpi = true;
+        theme = "sober";
+      };
     };
 
     pipewire = {
@@ -28,6 +37,8 @@
       jack.enable = true;
       wireplumber.enable = true;
     };
+
+    blueman.enable = true;
     
     flatpak.enable = true;
   };
@@ -69,6 +80,7 @@
   };
 
   programs.steam.enable = true;
+  programs.kdeconnect.enable = true;
 
   programs.dconf.enable = true;
   services.udisks2.enable = true;

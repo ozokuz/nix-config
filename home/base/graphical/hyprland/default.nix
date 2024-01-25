@@ -1,4 +1,4 @@
-{ pkgs, hyprsome, ... }:
+{ pkgs, pkgs-unstable, hyprsome, ... }:
 {
   imports = [
     ./workspaces.nix
@@ -22,6 +22,10 @@
     wl-clip-persist
     playerctl
     bc
+    avizo
+    systemd
+    swaylock-effects
+    wtype
     hyprsome.packages.${pkgs.system}.default
   ]; 
 
@@ -69,6 +73,8 @@
           "workspaces, 1, 6, default"
         ];
       };
+
+      xwayland.force_zero_scaling = true;
     };
   };
 

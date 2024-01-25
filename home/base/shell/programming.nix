@@ -7,6 +7,11 @@
     go
     opam
     rustup
+    poetry
+    python3
+    lua-language-server
+    nixd
+    nil
   ];
 
   xdg.configFile."npm/npmrc".source = ./npmrc;

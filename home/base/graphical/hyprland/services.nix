@@ -19,6 +19,23 @@
     package = pkgs.eww-wayland;
   };
 
+  # Volume / Brightness OSD
+  services.avizo.enable = true;
+
+  # Idle Manager
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      { timeout = 900; command = "${pkgs.swaylock-effects}/bin/swaylock --grace 5 -i /home/ozoku/.local/wallpaper.png"; }
+      { timeout = 915; command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off"; resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on"; }
+      { timeout = 1200; command = "${pkgs.systemd}/bin/systemctl suspend"; }
+    ];
+    events = [
+      { event = "before-sleep"; command = "${pkgs.playerctl}/bin/playerctl pause"; }
+      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -i /home/ozoku/.local/wallpaper.png"; }
+    ];
+  };
+
   # Color Temperature
   services.gammastep = {
     enable = true;
@@ -49,4 +66,10 @@
 
   # Device Auto Mount
   services.udiskie.enable = true;
+
+  # Bluetooth Manager
+  services.blueman-applet.enable = true;
+
+  # Network Manager
+  services.network-manager-applet.enable = true;
 }

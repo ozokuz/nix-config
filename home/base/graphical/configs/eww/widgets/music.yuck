@@ -98,17 +98,3 @@
   :exclusive false
   (musicpop)
 )
-
-(defwindow music1
-  :monitor 1
-  :geometry (geometry
-    :x "0%"
-    :y "20px"
-    :width "400px"
-    :height "200px"
-    :anchor "top center"
-  )
-  :stacking "fg"
-  :exclusive false
-  (musicpop)
-)

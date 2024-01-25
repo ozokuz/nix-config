@@ -3,8 +3,8 @@
   imports = [
     ./base.nix
     ./environment.nix
-    ./desktop/hyprland
-    ./desktop/apps.nix
+    ./graphical/hyprland
+    ./graphical/apps.nix
     ./shell/fish.nix
     ./shell/prompt.nix
     ./shell/apps.nix
