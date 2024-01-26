@@ -13,7 +13,7 @@
     gnome.sushi
     discord
     nautilus-open-any-terminal
-    pkgs-unstable.vscode
+    pkgs-unstable.vscode-fhs
     pkgs-unstable.jetbrains-toolbox
   ];
 
