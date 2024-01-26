@@ -18,7 +18,7 @@
       "GDK_SCALE, 2"
 
       # GNOME Keyring SSH
-      "SSH_AUTH_SOCK, $XDG_RUNTIME_DIR/gcr/ssh"
+      "SSH_AUTH_SOCK, $XDG_RUNTIME_DIR/keyring/ssh"
 
       # Tearing
       "WLR_DRM_NO_ATOMIC, 1"

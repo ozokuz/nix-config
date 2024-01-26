@@ -52,7 +52,7 @@
   # Secrets Provider
   services.gnome-keyring = {
     enable = true;
-    components = ["secrets"];
+    components = ["secrets" "ssh"];
   };
 
   # Phone Integration

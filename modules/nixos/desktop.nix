@@ -5,8 +5,6 @@ in
 {
   environment.systemPackages = with pkgs; [
     libsForQt5.polkit-kde-agent
-    gnome.gnome-keyring
-    gnome.seahorse
     (lutris.override {
       extraPkgs = pkgs: [
         pkgs.wineWowPackages.stagingFull
@@ -18,6 +16,7 @@ in
 
   security.rtkit.enable = true;
   security.pam.services.swaylock = {};
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   services = {
     xserver = {
@@ -84,4 +83,6 @@ in
 
   programs.dconf.enable = true;
   services.udisks2.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
 }
