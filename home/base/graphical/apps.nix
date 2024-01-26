@@ -2,6 +2,9 @@
 {
   home.packages = with pkgs; [
     brave
+    vivaldi
+    microsoft-edge
+    floorp
     spotify
     bitwarden
     authy
