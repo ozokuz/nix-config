@@ -21,6 +21,7 @@
       "audio"
       "input"
       "video"
+      "storage"
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN9iloUdc5cvzURayOT4rBhsAh/5fBTrVfv7sVMtG8i6 ozoku@cosmos"

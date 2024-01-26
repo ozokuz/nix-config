@@ -10,10 +10,10 @@
   ];
 
   fileSystems = {
-    "/".options = ["compress=zstd"];
-    "/home".options = ["compress=zstd"];
-    "/nix".options = ["compress=zstd" "noatime"];
-    "/files".options = ["dmask=0000" "fmask=0111" "nofail"];
+    "/".options = ["discard=async" "compress=zstd"];
+    "/home".options = ["discard=async" "compress=zstd"];
+    "/nix".options = ["discard=async" "compress=zstd" "noatime"];
+    "/files".options = ["uid=1000" "dmask=0022" "fmask=0113" "nofail"];
   };
 
   boot.loader = {
