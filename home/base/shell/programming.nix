@@ -10,6 +10,11 @@
     poetry
     python3
     lua-language-server
+    clang-tools_17
+    marksman
+    stylua
+    elixir_1_16
+    ruby_3_3
     nixd
     nil
   ];
