@@ -4,14 +4,13 @@ let
 in 
 {
   environment.systemPackages = with pkgs; [
+    sddm-themes.sddm-sober
     libsForQt5.polkit-kde-agent
     (lutris.override {
       extraPkgs = pkgs: [
         pkgs.wineWowPackages.stagingFull
       ];
     })
-    sddm-themes.sddm-sober
-    libsForQt5.sddm
   ];
 
   security.rtkit.enable = true;
