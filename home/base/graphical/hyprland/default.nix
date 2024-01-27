@@ -1,4 +1,7 @@
 { pkgs, pkgs-unstable, hyprsome, ... }:
+let
+  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
+in 
 {
   imports = [
     ./workspaces.nix
@@ -14,18 +17,15 @@
     hyprpaper
     tofi
     libnotify
-    grim
-    slurp
-    jq
-    xdg-user-dirs
     wl-clipboard
     wl-clip-persist
     playerctl
     bc
     avizo
-    systemd
     swaylock-effects
     wtype
+    scripts.ode-toggle-widget
+    scripts.scrsht
     hyprsome.packages.${pkgs.system}.default
   ]; 
 
@@ -82,7 +82,4 @@
   xdg.configFile."hypr/hyprpaper.conf".source = ../configs/hyprpaper.conf;
 
   xdg.configFile."tofi/config".source = ../configs/tofi/config;
-
-  home.file.".local/bin/ode_toggle_widget".source = ./scripts/ode_toggle_widget;
-  home.file.".local/bin/scrsht".source = ./scripts/scrsht;
 }
