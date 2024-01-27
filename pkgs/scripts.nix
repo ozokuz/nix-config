@@ -2,7 +2,7 @@
 {
   ode-toggle-widget = writeShellApplication {
     name = "ode_toggle_widget";
-    runtimeInputs = with pkgs; [hyprland eww-wayland];
+    runtimeInputs = with pkgs; [hyprland eww-wayland jq];
     text = builtins.readFile ./scripts/ode_toggle_widget.sh;
   };
 
