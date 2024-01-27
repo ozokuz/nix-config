@@ -14,6 +14,7 @@
     gnome.nautilus
     gnome.sushi
     discord
+    vesktop
     nautilus-open-any-terminal
     pkgs-unstable.vscode-fhs
     pkgs-unstable.jetbrains-toolbox
