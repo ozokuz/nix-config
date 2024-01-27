@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+let
+  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
+in 
 {
   # Notifications
   services.mako = {
@@ -17,6 +20,17 @@
     enable = true;
     configDir = ../configs/eww;
     package = pkgs.eww-wayland;
+  };
+
+  systemd.user.services.eww = {
+    Unit = { Description = "Widget system"; };
+    Service = {
+      Type = "exec";
+      ExecStart = "${pkgs.eww-wayland}/bin/eww daemon --no-daemonize";
+      Restart = "on-failure";
+      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash hyprland eww-wayland]}\"";
+    };
+    Install = { WantedBy = ["graphical-session.target"]; };
   };
 
   # Volume / Brightness OSD

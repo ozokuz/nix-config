@@ -37,9 +37,6 @@
       # Password Manager
       "bitwarden"
 
-      # Widgets
-      "eww daemon"
-
       # clipboard persist
       "wl-clip-persist --clipboard regular"
 
