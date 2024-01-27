@@ -82,4 +82,9 @@ in
   xdg.configFile."hypr/hyprpaper.conf".source = ../configs/hyprpaper.conf;
 
   xdg.configFile."tofi/config".source = ../configs/tofi/config;
+
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+  };
 }
