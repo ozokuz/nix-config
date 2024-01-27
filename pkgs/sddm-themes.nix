@@ -6,20 +6,29 @@ in
   sddm-sober = stdenv.mkDerivation rec {
     pname = "sddm-sober-theme";
     version = "1.0";
+
     dontBuild = true;
+
     propagatedBuildInputs = [
       qtge
     ];
+
     dontWrapQtApps = true;
+
     installPhase = ''
       mkdir -p $out/share/sddm/themes/sober
       tar xf $src -C $out/share/sddm/themes
+      echo "" >> $out/share/sddm/themes/sober/theme.conf.user
+      echo "menu.default.size=full" >> $out/share/sddm/themes/sober/theme.conf.user
+      echo "enable.button.fullscreen.switch=false" >> $out/share/sddm/themes/sober/theme.conf.user
     '';
+
     postFixup = ''
       mkdir -p $out/nix-support
 
       echo ${qtge} >> $out/nix-support/propagated-user-env-packages
     '';
+
     src = fetchurl {
       url = "https://github.com/Rokin05/sddm-themes/raw/master/releases/sddm-sober.tar.gz";
       hash = "sha256-sswb3fLhxq88YOKO+xdu2p6Fe+m5ZaOES0pm/MR7UxI=";
