@@ -9,6 +9,7 @@
   programs.bat.enable = true;
   programs.btop.enable = true;
   programs.direnv.enable = true;
+  programs.zoxide.enable = true;
   programs.eza = {
     enable = true;
     enableAliases = true;
