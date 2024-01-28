@@ -18,6 +18,7 @@
     nautilus-open-any-terminal
     pkgs-unstable.vscode-fhs
     pkgs-unstable.jetbrains-toolbox
+    pkgs-unstable.gitkraken
   ];
 
   programs.alacritty = {
