@@ -87,4 +87,18 @@ in
     enable = true;
     createDirectories = true;
   };
+
+  xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+          "text/plain" = ["nvim.desktop"];
+          "x-scheme-handler/http" = ["brave-browser.desktop"];
+          "x-scheme-handler/https" = ["brave-browser.desktop"];
+          "x-scheme-handler/webcal" = ["brave-browser.desktop"];
+          "text/html" = ["brave-browser.desktop"];
+          "application/pdf" = ["org.pwmt.zathura.desktop"];
+          "inode/directory" = ["org.gnome.Nautilus.desktop"];
+          "x-scheme-handler/jetbrains" = ["JetBrains Toolbox.desktop"];
+        };
+    };
 }
