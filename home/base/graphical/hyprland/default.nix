@@ -89,7 +89,7 @@ in
   };
 
   xdg.mimeApps = {
-      enable = true;
+      enable = false;
       defaultApplications = {
           "text/plain" = ["nvim.desktop"];
           "x-scheme-handler/http" = ["brave-browser.desktop"];
