@@ -27,7 +27,7 @@
       g = "git";
       lg = "lazygit";
       cl = "clear";
-      zf = "cd (z -l | awk '{print \$2}' | fzf)";
+      vi = "fzf | nvim";
     };
 
     shellAbbrs = {
