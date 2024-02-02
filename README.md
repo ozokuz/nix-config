@@ -4,7 +4,7 @@ My Nix Config
 
 ## Steps
 
-1. `nixos-install --flake .#saturn` or `sudo nixos-rebuild --flake .#saturn`
+1. `nixos-install --flake .#titan` or `sudo nixos-rebuild --flake .#titan`
 2. `reboot`
 3. `rustup default stable`
 4. `opam init`
@@ -12,4 +12,5 @@ My Nix Config
 6. `sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
 7. `flatpak install flathub com.google.Chrome`
 8. `flatpak install flathub com.microsoft.Edge`
-9. `reboot`
+9. `flatpak install flathub org.prismlauncher.PrismLauncher`
+10. `reboot`
