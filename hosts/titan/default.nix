@@ -39,6 +39,7 @@
   services.xserver.videoDrivers = ["nvidia"];
   services.upower.enable = true;
   services.tlp.enable = true;
+  services.tailscale.enable = true;
 
   hardware = {
     bluetooth = {
