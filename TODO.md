@@ -1,7 +1,6 @@
 # TODO
 
 - Better screenshots with grimblast + custom uploader script
-- xwaylandvideobridge?
 - Setup lf
 - Setup Tmux
 - Setup VSCode
