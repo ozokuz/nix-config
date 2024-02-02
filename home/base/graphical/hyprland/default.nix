@@ -22,6 +22,7 @@ in
     playerctl
     bc
     avizo
+    emote
     swaylock-effects
     wtype
     scripts.ode-toggle-widget

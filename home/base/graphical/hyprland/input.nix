@@ -46,6 +46,8 @@
         "$mod, minus, togglespecialworkspace, scratchpad"
         # Overlay Resource Monitor
         "$mod, R, togglespecialworkspace, processes"
+        # Emoji Picker
+        "$mod, period, exec, emote"
 
         ## Apps
         # Terminal

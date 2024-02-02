@@ -40,6 +40,9 @@
       # clipboard persist
       "wl-clip-persist --clipboard regular"
 
+      # Emoji Picker
+      "emote"
+
       # Apps
       "discord"
       "spotify"
