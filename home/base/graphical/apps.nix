@@ -15,6 +15,8 @@
     gnome.sushi
     discord
     vesktop
+    obsidian
+    ticktick
     nautilus-open-any-terminal
     pkgs-unstable.vscode-fhs
     pkgs-unstable.jetbrains-toolbox
