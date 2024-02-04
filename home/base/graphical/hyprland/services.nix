@@ -50,11 +50,6 @@ in
         command = "${scripts.ode-lock}/bin/ode_lock --grace 5";
       }
       {
-        timeout = 615;
-        command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-      }
-      {
         timeout = 900;
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
@@ -62,7 +57,6 @@ in
     events = [
       { event = "before-sleep"; command = "${pkgs.playerctl}/bin/playerctl pause"; }
       { event = "before-sleep"; command = "${scripts.ode-lock}/bin/ode_lock"; }
-      { event = "after-resume"; command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on"; }
       { event = "after-resume"; command = "${pkgs.brightnessctl}/bin/brightnessctl -r"; }
     ];
   };
