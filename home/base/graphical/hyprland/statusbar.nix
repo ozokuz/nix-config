@@ -62,7 +62,10 @@ in
           format = "{icon}";
           format-icons = ["" "" ""];
         };
-        network.format = "{essid}   ";
+        network = {
+          format = "󰖩 ";
+          format-disconnected = "󰖪 ";
+        };
         battery = {
           interval = 5;
           format = "{icon}";
