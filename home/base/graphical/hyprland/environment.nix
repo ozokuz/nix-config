@@ -43,6 +43,9 @@
       # Emoji Picker
       "emote"
 
+      # Syncthing Tray
+      "bash -c 'sleep 2; syncthingtray --wait'"
+
       # Apps
       "discord"
       "spotify"

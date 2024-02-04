@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-unstable, ... }:
+{ config, lib, pkgs, pkgs-unstable, username, ... }:
 let
   sddm-themes = pkgs.callPackage ../../pkgs/sddm-themes.nix {};
 in 
@@ -39,6 +39,15 @@ in
     blueman.enable = true;
     
     flatpak.enable = true;
+
+    syncthing = {
+      enable = true;
+      systemService = false;
+      user = username;
+      group = username;
+      dataDir = "/home/${username}";
+      openDefaultPorts = true;
+    };
   };
 
   xdg.portal = {

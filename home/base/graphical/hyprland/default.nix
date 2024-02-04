@@ -25,6 +25,7 @@ in
     emote
     swaylock-effects
     wtype
+    syncthingtray
     scripts.ode-toggle-widget
     scripts.scrsht
     hyprsome.packages.${pkgs.system}.default

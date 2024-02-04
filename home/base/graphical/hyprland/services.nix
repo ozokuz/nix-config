@@ -86,4 +86,7 @@ in
 
   # Network Manager
   services.network-manager-applet.enable = true;
+
+  # Syncthing
+  services.syncthing.enable = true;
 }
