@@ -25,7 +25,6 @@ in
     gnome.sushi
     discord
     vesktop
-    ticktick
     nautilus-open-any-terminal
     obsidian-fixed
     pkgs-unstable.vscode-fhs
