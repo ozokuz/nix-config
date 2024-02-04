@@ -24,6 +24,12 @@
     text = builtins.readFile ./scripts/ode_awake_toggle.sh;
   };
 
+  ode-weather-status = writeShellApplication {
+    name = "ode_weather_status";
+    runtimeInputs = with pkgs; [coreutils curl gnused];
+    text = builtins.readFile ./scripts/ode_weather_status.sh;
+  };
+
   scrsht = writeShellApplication {
     name = "scrsht";
     runtimeInputs = with pkgs; [xdg-user-dirs slurp hyprland jq grim libnotify wl-clipboard curl gawk coreutils];

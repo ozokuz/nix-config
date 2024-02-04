@@ -24,9 +24,15 @@ in
           on-click = "${scripts.ode-awake-toggle}/bin/ode_awake_toggle";
           signal = 8;
         };
+        "custom/weather" = {
+          format = "{}   ";
+          exec = "${scripts.ode-weather-status}/bin/ode_weather_status";
+          interval = 3600;
+          return-type = "json";
+        };
         "group/hardware" = {
           orientation = "horizontal";
-          modules = ["hyprland/submap" "hyprland/language" "wireplumber" "network" "battery"];
+          modules = ["hyprland/submap" "hyprland/language" "custom/weather" "custom/awake" "wireplumber" "network" "battery"];
         };
         "hyprland/workspaces" = {
           persistent-workspaces = {
