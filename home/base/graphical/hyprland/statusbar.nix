@@ -55,7 +55,7 @@ in
         "hyprland/language" = {
           format = {};
           format-fi = "🇫🇮  ";
-          format-us = "us";
+          format-en = "🇺🇸  ";
         };
         "hyprland/submap".format = "{}   ";
         wireplumber = {
