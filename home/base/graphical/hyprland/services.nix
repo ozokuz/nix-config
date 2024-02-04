@@ -42,10 +42,7 @@ in
     timeouts = [
       {
         timeout = 300;
-        command = ''
-          ${pkgs.brightnessctl}/bin/brightnessctl -s \
-          && ${pkgs.brightnessctl}/bin/brightnessctl set 5%
-        '';
+        command = "${pkgs.brightnessctl}/bin/brightnessctl -s && ${pkgs.brightnessctl}/bin/brightnessctl set 5%";
         resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl -r";
       }
       {
