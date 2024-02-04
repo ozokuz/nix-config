@@ -50,7 +50,7 @@ in
         command = "${scripts.ode-lock}/bin/ode_lock --grace 5";
       }
       {
-        timeout = 900;
+        timeout = 660;
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];
