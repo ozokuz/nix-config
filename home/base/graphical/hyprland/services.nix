@@ -28,7 +28,7 @@ in
       Type = "exec";
       ExecStart = "${pkgs.eww-wayland}/bin/eww daemon --no-daemonize";
       Restart = "on-failure";
-      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash hyprland eww-wayland swaylock-effects]}\"";
+      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash hyprland eww-wayland scripts.ode-lock]}\"";
     };
     Install = { WantedBy = ["graphical-session.target"]; };
   };
@@ -40,13 +40,13 @@ in
   services.swayidle = {
     enable = true;
     timeouts = [
-      { timeout = 900; command = "${pkgs.swaylock-effects}/bin/swaylock --grace 5 -i /home/ozoku/.local/wallpaper.png"; }
+      { timeout = 900; command = "${scripts.ode-lock}/bin/ode_lock --grace 5"; }
       { timeout = 915; command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off"; resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on"; }
       { timeout = 1200; command = "${pkgs.systemd}/bin/systemctl suspend"; }
     ];
     events = [
       { event = "before-sleep"; command = "${pkgs.playerctl}/bin/playerctl pause"; }
-      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -i /home/ozoku/.local/wallpaper.png"; }
+      { event = "before-sleep"; command = "${scripts.ode-lock}/bin/ode_lock"; }
     ];
   };
 

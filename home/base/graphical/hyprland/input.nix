@@ -35,7 +35,7 @@
         # Script Runner
         "$mod SHIFT, space, exec, ls ~/.local/bin | tofi | xargs hyprctl dispatch exec --"
         # Screen Lock
-        "$mod, X, exec, swaylock -i /home/ozoku/.local/wallpaper.png"
+        "$mod, X, exec, ode_lock"
         # Overlay Audio Mixer
         "$mod, A, togglespecialworkspace, audiomixer"
         # Overlay Network Manager

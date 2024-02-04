@@ -23,10 +23,10 @@ in
     bc
     avizo
     emote
-    swaylock-effects
     wtype
     syncthingtray
     scripts.ode-toggle-widget
+    scripts.ode-lock
     scripts.scrsht
     hyprsome.packages.${pkgs.system}.default
   ]; 

@@ -21,7 +21,7 @@
     )
     (button
       :class "powerbutton lock"
-      :onclick "ode_toggle_widget powermenu && hyprctl dispatch exec -- swaylock -i /home/ozoku/.local/wallpaper.png"
+      :onclick "ode_toggle_widget powermenu && hyprctl dispatch exec ode_lock"
       "󰌾"
     )
     (button
