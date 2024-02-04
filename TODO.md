@@ -7,4 +7,5 @@
 - Switch to kitty
 - Switch to nushell
 - Switch to swww
+- Switch to dunst
 - Check out greetd + tuigreet
