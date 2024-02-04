@@ -40,13 +40,33 @@ in
   services.swayidle = {
     enable = true;
     timeouts = [
-      { timeout = 900; command = "${scripts.ode-lock}/bin/ode_lock --grace 5"; }
-      { timeout = 915; command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off"; resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on"; }
-      { timeout = 1200; command = "${pkgs.systemd}/bin/systemctl suspend"; }
+      {
+        timeout = 300;
+        command = ''
+          ${pkgs.brightnessctl}/bin/brightnessctl -s \
+          && ${pkgs.brightnessctl}/bin/brightnessctl set 5%
+        '';
+        resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl -r";
+      }
+      {
+        timeout = 600;
+        command = "${scripts.ode-lock}/bin/ode_lock --grace 5";
+      }
+      {
+        timeout = 615;
+        command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+      }
+      {
+        timeout = 900;
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
     ];
     events = [
       { event = "before-sleep"; command = "${pkgs.playerctl}/bin/playerctl pause"; }
       { event = "before-sleep"; command = "${scripts.ode-lock}/bin/ode_lock"; }
+      { event = "after-resume"; command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on"; }
+      { event = "after-resume"; command = "${pkgs.brightnessctl}/bin/brightnessctl -r"; }
     ];
   };
 
