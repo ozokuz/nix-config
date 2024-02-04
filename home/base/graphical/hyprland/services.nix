@@ -77,8 +77,8 @@ in
     duskTime = "21:30-22:30";
     provider = "manual";
     temperature = {
-      day = 5500;
-      night = 3700;
+      day = 6500;
+      night = 3000;
     };
     tray = true;
   };
