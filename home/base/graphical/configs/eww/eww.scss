@@ -90,36 +90,34 @@ progressbar {
 
 .powerbutton {
   font-size: 60px;
-}
-
-.poweroff {
-  color: #ff0000;
 
   &:hover {
     color: #ffffff;
-    background-color: #ff0000;
     border-radius: 20px;
+  }
+}
+
+.poweroff {
+  color: #fb2340;
+
+  &:hover {
+    background-color: #fb2340;
   }
 }
 
 .reboot {
-  color: #ffaa00;
+  color: #ffa05c;
 
   &:hover {
-    color: #ffffff;
-    background-color: #ffaa00;
-    border-radius: 20px;
+    background-color: #ffa05c;
   }
 }
 
 .logout {
-  color: #22ff22;
+  color: #f5ec66;
 
   &:hover {
-    color: #ffffff;
-    background-color: #22ff22;
-    border-radius: 20px;
+    background-color: #f5ec66;
   }
 }
 
-/* Volume Styles */
