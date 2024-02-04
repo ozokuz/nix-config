@@ -32,6 +32,6 @@
   qt = {
     enable = true;
     platformTheme = "qtct";
-    style.name = "breeze";
+    style.package = pkgs.libsForQt5.breeze-qt5;
   };
 }
