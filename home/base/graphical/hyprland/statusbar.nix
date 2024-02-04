@@ -76,7 +76,7 @@ in
           tooltip-format = "{timeTo} - {capacity}%";
         };
         clock = {
-          format = "{:%a, %b %d | %H:%M:%S}";
+          format = "{:%a, %d.%m.%y | %H:%M:%S}";
           interval = 1;
           on-click = "ode_toggle_widget calendar";
         };
