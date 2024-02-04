@@ -25,6 +25,7 @@ in
     emote
     wtype
     syncthingtray
+    scripts.ode-awake-toggle
     scripts.ode-toggle-widget
     scripts.ode-lock
     scripts.scrsht

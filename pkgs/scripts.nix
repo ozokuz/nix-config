@@ -12,6 +12,18 @@
     text = builtins.readFile ./scripts/ode_lock.sh;
   };
 
+  ode-awake-status = writeShellApplication {
+    name = "ode_awake_status";
+    runtimeInputs = with pkgs; [systemd];
+    text = builtins.readFile ./scripts/ode_awake_status.sh;
+  };
+
+  ode-awake-toggle = writeShellApplication {
+    name = "ode_awake_toggle";
+    runtimeInputs = with pkgs; [systemd procps];
+    text = builtins.readFile ./scripts/ode_awake_toggle.sh;
+  };
+
   scrsht = writeShellApplication {
     name = "scrsht";
     runtimeInputs = with pkgs; [xdg-user-dirs slurp hyprland jq grim libnotify wl-clipboard curl gawk coreutils];

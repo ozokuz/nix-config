@@ -48,6 +48,8 @@
         "$mod, R, togglespecialworkspace, processes"
         # Emoji Picker
         "$mod, period, exec, emote"
+        # Toggle Awake Mode
+        "$mod SHIFT, T, exec, ode_awake_toggle"
 
         ## Apps
         # Terminal

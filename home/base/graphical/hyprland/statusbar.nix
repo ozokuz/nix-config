@@ -1,4 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
+let
+  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
+in 
 {
   programs.waybar = {
     enable = true;
@@ -14,6 +17,13 @@
         modules-left = ["hyprland/workspaces" "hyprland/window"];
         modules-center = ["mpris"];
         modules-right = ["tray" "group/hardware" "clock"];
+        "custom/awake" = {
+          format = "{} ";
+          exec = "${scripts.ode-awake-status}/bin/ode_awake_status";
+          interval = "once";
+          on-click = "${scripts.ode-awake-toggle}/bin/ode_awake_toggle";
+          signal = 8;
+        };
         "group/hardware" = {
           orientation = "horizontal";
           modules = ["hyprland/submap" "hyprland/language" "wireplumber" "network" "battery"];
