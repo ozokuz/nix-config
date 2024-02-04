@@ -113,7 +113,7 @@ progressbar {
   }
 }
 
-.logout {
+.suspend {
   color: #f5ec66;
 
   &:hover {
@@ -121,3 +121,18 @@ progressbar {
   }
 }
 
+.lock {
+  color: #44d593;
+
+  &:hover {
+    background-color: #44d593;
+  }
+}
+
+.logout {
+  color: #88f7e2;
+
+  &:hover {
+    background-color: #88f7e2;
+  }
+}

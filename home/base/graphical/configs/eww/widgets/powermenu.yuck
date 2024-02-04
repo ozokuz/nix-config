@@ -15,6 +15,16 @@
       ""
     )
     (button
+      :class "powerbutton suspend"
+      :onclick "ode_toggle_widget powermenu && systemctl suspend"
+      "󰤄"
+    )
+    (button
+      :class "powerbutton lock"
+      :onclick "ode_toggle_widget powermenu && hyprctl dispatch exec -- swaylock -i /home/ozoku/.local/wallpaper.png"
+      "󰌾"
+    )
+    (button
       :class "powerbutton logout"
       :onclick "ode_toggle_widget powermenu && hyprctl dispatch exit"
       ""
@@ -25,8 +35,8 @@
 (defwindow powermenu0
   :monitor 0
   :geometry (geometry
-    :width "1280px"
-    :height "480px"
+    :width "960px"
+    :height "360px"
     :anchor "center center"
   )
   :stacking "fg"
