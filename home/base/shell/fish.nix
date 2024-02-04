@@ -28,6 +28,7 @@
       lg = "lazygit";
       cl = "clear";
       vi = "fzf | nvim";
+      ov = "cd /files/Vault/Brain";
     };
 
     shellAbbrs = {
