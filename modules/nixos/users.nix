@@ -2,10 +2,7 @@
 {
   nix.settings.trusted-users = [username];
 
-  users.groups = {
-    "${username}" = {};
-    docker = {};
-  };
+  users.groups."${username}" = {};
 
   users.users."${username}" = {
     hashedPassword = "$6$Z2S2hwm5RjcEmJ1b$HH.X099RzUn7EPCSXSDyumIjDdITfjoXAJIHhYP7oJ68jET1hyQPcEc574P9G5yhqmnAWnGnNtwjZ4UnBwxzT.";
@@ -18,6 +15,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "libvirtd"
       "audio"
       "input"
       "video"

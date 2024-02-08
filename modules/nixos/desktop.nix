@@ -11,6 +11,10 @@ in
         pkgs.wineWowPackages.stagingFull
       ];
     })
+    podman-compose
+    docker
+    docker-compose
+    docker-buildx
   ];
 
   security.rtkit.enable = true;
@@ -49,6 +53,14 @@ in
       openDefaultPorts = true;
     };
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  virtualisation.podman.enable = true;
+
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
 
   xdg.portal = {
     enable = true;

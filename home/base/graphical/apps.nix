@@ -27,6 +27,8 @@ in
     vesktop
     nautilus-open-any-terminal
     obsidian-fixed
+    podman-desktop
+    distrobox
     pkgs-unstable.vscode-fhs
     pkgs-unstable.jetbrains-toolbox
     pkgs-unstable.gitkraken
