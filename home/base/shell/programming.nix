@@ -17,6 +17,7 @@
     ruby_3_3
     nixd
     nil
+    dotnet-sdk_7
   ];
 
   xdg.configFile."npm/npmrc".source = ./npmrc;

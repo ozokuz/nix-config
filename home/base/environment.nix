@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   vars = config.home.sessionVariables;
 in {
@@ -27,6 +27,7 @@ in {
     NODE_REPL_HISTORY = "${vars.XDG_DATA_HOME}/node_repl_history";
     WINEPREFIX = "${vars.XDG_DATA_HOME}/wine";
     NPM_CONFIG_USERCONFIG = "${vars.XDG_CONFIG_HOME}/npm/npmrc";
+    DOTNET_ROOT = "${pkgs.dotnet-sdk_7}";
   };
 
   home.sessionPath = [
