@@ -52,4 +52,6 @@
     };
   };
   programs.lf.enable = true;
+  programs.tmux.enable = true;
+  programs.zellij.enable = true;
 }
