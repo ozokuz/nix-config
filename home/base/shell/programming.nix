@@ -8,7 +8,7 @@
     opam
     rustup
     poetry
-    python3
+    python312
     lua-language-server
     clang-tools_17
     marksman
