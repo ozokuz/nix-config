@@ -33,7 +33,7 @@
         # App Launcher
         "$mod, space, exec, tofi-drun | xargs hyprctl dispatch exec --"
         # Script Runner
-        "$mod SHIFT, space, exec, ls ~/.local/bin | tofi | xargs hyprctl dispatch exec --"
+        "$mod SHIFT, space, exec, tofi-run | xargs hyprctl dispatch exec --"
         # Screen Lock
         "$mod, X, exec, ode_lock"
         # Overlay Audio Mixer
