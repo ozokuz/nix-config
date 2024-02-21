@@ -1,4 +1,7 @@
 { config, pkgs, ... } @ args:
+let
+  themes = pkgs.callPackage ../../pkgs/themes.nix {};
+in 
 {
   imports = [
     ./hardware-configuration.nix
@@ -24,6 +27,7 @@
       devices = ["nodev"];
       efiSupport = true;
       useOSProber = true;
+      theme = themes.lenovo-yoga-grub;
     };
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;

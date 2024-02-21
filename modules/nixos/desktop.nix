@@ -1,10 +1,10 @@
 { config, lib, pkgs, pkgs-unstable, username, ... }:
 let
-  sddm-themes = pkgs.callPackage ../../pkgs/sddm-themes.nix {};
+  themes = pkgs.callPackage ../../pkgs/themes.nix {};
 in 
 {
   environment.systemPackages = with pkgs; [
-    sddm-themes.sddm-sober
+    themes.sddm-sober
     libsForQt5.polkit-kde-agent
     (lutris.override {
       extraPkgs = pkgs: [
