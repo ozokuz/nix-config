@@ -95,10 +95,10 @@ in
       enable = false;
       defaultApplications = {
           "text/plain" = ["nvim.desktop"];
-          "x-scheme-handler/http" = ["brave-browser.desktop"];
-          "x-scheme-handler/https" = ["brave-browser.desktop"];
-          "x-scheme-handler/webcal" = ["brave-browser.desktop"];
-          "text/html" = ["brave-browser.desktop"];
+          "x-scheme-handler/http" = ["firefox.desktop"];
+          "x-scheme-handler/https" = ["firefox.desktop"];
+          "x-scheme-handler/webcal" = ["firefox.desktop"];
+          "text/html" = ["firefox.desktop"];
           "application/pdf" = ["org.pwmt.zathura.desktop"];
           "inode/directory" = ["org.gnome.Nautilus.desktop"];
           "x-scheme-handler/jetbrains" = ["JetBrains Toolbox.desktop"];

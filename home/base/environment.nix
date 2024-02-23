@@ -5,7 +5,7 @@ in {
   home.sessionVariables = {
     # Defaults
     EDITOR = "nvim";
-    BROWSER = "brave";
+    BROWSER = "firefox";
     TERMINAL = "alacritty";
 
     # XDG
