@@ -24,7 +24,6 @@ in
     gnome.nautilus
     gnome.sushi
     discord
-    vesktop
     nautilus-open-any-terminal
     obsidian-fixed
     podman-desktop
@@ -32,6 +31,7 @@ in
     pkgs-unstable.vscode-fhs
     pkgs-unstable.jetbrains-toolbox
     pkgs-unstable.gitkraken
+    pkgs-unstable.vesktop
   ];
 
   programs.alacritty = {

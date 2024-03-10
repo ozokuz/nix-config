@@ -15,8 +15,8 @@
     stylua
     elixir_1_16
     ruby_3_3
-    nixd
-    nil
+    # nixd
+    # nil
     dotnet-sdk_7
   ];
 
