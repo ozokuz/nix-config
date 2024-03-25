@@ -98,6 +98,7 @@ in
     xwayland.enable = true;
   };
 
+  programs.nix-ld.enable = true;
   programs.steam.enable = true;
   programs.kdeconnect.enable = true;
 
