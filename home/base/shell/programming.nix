@@ -9,14 +9,12 @@
     rustup
     poetry
     python312
-    lua-language-server
-    clang-tools_17
-    marksman
-    stylua
+    # lua-language-server
+    # clang-tools_17
+    # marksman
+    # stylua
     elixir_1_16
     ruby_3_3
-    # nixd
-    # nil
     dotnet-sdk_7
   ];
 
