@@ -15,6 +15,8 @@ in
     docker
     docker-compose
     docker-buildx
+    pkgs-unstable.quickemu
+    pkgs-unstable.quickgui
   ];
 
   security.rtkit.enable = true;
