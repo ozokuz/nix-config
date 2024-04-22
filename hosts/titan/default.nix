@@ -31,6 +31,9 @@ in
     };
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.extraModprobeConfig = ''
+  #   options snd-hda-intel model=17aa:38be
+  # '';
 
   zramSwap.enable = true;
 
