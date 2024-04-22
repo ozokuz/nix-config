@@ -1,6 +1,7 @@
 { config, lib, pkgs, pkgs-unstable, username, ... }:
 let
   themes = pkgs.callPackage ../../pkgs/themes.nix {};
+  fonts = pkgs.callPackage ../../pkgs/fonts.nix {};
 in 
 {
   environment.systemPackages = with pkgs; [
@@ -79,6 +80,7 @@ in
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
+      fonts.monocraft
 
       (nerdfonts.override {
         fonts = [
