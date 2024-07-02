@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 let
   scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
 in 
 {
   programs.waybar = {
     enable = true;
+    package = pkgs-unstable.waybar;
     settings = {
       mainBar = {
         position = "top";

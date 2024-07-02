@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, split-monitor-workspaces, ... }:
+{ pkgs, pkgs-unstable, hyprland, split-monitor-workspaces, ... }:
 let
   scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
 in
@@ -33,6 +33,7 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = hyprland.packages.${pkgs.system}.hyprland;
     systemd = {
        enable = true;
        variables = ["--all"];

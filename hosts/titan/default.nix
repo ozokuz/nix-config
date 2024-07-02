@@ -1,4 +1,4 @@
-{ config, pkgs, ... } @ args:
+{ config, pkgs, pkgs-unstable, ... } @ args:
 let
   themes = pkgs.callPackage ../../pkgs/themes.nix {};
 in 
@@ -55,6 +55,9 @@ in
     };
 
     opengl = {
+      package = pkgs-unstable.mesa.drivers;
+      package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
