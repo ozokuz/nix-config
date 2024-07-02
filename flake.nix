@@ -62,7 +62,7 @@
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland.url = "github:hyprwm/Hyprland/v0.41.2";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.41.2";
     hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     split-monitor-workspaces = {
@@ -75,9 +75,10 @@
     experimental-features = ["nix-command" "flakes"];
 
     substituters = [
+      "https://cache.nixos.org"
       "https://hyprland.cachix.org"
     ];
 
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    extra-trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 }
