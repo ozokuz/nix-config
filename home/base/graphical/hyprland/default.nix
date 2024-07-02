@@ -1,7 +1,7 @@
-{ pkgs, pkgs-unstable, ... }: # TODO: add back hyprsome
+{ pkgs, pkgs-unstable, split-monitor-workspaces, ... }:
 let
   scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
-in 
+in
 {
   imports = [
     ./workspaces.nix
@@ -29,8 +29,7 @@ in
     scripts.ode-toggle-widget
     scripts.ode-lock
     scripts.scrsht
-    #hyprsome.packages.${pkgs.system}.default
-  ]; 
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -38,6 +37,9 @@ in
        enable = true;
        variables = ["--all"];
     };
+    plugins = [
+      split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces 
+    ];
     settings = {
       general = {
         allow_tearing = true;

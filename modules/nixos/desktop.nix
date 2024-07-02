@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-unstable, username, ... }:
+{ config, lib, pkgs, pkgs-unstable, username, hyprland, ... }:
 let
   themes = pkgs.callPackage ../../pkgs/themes.nix {};
   fonts = pkgs.callPackage ../../pkgs/fonts.nix {};
@@ -99,6 +99,7 @@ in
 
   programs.hyprland = {
     enable = true;
+    package = hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
   };
 
