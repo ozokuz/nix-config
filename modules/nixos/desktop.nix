@@ -25,13 +25,12 @@ in
   security.pam.services.sddm.enableGnomeKeyring = true;
 
   services = {
-    xserver = {
+    xserver.enable = true;
+
+    displayManager.sddm = {
       enable = true;
-      displayManager.sddm = {
-        enable = true;
-        enableHidpi = true;
-        theme = "sober";
-      };
+      enableHidpi = true;
+      theme = "sober";
     };
 
     pipewire = {

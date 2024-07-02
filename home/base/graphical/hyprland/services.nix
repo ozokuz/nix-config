@@ -19,16 +19,15 @@ in
   programs.eww = {
     enable = true;
     configDir = ../configs/eww;
-    package = pkgs.eww-wayland;
   };
 
   systemd.user.services.eww = {
     Unit = { Description = "Widget system"; };
     Service = {
       Type = "exec";
-      ExecStart = "${pkgs.eww-wayland}/bin/eww daemon --no-daemonize";
+      ExecStart = "${pkgs.eww}/bin/eww daemon --no-daemonize";
       Restart = "on-failure";
-      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash hyprland eww-wayland scripts.ode-lock]}\"";
+      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash hyprland eww scripts.ode-lock]}\"";
     };
     Install = { WantedBy = ["graphical-session.target"]; };
   };
