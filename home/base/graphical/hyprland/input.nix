@@ -60,8 +60,8 @@
         "$mod SHIFT, E, exec, nautilus -w"
         # Web Browser
         "$mod, W, exec, $BROWSER"
-        # Overlay 2FA
-        "$mod, S, togglespecialworkspace, 2fa"
+        # Overlay Password Manager
+        "$mod, S, togglespecialworkspace, pwmanager"
 
         ## Music
         # Play/Pause

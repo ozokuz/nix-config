@@ -16,7 +16,6 @@ in
     floorp
     spotify
     bitwarden
-    authy
     pulsemixer
     alsa-utils
     nvtop

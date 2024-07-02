@@ -20,7 +20,7 @@
       "10, monitor:eDP-1"
 
       # Special Workspaces
-      "special:2fa, on-created-empty:authy"
+      "special:pwmanager, on-created-empty:bitwarden"
       "special:processes, on-created-empty:$TERMINAL -e btop"
       "special:audiomixer, on-created-empty:$TERMINAL -e pulsemixer"
       "special:scratchpad, on-created-empty:$TERMINAL"
