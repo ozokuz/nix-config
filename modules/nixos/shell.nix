@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, pkgs-unstable, ... }:
 {
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
@@ -47,7 +47,7 @@
   users.defaultUserShell = pkgs.fish;
 
   environment.systemPackages = with pkgs; [
-    neovim
+    pkgs-unstable.neovim
     curl
     wget
     git
