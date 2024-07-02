@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, hyprsome, ... }:
+{ pkgs, pkgs-unstable, ... }: # TODO: add back hyprsome
 let
   scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
 in 
@@ -29,7 +29,7 @@ in
     scripts.ode-toggle-widget
     scripts.ode-lock
     scripts.scrsht
-    hyprsome.packages.${pkgs.system}.default
+    #hyprsome.packages.${pkgs.system}.default
   ]; 
 
   wayland.windowManager.hyprland = {
