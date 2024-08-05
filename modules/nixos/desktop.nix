@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-unstable, username, hyprland, ... }:
+{ pkgs, pkgs-unstable, username, hyprland, ... }:
 let
   themes = pkgs.callPackage ../../pkgs/themes.nix {};
   fonts = pkgs.callPackage ../../pkgs/fonts.nix {};
@@ -63,6 +63,8 @@ in
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
+
+  virtualisation.vmware.host.enable = true;
 
   xdg.portal = {
     enable = true;

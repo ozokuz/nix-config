@@ -30,7 +30,7 @@ in
       theme = themes.lenovo-yoga-grub;
     };
   };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_8;
   # boot.extraModprobeConfig = ''
   #   options snd-hda-intel model=17aa:38be
   # '';
