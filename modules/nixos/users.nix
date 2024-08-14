@@ -1,5 +1,4 @@
-{ username, ... }:
-{
+{username, ...}: {
   nix.settings.trusted-users = [username];
 
   users.groups."${username}" = {};

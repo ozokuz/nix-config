@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.pointerCursor = {
     package = pkgs.numix-cursor-theme;
     name = "Numix-Cursor-Light";

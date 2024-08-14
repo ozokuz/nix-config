@@ -1,26 +1,47 @@
-{ config, ... } @ args:
-{
+{ pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
+
+    ../../modules/nixos/base.nix
+    ../../modules/nixos/filesystems.nix
+    ../../modules/nixos/locale.nix
+
     ../../modules/nixos/shell.nix
-    ../../modules/nixos/desktop.nix
     ../../modules/nixos/users.nix
+
+    ../../modules/nixos/graphical.nix
+    ../../modules/nixos/audio.nix
+    ../../modules/nixos/nvidia.nix
+    ../../modules/nixos/bluetooth.nix
+
+    ../../modules/nixos/services.nix
+    ../../modules/nixos/gaming.nix
+    ../../modules/nixos/virtualization.nix
   ];
 
-  boot.supportedFilesystems = [
-    "ext4"
-    "btrfs"
-    "xfs"
-    "ntfs"
-    "fat"
-    "vfat"
-    "exfat"
-  ];
+  fileSystems = {
+    "/".options = ["discard=async" "compress=zstd"];
+    "/home".options = ["discard=async" "compress=zstd"];
+    "/nix".options = ["discard=async" "compress=zstd" "noatime"];
+    "/files".options = ["uid=1000" "dmask=0022" "fmask=0113" "nofail"];
+  };
 
   boot.loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot.enable = true;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+    grub = {
+      enable = true;
+      devices = ["nodev"];
+      efiSupport = true;
+      useOSProber = true;
+    };
   };
+
+  boot.kernelPackages = pkgs.linuxPackages_6_8;
+
+  zramSwap.enable = true;
 
   networking = {
     hostName = "saturn";
@@ -28,31 +49,11 @@
     enableIPv6 = false;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
-
   hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
-
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
+    nvidia.powerManagement.enable = false;
 
     ckb-next.enable = true;
   };
 
-
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }

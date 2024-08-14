@@ -1,8 +1,12 @@
-{ pkgs, pkgs-unstable, hyprland, split-monitor-workspaces, ... }:
-let
-  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
-in
 {
+  pkgs,
+  pkgs-unstable,
+  hyprland,
+  split-monitor-workspaces,
+  ...
+}: let
+  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
+in {
   imports = [
     ./workspaces.nix
     ./environment.nix
@@ -35,11 +39,11 @@ in
     enable = true;
     package = hyprland.packages.${pkgs.system}.hyprland;
     systemd = {
-       enable = true;
-       variables = ["--all"];
+      enable = true;
+      variables = ["--all"];
     };
     plugins = [
-      split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces 
+      split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
     ];
     settings = {
       general = {
@@ -95,16 +99,16 @@ in
   };
 
   xdg.mimeApps = {
-      enable = false;
-      defaultApplications = {
-          "text/plain" = ["nvim.desktop"];
-          "x-scheme-handler/http" = ["firefox.desktop"];
-          "x-scheme-handler/https" = ["firefox.desktop"];
-          "x-scheme-handler/webcal" = ["firefox.desktop"];
-          "text/html" = ["firefox.desktop"];
-          "application/pdf" = ["org.pwmt.zathura.desktop"];
-          "inode/directory" = ["org.gnome.Nautilus.desktop"];
-          "x-scheme-handler/jetbrains" = ["JetBrains Toolbox.desktop"];
-        };
+    enable = false;
+    defaultApplications = {
+      "text/plain" = ["nvim.desktop"];
+      "x-scheme-handler/http" = ["firefox.desktop"];
+      "x-scheme-handler/https" = ["firefox.desktop"];
+      "x-scheme-handler/webcal" = ["firefox.desktop"];
+      "text/html" = ["firefox.desktop"];
+      "application/pdf" = ["org.pwmt.zathura.desktop"];
+      "inode/directory" = ["org.gnome.Nautilus.desktop"];
+      "x-scheme-handler/jetbrains" = ["JetBrains Toolbox.desktop"];
     };
+  };
 }

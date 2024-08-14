@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   wayland.windowManager.hyprland.settings = {
     monitor = [
       "eDP-1, 3072x1920@60, 0x0, 2"

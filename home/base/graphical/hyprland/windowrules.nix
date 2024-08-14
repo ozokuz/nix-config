@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
       "workspace 8 silent,class:(discord)"
@@ -20,6 +19,6 @@
       "immediate, class:^(Minecraft.*)$"
       "immediate, class:^(steam_app_.*)$"
       "immediate, class:^(osu!)$"
-    ]; 
+    ];
   };
 }

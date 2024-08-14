@@ -1,8 +1,10 @@
-{ pkgs, lib, ... }:
-let
-  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
-in 
 {
+  pkgs,
+  lib,
+  ...
+}: let
+  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
+in {
   # Notifications
   services.mako = {
     enable = true;
@@ -22,14 +24,14 @@ in
   };
 
   systemd.user.services.eww = {
-    Unit = { Description = "Widget system"; };
+    Unit = {Description = "Widget system";};
     Service = {
       Type = "exec";
       ExecStart = "${pkgs.eww}/bin/eww daemon --no-daemonize";
       Restart = "on-failure";
       Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash hyprland eww scripts.ode-lock]}\"";
     };
-    Install = { WantedBy = ["graphical-session.target"]; };
+    Install = {WantedBy = ["graphical-session.target"];};
   };
 
   # Volume / Brightness OSD
@@ -54,9 +56,18 @@ in
       }
     ];
     events = [
-      { event = "before-sleep"; command = "${pkgs.playerctl}/bin/playerctl pause"; }
-      { event = "before-sleep"; command = "${scripts.ode-lock}/bin/ode_lock"; }
-      { event = "after-resume"; command = "${pkgs.brightnessctl}/bin/brightnessctl -r"; }
+      {
+        event = "before-sleep";
+        command = "${pkgs.playerctl}/bin/playerctl pause";
+      }
+      {
+        event = "before-sleep";
+        command = "${scripts.ode-lock}/bin/ode_lock";
+      }
+      {
+        event = "after-resume";
+        command = "${pkgs.brightnessctl}/bin/brightnessctl -r";
+      }
     ];
   };
 

@@ -1,6 +1,8 @@
-{ config, username, ... } @ args:
-{
+{ username, ... }: {
   imports = [
+    ../../modules/nixos/base.nix
+    ../../modules/nixos/locale.nix
+
     ../../modules/nixos/shell.nix
     ../../modules/nixos/users.nix
   ];
@@ -15,5 +17,5 @@
 
   networking.hostName = "prometheus";
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }

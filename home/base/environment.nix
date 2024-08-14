@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   vars = config.home.sessionVariables;
 in {
   home.sessionVariables = {

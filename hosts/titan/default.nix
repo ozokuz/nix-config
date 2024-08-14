@@ -1,13 +1,27 @@
-{ config, pkgs, pkgs-unstable, ... } @ args:
-let
-  themes = pkgs.callPackage ../../pkgs/themes.nix {};
-in 
 {
+  pkgs,
+  ...
+}: let
+  themes = pkgs.callPackage ../../pkgs/themes.nix {};
+in {
   imports = [
     ./hardware-configuration.nix
+
+    ../../modules/nixos/base.nix
+    ../../modules/nixos/filesystems.nix
+    ../../modules/nixos/locale.nix
+
     ../../modules/nixos/shell.nix
-    ../../modules/nixos/desktop.nix
     ../../modules/nixos/users.nix
+
+    ../../modules/nixos/graphical.nix
+    ../../modules/nixos/audio.nix
+    ../../modules/nixos/nvidia.nix
+    ../../modules/nixos/bluetooth.nix
+
+    ../../modules/nixos/services.nix
+    ../../modules/nixos/gaming.nix
+    ../../modules/nixos/virtualization.nix
   ];
 
   fileSystems = {
@@ -30,10 +44,8 @@ in
       theme = themes.lenovo-yoga-grub;
     };
   };
+
   boot.kernelPackages = pkgs.linuxPackages_6_8;
-  # boot.extraModprobeConfig = ''
-  #   options snd-hda-intel model=17aa:38be
-  # '';
 
   zramSwap.enable = true;
 
@@ -43,35 +55,15 @@ in
     enableIPv6 = true;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
   services.upower.enable = true;
   services.tlp.enable = true;
-  services.tailscale.enable = true;
 
   hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = false;
-    };
-
-    opengl = {
-      package = pkgs-unstable.mesa.drivers;
-      package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-
     nvidia = {
-      modesetting.enable = true;
       powerManagement = {
         enable = true;
         finegrained = true;
       };
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
 
       prime = {
         offload = {

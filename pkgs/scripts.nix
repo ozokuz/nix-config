@@ -1,5 +1,8 @@
-{ stdenv, pkgs, writeShellApplication }:
 {
+  stdenv,
+  pkgs,
+  writeShellApplication,
+}: {
   ode-toggle-widget = writeShellApplication {
     name = "ode_toggle_widget";
     runtimeInputs = with pkgs; [hyprland eww jq];

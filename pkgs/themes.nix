@@ -1,8 +1,11 @@
-{ stdenv, fetchurl, pkgs, fetchFromGitHub }:
-let
-  qtge = pkgs.libsForQt5.qt5.qtgraphicaleffects;
-in 
 {
+  stdenv,
+  fetchurl,
+  pkgs,
+  fetchFromGitHub,
+}: let
+  qtge = pkgs.libsForQt5.qt5.qtgraphicaleffects;
+in {
   sddm-sober = stdenv.mkDerivation rec {
     pname = "sddm-sober-theme";
     version = "1.0";

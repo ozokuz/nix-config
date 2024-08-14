@@ -1,8 +1,10 @@
-{ pkgs, pkgs-unstable, ... }:
-let
-  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
-in 
 {
+  pkgs,
+  pkgs-unstable,
+  ...
+}: let
+  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
+in {
   programs.waybar = {
     enable = true;
     package = pkgs-unstable.waybar;

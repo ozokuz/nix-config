@@ -1,5 +1,9 @@
-{ pkgs, pkgs-unstable, lib, ... }:
 {
+  pkgs,
+  pkgs-unstable,
+  lib,
+  ...
+}: {
   home.packages = with pkgs; [
     brave
     firefox
@@ -36,12 +40,14 @@
         blinking = "On";
       };
       mouse.hide_when_typing = true;
-      hints.enabled = [{
-        regex = "(mailto:|https:|http:|file:|git:|ssh:|ftp:)[^\\u0000-\\u001F\\u007F-\\u009F<>\"\\\\s{-}\\\\^⟨⟩`]+";
-        command = "xdg-open";
-        post_processing = true;
-        mouse.enabled = true;
-      }];
+      hints.enabled = [
+        {
+          regex = "(mailto:|https:|http:|file:|git:|ssh:|ftp:)[^\\u0000-\\u001F\\u007F-\\u009F<>\"\\\\s{-}\\\\^⟨⟩`]+";
+          command = "xdg-open";
+          post_processing = true;
+          mouse.enabled = true;
+        }
+      ];
     };
   };
 

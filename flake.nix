@@ -38,7 +38,8 @@
           system = x64_linux;
           config.allowUnfree = true;
         };
-      } // inputs;
+      }
+      // inputs;
   in {
     nixosConfigurations = let
       base_args = {

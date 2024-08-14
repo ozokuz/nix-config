@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     neofetch
   ];
@@ -23,7 +22,7 @@
       prompt = "enabled";
       pager = "bat";
       aliases = {
-        co = "pr checkout"; 
+        co = "pr checkout";
       };
     };
   };
