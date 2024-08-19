@@ -11,7 +11,7 @@
   # Virtualization
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  virtualisation.vmware.host.enable = true;
+  #virtualisation.vmware.host.enable = true;
 
   # Containers
   virtualisation.podman.enable = true;
