@@ -4,8 +4,8 @@
     docker
     docker-compose
     docker-buildx
-    pkgs-unstable.quickemu
-    pkgs-unstable.quickgui
+    #pkgs-unstable.quickemu
+    #pkgs-unstable.quickgui
   ];
 
   # Virtualization

@@ -29,6 +29,7 @@
 
   programs.alacritty = {
     enable = true;
+    package = pkgs-unstable.alacritty;
     settings = {
       window.opacity = 0.9;
       font = {
@@ -52,6 +53,7 @@
   };
 
   programs.kitty.enable = true;
+  programs.kitty.package = pkgs-unstable.kitty;
 
   programs.mpv.enable = true;
   programs.zathura.enable = true;
