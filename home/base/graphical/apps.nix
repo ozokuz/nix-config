@@ -11,7 +11,6 @@
     spotify
     bitwarden
     pulsemixer
-    alsa-utils
     nvtopPackages.full
     nsxiv
     gnome.nautilus
