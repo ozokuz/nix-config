@@ -4,7 +4,6 @@
 - Setup lf
 - Setup Tmux
 - Setup VSCode
-- Switch from alacritty to kitty
 - Switch from fish to nushell
 - Switch from waybar & eww to quickshell
 - Switch from mako to dunst

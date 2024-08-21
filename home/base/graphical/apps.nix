@@ -1,7 +1,6 @@
 {
   pkgs,
   pkgs-unstable,
-  lib,
   ...
 }: {
   home.packages = with pkgs; [
@@ -51,8 +50,22 @@
     };
   };
 
-  programs.kitty.enable = true;
-  programs.kitty.package = pkgs-unstable.kitty;
+  programs.kitty = {
+    enable = true;
+    package = pkgs-unstable.kitty;
+    theme = "Tokyo Night Storm";
+    font = {
+      name = "FiraCode Nerd Font";
+      size = 11;
+    };
+    shellIntegration = {
+      mode = "enabled";
+      enableFishIntegration = true;
+    };
+    extraConfig = ''
+      background_opacity 0.9
+    '';
+  };
 
   programs.mpv.enable = true;
   programs.zathura.enable = true;

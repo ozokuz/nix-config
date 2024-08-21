@@ -9,7 +9,7 @@ in {
     # Defaults
     EDITOR = "nvim";
     BROWSER = "firefox";
-    TERMINAL = "alacritty";
+    TERMINAL = "kitty";
 
     # XDG
     XDG_CONFIG_HOME = "$HOME/.config";
