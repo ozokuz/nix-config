@@ -4,28 +4,25 @@
   ];
 
   programs.command-not-found.enable = false;
+
   programs.bat.enable = true;
   programs.btop.enable = true;
   programs.direnv.enable = true;
   programs.zoxide.enable = true;
+  programs.lf.enable = true;
+  programs.tmux.enable = true;
+  programs.zellij.enable = true;
+  programs.fzf.enable = true;
+  programs.jq.enable = true;
+
   programs.eza = {
     enable = true;
     extraOptions = ["--group-directories-first"];
     icons = true;
     git = true;
   };
-  programs.fzf.enable = true;
-  programs.gh = {
-    enable = true;
-    settings = {
-      git_protocol = "ssh";
-      prompt = "enabled";
-      pager = "bat";
-      aliases = {
-        co = "pr checkout";
-      };
-    };
-  };
+
+  # Git Tools
   programs.git = {
     enable = true;
     userName = "Ozoku";
@@ -37,7 +34,6 @@
     lfs.enable = true;
     delta.enable = true;
   };
-  programs.jq.enable = true;
   programs.lazygit = {
     enable = true;
     settings = {
@@ -49,7 +45,15 @@
       notARepository = "quit";
     };
   };
-  programs.lf.enable = true;
-  programs.tmux.enable = true;
-  programs.zellij.enable = true;
+  programs.gh = {
+    enable = true;
+    settings = {
+      git_protocol = "ssh";
+      prompt = "enabled";
+      pager = "bat";
+      aliases = {
+        co = "pr checkout";
+      };
+    };
+  };
 }
