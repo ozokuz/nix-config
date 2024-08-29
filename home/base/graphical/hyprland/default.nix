@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   hyprland,
   split-monitor-workspaces,
   ...

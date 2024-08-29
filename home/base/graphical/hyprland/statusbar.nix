@@ -37,11 +37,6 @@ in {
           orientation = "horizontal";
           modules = ["hyprland/submap" "hyprland/language" "custom/weather" "custom/awake" "wireplumber" "network" "battery"];
         };
-        "hyprland/workspaces" = {
-          persistent-workspaces = {
-            eDP-1 = [1 2 3 4 5 6 7 8 9];
-          };
-        };
         "hyprland/window".separate-outputs = true;
         "mpris" = {
           player = "spotify";

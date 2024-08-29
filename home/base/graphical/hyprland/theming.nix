@@ -21,7 +21,7 @@
       name = "adw-gtk3-dark";
     };
     gtk3 = {
-      bookmarks = ["file:///home/ozoku/src"];
+      bookmarks = ["file:///home/ozoku/src" "file:///files/Vault"];
       extraConfig.gtk-application-prefer-dark-theme = true;
     };
   };

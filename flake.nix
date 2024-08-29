@@ -20,7 +20,7 @@
       nixos-modules = [
         ./hosts/saturn
       ];
-      home-module = import ./home/base/graphical.nix;
+      home-module = import ./home/saturn;
     };
 
     # Titan - On the Go System - Laptop
@@ -28,7 +28,7 @@
       nixos-modules = [
         ./hosts/titan
       ];
-      home-module = import ./home/base/graphical.nix;
+      home-module = import ./home/titan;
     };
 
     x64_specialArgs =
