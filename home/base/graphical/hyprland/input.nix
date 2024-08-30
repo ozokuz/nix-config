@@ -22,7 +22,11 @@
         sensitivity = 0;
       };
 
-      gestures.workspace_swipe = true;
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_create_new = false;
+        workspace_swipe_use_r = false;
+      };
 
       "$mod" = "SUPER";
       bind = [
@@ -105,6 +109,12 @@
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
         "$mod, l, movefocus, r"
+
+        # Move windows with Super + SHIFT + hjkl
+        "$mod SHIFT, h, movewindow, l"
+        "$mod SHIFT, j, movewindow, d"
+        "$mod SHIFT, k, movewindow, u"
+        "$mod SHIFT, l, movewindow, r"
 
         # Switch workspaces with mod + [0-9]
         "$mod, 1, split-workspace, 1"
