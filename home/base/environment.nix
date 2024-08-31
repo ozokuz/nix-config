@@ -8,7 +8,7 @@ in {
   home.sessionVariables = {
     # Defaults
     EDITOR = "nvim";
-    BROWSER = "firefox";
+    BROWSER = "flatpak run io.github.zen_browser.zen";
     TERMINAL = "kitty";
 
     # XDG

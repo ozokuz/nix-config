@@ -101,10 +101,10 @@ in {
     enable = false;
     defaultApplications = {
       "text/plain" = ["nvim.desktop"];
-      "x-scheme-handler/http" = ["firefox.desktop"];
-      "x-scheme-handler/https" = ["firefox.desktop"];
-      "x-scheme-handler/webcal" = ["firefox.desktop"];
-      "text/html" = ["firefox.desktop"];
+      "x-scheme-handler/http" = ["io.github.zen_browser.zen.desktop"];
+      "x-scheme-handler/https" = ["io.github.zen_browser.zen.desktop"];
+      "x-scheme-handler/webcal" = ["io.github.zen_browser.zen.desktop"];
+      "text/html" = ["io.github.zen_browser.zen.desktop"];
       "application/pdf" = ["org.pwmt.zathura.desktop"];
       "inode/directory" = ["org.gnome.Nautilus.desktop"];
       "x-scheme-handler/jetbrains" = ["JetBrains Toolbox.desktop"];
