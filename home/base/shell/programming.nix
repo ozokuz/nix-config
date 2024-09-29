@@ -10,6 +10,7 @@
     python312
     elixir_1_17
     dotnet-sdk_8
+    msbuild
     ruby_3_3
     swift
     swiftPackages.swiftpm
