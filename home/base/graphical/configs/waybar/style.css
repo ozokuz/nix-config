@@ -7,19 +7,19 @@ window {
   background-color: rgba(0, 0, 0, 0);
 }
 
-#workspaces,
 #window,
 #mpris,
 #tray,
-#hardware,
-#clock {
+#hardware {
   background-color: #333;
-  border-radius: 20px;
-  padding: 0 18px;
+  border-radius: 18px;
+  padding: 0 12px;
 }
 
 #workspaces {
-  padding: 0 14px;
+  background-color: #333;
+  padding: 0 14px 0 8px;
+  border-radius: 0 18px 18px 0;
 }
 
 #workspaces button {
@@ -66,4 +66,10 @@ window#waybar.empty #window {
   background-color: #333;
   padding: 12px;
   border-radius: 12px;
+}
+
+#clock {
+  background-color: #333;
+  padding: 0 8px 0 12px;
+  border-radius: 18px 0 0 18px;
 }

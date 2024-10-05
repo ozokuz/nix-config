@@ -13,10 +13,10 @@ in {
         position = "top";
         layer = "top";
         height = 36;
-        spacing = 16;
-        margin-top = 20;
-        margin-left = 20;
-        margin-right = 20;
+        spacing = 8;
+        margin-top = 8;
+        margin-left = 0;
+        margin-right = 0;
         modules-left = ["hyprland/workspaces" "hyprland/window"];
         modules-center = ["mpris"];
         modules-right = ["tray" "group/hardware" "clock"];
