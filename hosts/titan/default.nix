@@ -41,6 +41,8 @@ in {
       devices = ["nodev"];
       efiSupport = true;
       useOSProber = true;
+      default = "saved";
+      extraEntries = "GRUB_SAVEDEFAULT=true";
       theme = themes.lenovo-yoga-grub;
     };
   };
