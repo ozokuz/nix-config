@@ -6,5 +6,6 @@
     ./shell/prompt.nix
     ./shell/apps.nix
     ./shell/programming.nix
+    ./shell/git.nix
   ];
 }
