@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     neofetch
+    trash-cli
+    ouch
+    xdg-ninja
   ];
 
   programs.command-not-found.enable = false;

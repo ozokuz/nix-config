@@ -39,6 +39,7 @@
       gd = "git diff";
       gpl = "git pull";
       gps = "git push";
+      trm = "trash-rm";
     };
 
     shellInit = ''
