@@ -1,6 +1,6 @@
 {
   pkgs,
-  hyprland,
+  pkgs-unstable,
   ...
 }: let
   themes = pkgs.callPackage ../../pkgs/themes.nix {};
@@ -60,7 +60,7 @@ in {
 
   programs.hyprland = {
     enable = true;
-    package = hyprland.packages.${pkgs.system}.hyprland;
+    package = pkgs-unstable.hyprland;
     xwayland.enable = true;
   };
 
