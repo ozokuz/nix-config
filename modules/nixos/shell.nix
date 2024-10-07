@@ -27,7 +27,13 @@
     psmisc
     lshw
     file
+    nh
+    nvd
+    nix-output-monitor
   ];
 
+  environment.sessionVariables = {
+    FLAKE = "/home/ozoku/.config/nix";
+  };
   environment.variables.EDITOR = "nvim";
 }
