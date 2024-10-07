@@ -9,7 +9,6 @@
   programs.btop.enable = true;
   programs.direnv.enable = true;
   programs.zoxide.enable = true;
-  programs.lf.enable = true;
   programs.tmux.enable = true;
   programs.zellij.enable = true;
   programs.fzf.enable = true;
