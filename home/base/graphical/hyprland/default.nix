@@ -3,7 +3,7 @@
   pkgs-unstable,
   ...
 }: let
-  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
+  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {inherit pkgs-unstable;};
 in {
   imports = [
     ./workspaces.nix

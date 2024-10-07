@@ -1,9 +1,10 @@
 {
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }: let
-  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix {};
+  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix { inherit pkgs-unstable; };
 in {
   # Notifications
   services.mako = {
@@ -29,7 +30,7 @@ in {
       Type = "exec";
       ExecStart = "${pkgs.eww}/bin/eww daemon --no-daemonize";
       Restart = "on-failure";
-      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash hyprland eww scripts.ode-lock]}\"";
+      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash pkgs-unstable.hyprland eww scripts.ode-lock]}\"";
     };
     Install = {WantedBy = ["graphical-session.target"];};
   };
