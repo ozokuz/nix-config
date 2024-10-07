@@ -33,7 +33,7 @@
   ];
 
   environment.sessionVariables = {
-    FLAKE = "/home/ozoku/.config/nix";
+    FLAKE = "/home/ozoku/.local/src/nix-config";
   };
   environment.variables.EDITOR = "nvim";
 }
