@@ -1,19 +1,27 @@
 {
   description = "Ozoku's Nix Config";
 
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    systems.url = "github:nix-systems/default";
+    systems-linux.url = "github:nix-systems/default-linux";
+    systems-darwin.url = "github:nix-systems/default-darwin";
+
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
+    systems,
     home-manager,
     ...
   } @ inputs: let
-    username = "ozoku";
-    x64_linux = "x86_64-linux";
-    systems = [x64_linux];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
+    inherit (self) outputs;
 
-    nixosSystem = import ./lib/nixosSystem.nix;
+    username = "ozoku";
 
     # Saturn - Main System - Desktop
     saturn_modules = {
@@ -31,40 +39,29 @@
       home-module = import ./home/titan;
     };
 
-    x64_specialArgs =
-      {
-        inherit username;
-        pkgs-unstable = import nixpkgs-unstable {
-          system = x64_linux;
-          config.allowUnfree = true;
-        };
-      }
-      // inputs;
-  in {
-    nixosConfigurations = let
-      base_args = {
-        inherit home-manager;
-        nixpkgs = nixpkgs;
-        system = x64_linux;
-        specialArgs = x64_specialArgs;
-      };
-    in {
-      saturn = nixosSystem (saturn_modules // base_args);
-      titan = nixosSystem (titan_modules // base_args);
+    nixos_defaults = {
+      inherit nixpkgs home-manager;
+      system = "x86_64-linux";
+      specialArgs = {inherit inputs outputs username;};
     };
 
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-  };
+    pkgsFor = nixpkgs.lib.genAttrs (import systems) (system: import nixpkgs {inherit system; config.allowUnfree = true;});
+    forEachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f pkgsFor.${system});
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixosSystem = import ./lib/nixosSystem.nix;
+  in {
+    packages = forEachSystem (pkgs: import ./pkgs pkgs);
+    overlays = import ./overlays {inherit inputs;};
+    nixosModules = import ./modules/nixos;
+    homeManagerModules = import ./modules/home-manager;
 
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  };
+    nixosConfigurations = {
+      saturn = nixosSystem (saturn_modules // nixos_defaults);
+      titan = nixosSystem (titan_modules // nixos_defaults);
+    };
 
-  nixConfig = {
-    experimental-features = ["nix-command" "flakes"];
+    homeConfigurations = {};
+
+    formatter = forEachSystem (pkgs: pkgs.alejandra);
   };
 }
