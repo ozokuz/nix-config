@@ -1,13 +1,9 @@
 {
   pkgs,
-  pkgs-unstable,
   ...
-}: let
-  themes = pkgs.callPackage ../../pkgs/themes.nix {};
-  fonts = pkgs.callPackage ../../pkgs/fonts.nix {};
-in {
+}: {
   environment.systemPackages = with pkgs; [
-    themes.sddm-sober
+    custom.themes.sddm-sober
     libsForQt5.polkit-kde-agent
   ];
 
@@ -41,7 +37,7 @@ in {
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
-      fonts.monocraft
+      custom.fonts.monocraft
 
       (nerdfonts.override {
         fonts = [
@@ -60,7 +56,7 @@ in {
 
   programs.hyprland = {
     enable = true;
-    package = pkgs-unstable.hyprland;
+    package = pkgs.unstable.hyprland;
     xwayland.enable = true;
   };
 
