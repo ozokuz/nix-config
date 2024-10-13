@@ -1,6 +1,6 @@
 {
-  audio = import ./audio;
-  bluetooth = import ./bluetooth;
-  filesystems = import ./filesystems;
+  common = import ./common;
+  desktop = import ./desktop;
+  hardware = import ./hardware;
   virtualization = import ./virtualization;
 }
