@@ -1,10 +1,10 @@
 { pkgs, lib, config, ... }:
 let
-  cfg = config.ozoku.desktop.hyprland;
+  cfg = config.ozoku.desktop;
 in {
   options.ozoku.desktop.hyprland = lib.mkEnableOption "Enable Hyprland";
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.hyprland {
     environment.systemPackages = with pkgs; [
       libsForQt5.polkit-kde-agent
     ];

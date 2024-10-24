@@ -1,10 +1,10 @@
 { pkgs, lib, config, ... }:
 let
-  cfg = config.ozoku.desktop.fonts;
+  cfg = config.ozoku.desktop;
 in {
   options.ozoku.desktop.fonts = lib.mkEnableOption "Enable Fonts";
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.fonts {
     fonts = {
       enableDefaultPackages = false;
       fontDir.enable = true;

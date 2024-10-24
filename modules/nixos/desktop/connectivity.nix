@@ -1,8 +1,8 @@
 { username, lib, config, ... }:
 let
-  cfg = config.ozoku.modules.desktop;
+  cfg = config.ozoku.desktop;
 in {
-  options.ozoku.modules.desktop.connectivity = lib.mkEnableOption "Enable Connectivity";
+  options.ozoku.desktop.connectivity = lib.mkEnableOption "Enable Connectivity";
 
   config = lib.mkIf cfg.connectivity {
     programs.kdeconnect.enable = true;

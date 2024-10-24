@@ -1,12 +1,10 @@
 { pkgs, lib, config, ... }:
 let
-  cfg = config.ozoku.audio;
+  cfg = config.ozoku.desktop;
 in {
-  options.ozoku.audio = {
-    enable = lib.mkEnableOption "Enable audio";
-  };
+  options.ozoku.desktop.audio = lib.mkEnableOption "Enable audio";
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.audio {
     environment.systemPackages = with pkgs; [
       alsa-utils
       tree
