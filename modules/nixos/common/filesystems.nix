@@ -1,8 +1,8 @@
 { lib, ... }:
 let
-  cfg = config.custom.filesystems;
+  cfg = config.ozoku.filesystems;
 in {
-  options.custom.filesystems.maintenance = {
+  options.ozoku.filesystems.maintenance = {
     enable = lib.mkEnableOption "Enable filesystem maintenance";
   };
 

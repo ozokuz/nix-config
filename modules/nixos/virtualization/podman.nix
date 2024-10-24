@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }:
 let
-  cfg = config.custom.virtualization;
+  cfg = config.ozoku.virtualization;
 in {
-  options.custom.virtualization = {
+  options.ozoku.virtualization = {
     podman = lib.mkEnableOption "Enable Podman";
   };
 

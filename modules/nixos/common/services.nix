@@ -1,8 +1,8 @@
 { username, ...}: {
   programs.kdeconnect.enable = true;
+  services.udisks2.enable = true;
 
   services = {
-    udisks2.enable = true;
     tailscale.enable = true;
     syncthing = {
       enable = true;

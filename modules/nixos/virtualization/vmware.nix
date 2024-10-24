@@ -1,8 +1,8 @@
 { lib, config, ... }:
 let
-  cfg = config.custom.virtualization;
+  cfg = config.ozoku.virtualization;
 in {
-  options.custom.virtualization = {
+  options.ozoku.virtualization = {
     vmware = lib.mkEnableOption "Enable VMware";
   };
 

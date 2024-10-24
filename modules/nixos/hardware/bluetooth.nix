@@ -1,8 +1,8 @@
 { lib, ... }:
 let
-  cfg = config.custom.bluetooth;
+  cfg = config.ozoku.bluetooth;
 in {
-  options.custom.bluetooth = {
+  options.ozoku.bluetooth = {
     enable = lib.mkEnableOption "Enable bluetooth";
   };
 

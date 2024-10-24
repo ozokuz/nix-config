@@ -1,12 +1,12 @@
 { pkgs, lib, config, ... }:
 let
-  cfg = config.custom.virtualization;
+  cfg = config.ozoku.virtualization;
 in {
   imports = [
     ./common.nix
   ];
 
-  options.custom.virtualization = {
+  options.ozoku.virtualization = {
     libvirt = lib.mkEnableOption "Enable Libvirt";
   };
 

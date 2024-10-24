@@ -1,8 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 let
-  cfg = config.custom.audio;
+  cfg = config.ozoku.audio;
 in {
-  options.custom.audio = {
+  options.ozoku.audio = {
     enable = lib.mkEnableOption "Enable audio";
   };
 
