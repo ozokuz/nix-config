@@ -21,7 +21,6 @@
     self,
     nixpkgs,
     systems,
-    home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -59,10 +58,10 @@
       inherit system specialArgs;
 
       modules = nixos-modules ++ [
-        home-manager.nixosModules.home-manager
-        impermanence.nixosModules.default
-        sops-nix.nixosModule
-        stylix.nixosModule
+        inputs.home-manager.nixosModules.home-manager
+        inputs.impermanence.nixosModules.default
+        inputs.sops-nix.nixosModule
+        inputs.stylix.nixosModule
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
