@@ -1,21 +1,20 @@
 {
   pkgs-unstable,
+  lib,
   config,
   ...
-}: {
-  services.xserver.videoDrivers = ["nvidia"];
+}:
+let
+  cfg = config.ozoku.hardware.nvidia;
+in {
+  options.ozoku.hardware.nvidia = {
+    enable = lib.mkEnableOption "Enable Nvidia";
+  };
 
-  hardware = {
-    opengl = {
-      package = pkgs-unstable.mesa.drivers;
-      package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+  config = lib.mkIf cfg.enable {
+    services.xserver.videoDrivers = ["nvidia"];
 
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-
-    nvidia = {
+    hardware.nvidia = {
       modesetting.enable = true;
       open = false;
       nvidiaSettings = true;
