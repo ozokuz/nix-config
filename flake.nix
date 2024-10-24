@@ -11,6 +11,10 @@
 
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    impermanence.url = "github:nix-community/impermanence";
+    sops-nix.url = "github:Mic92/sops-nix";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -57,8 +61,8 @@
       modules = nixos-modules ++ [
         home-manager.nixosModules.home-manager
         impermanence.nixosModules.default
-        stylix.nixosModule
         sops-nix.nixosModule
+        stylix.nixosModule
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
