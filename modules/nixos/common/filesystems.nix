@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 let
   cfg = config.ozoku.filesystems;
 in {
