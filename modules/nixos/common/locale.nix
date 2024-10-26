@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   time.timeZone = "Europe/Helsinki";
   console.keyMap = "fi";
   i18n.defaultLocale = "en_US.UTF-8";

@@ -6,7 +6,7 @@
 }: let
   qtge = pkgs.libsForQt5.qt5.qtgraphicaleffects;
 in {
-  sddm-sober = stdenv.mkDerivation rec {
+  sddm-sober = stdenv.mkDerivation {
     pname = "sddm-sober-theme";
     version = "1.0";
 
@@ -38,7 +38,7 @@ in {
     };
   };
 
-  lenovo-yoga-grub = stdenv.mkDerivation rec {
+  lenovo-yoga-grub = stdenv.mkDerivation {
     pname = "lenovo-yoga-grub-theme";
     version = "1.0";
 

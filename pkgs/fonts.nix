@@ -1,8 +1,6 @@
 {
   stdenv,
   fetchurl,
-  pkgs,
-  fetchFromGitHub,
 }: {
   monocraft = let
     version = "3.0";

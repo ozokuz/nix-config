@@ -1,5 +1,8 @@
-{ lib, config, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.desktop;
 in {
   options.ozoku.desktop.enable = lib.mkEnableOption "Enable Desktop";

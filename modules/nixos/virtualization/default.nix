@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./common.nix
     ./docker.nix

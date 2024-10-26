@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.desktop;
 in {
   options.ozoku.desktop.hyprland = lib.mkEnableOption "Enable Hyprland";

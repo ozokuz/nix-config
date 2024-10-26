@@ -1,5 +1,8 @@
-{ lib, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.bluetooth;
 in {
   options.ozoku.bluetooth = {

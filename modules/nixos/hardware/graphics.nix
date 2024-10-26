@@ -1,5 +1,9 @@
-{ lib, config, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.hardware.graphics;
 in {
   options.ozoku.hardware.graphics = {
@@ -8,8 +12,8 @@ in {
 
   config = lib.mkIf cfg.enable {
     hardware.opengl = {
-      package = pkgs-unstable.mesa.drivers;
-      package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+      package = pkgs.unstable.mesa.drivers;
+      package32 = pkgs.unstable.pkgsi686Linux.mesa.drivers;
 
       enable = true;
       driSupport = true;

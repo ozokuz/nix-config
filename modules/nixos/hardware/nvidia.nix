@@ -1,10 +1,8 @@
 {
-  pkgs-unstable,
   lib,
   config,
   ...
-}:
-let
+}: let
   cfg = config.ozoku.hardware.nvidia;
 in {
   options.ozoku.hardware.nvidia = {

@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.virtualization;
 in {
   imports = [

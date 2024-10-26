@@ -1,5 +1,8 @@
-{ lib, config, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.desktop;
 in {
   options.ozoku.desktop.secrets = lib.mkEnableOption "Enable Secrets";

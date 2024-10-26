@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.virtualization;
 in {
   imports = [
@@ -11,8 +15,14 @@ in {
   };
 
   config = lib.mkIf cfg.quickemu {
-    environment.systemPackages = with pkgs; [
-      quickemu
-    ] ++ (if cfg.guiTools then [ quickgui ] else []);
+    environment.systemPackages = with pkgs;
+      [
+        quickemu
+      ]
+      ++ (
+        if cfg.guiTools
+        then [quickgui]
+        else []
+      );
   };
 }

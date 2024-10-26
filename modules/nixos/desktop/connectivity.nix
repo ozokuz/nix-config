@@ -1,5 +1,9 @@
-{ username, lib, config, ... }:
-let
+{
+  username,
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.desktop;
 in {
   options.ozoku.desktop.connectivity = lib.mkEnableOption "Enable Connectivity";

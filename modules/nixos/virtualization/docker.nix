@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.virtualization;
 in {
   imports = [
@@ -18,6 +22,9 @@ in {
     ];
 
     services.docker.enable = true;
-    services.docker.storageDriver = if cfg.btrfsSubvolumes then "btrfs" else "overlay2";
+    services.docker.storageDriver =
+      if cfg.btrfsSubvolumes
+      then "btrfs"
+      else "overlay2";
   };
 }

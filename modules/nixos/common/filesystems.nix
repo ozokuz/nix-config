@@ -1,5 +1,8 @@
-{ lib, config, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   cfg = config.ozoku.filesystems;
 in {
   options.ozoku.filesystems.maintenance = {

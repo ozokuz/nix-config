@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
   environment.shells = with pkgs; [
     bash
     fish
@@ -14,7 +10,7 @@
   users.defaultUserShell = pkgs.fish;
 
   environment.systemPackages = with pkgs; [
-    pkgs-unstable.neovim
+    unstable.neovim
     curl
     wget
     git

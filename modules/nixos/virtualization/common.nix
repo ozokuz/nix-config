@@ -1,5 +1,4 @@
-{ lib, ... }:
-{
+{lib, ...}: {
   options = {
     custom.virtualization = {
       guiTools = lib.mkEnableOption "Enable GUI tools for virtualization";
