@@ -26,6 +26,7 @@
     ghc
     crystal
     dart
+    nixd
     # lua-language-server
     # clang-tools_17
     # marksman
