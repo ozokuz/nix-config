@@ -27,6 +27,7 @@
     crystal
     dart
     nixd
+    alejandra
     # lua-language-server
     # clang-tools_17
     # marksman
