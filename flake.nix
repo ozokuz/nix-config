@@ -9,6 +9,8 @@
     systems-linux.url = "github:nix-systems/default-linux";
     systems-darwin.url = "github:nix-systems/default-darwin";
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -27,48 +29,15 @@
 
     username = "ozoku";
 
-    # Saturn - Main System - Desktop
-    saturn_modules = {
-      nixos-modules = [
-        ./hosts/saturn
-      ];
-      home-module = import ./home/saturn;
-    };
-
-    # Titan - On the Go System - Laptop
-    titan_modules = {
-      nixos-modules = [
-        ./hosts/titan
-      ];
-      home-module = import ./home/titan;
-    };
-
-    pkgsFor = nixpkgs.lib.genAttrs (import systems) (system: import nixpkgs {inherit system; config.allowUnfree = true;});
+    pkgsFor = nixpkgs.lib.genAttrs (import systems) (system:
+      import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      });
     forEachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f pkgsFor.${system});
 
     specialArgs = {
       inherit inputs outputs username;
-    };
-
-    nixosSystem = {
-      nixos-modules,
-      home-module,
-      system ? "x86_64-linux",
-    }: nixpkgs.lib.nixosSystem {
-      inherit system specialArgs;
-
-      modules = nixos-modules ++ [
-        inputs.home-manager.nixosModules.home-manager
-        inputs.impermanence.nixosModules.default
-        inputs.sops-nix.nixosModule
-        inputs.stylix.nixosModule
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users."${username}" = home-module;
-        }
-      ];
     };
   in {
     packages = forEachSystem (pkgs: import ./pkgs pkgs);
@@ -77,8 +46,16 @@
     homeManagerModules = import ./modules/home-manager;
 
     nixosConfigurations = {
-      saturn = nixosSystem saturn_modules;
-      titan = nixosSystem titan_modules;
+      # Saturn - Main System - Desktop
+      saturn = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [./hosts/saturn];
+      };
+      # Titan - On the Go System - Laptop
+      titan = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [./hosts/titan];
+      };
     };
 
     homeConfigurations = {};

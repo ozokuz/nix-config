@@ -1,18 +1,16 @@
-{ ... }: {
+{...}: {
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/nixos/base.nix
-    ../../modules/nixos/filesystems.nix
-    ../../modules/nixos/locale.nix
+    ../common/global
 
-    ../../modules/nixos/shell.nix
-    ../../modules/nixos/users.nix
+    ../common/users/ozoku
 
-    ../../modules/nixos/graphical.nix
-    ../../modules/nixos/audio.nix
+    ../common/optional/desktop
 
-    ../../modules/nixos/services.nix
+    ../common/optional/locale/finnish.nix
+
+    ../common/optional/btrfs.nix
   ];
 
   fileSystems = {
@@ -25,12 +23,6 @@
     efi = {
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot/efi";
-    };
-    grub = {
-      enable = true;
-      devices = ["nodev"];
-      efiSupport = true;
-      useOSProber = true;
     };
   };
 

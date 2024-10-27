@@ -1,27 +1,34 @@
 {
   pkgs,
+  outputs,
   ...
 }: let
-  themes = pkgs.callPackage ../../pkgs/themes.nix {};
 in {
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/nixos/base.nix
-    ../../modules/nixos/filesystems.nix
-    ../../modules/nixos/locale.nix
+    ../common/global
 
-    ../../modules/nixos/shell.nix
-    ../../modules/nixos/users.nix
+    ../common/users/ozoku
 
-    ../../modules/nixos/graphical.nix
-    ../../modules/nixos/audio.nix
-    ../../modules/nixos/nvidia.nix
-    ../../modules/nixos/bluetooth.nix
+    ../common/optional/desktop
 
-    ../../modules/nixos/services.nix
-    ../../modules/nixos/gaming.nix
-    ../../modules/nixos/virtualization.nix
+    ../common/optional/hardware/bluetooth.nix
+    ../common/optional/hardware/nvidia.nix
+
+    ../common/optional/locale/finnish.nix
+
+    ../common/optional/virtualization/docker.nix
+    ../common/optional/virtualization/libvirt.nix
+    ../common/optional/virtualization/podman.nix
+    # ../common/optional/virtualization/quickemu.nix
+    # ../common/optional/virtualization/vmware.nix
+
+    ../common/optional/btrfs.nix
+
+    ../common/optional/gaming.nix
+
+    outputs.nixosModules.lenovo-yoga-pro-7-14irh8
   ];
 
   fileSystems = {
@@ -36,15 +43,8 @@ in {
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot/efi";
     };
-    grub = {
-      enable = true;
-      devices = ["nodev"];
-      efiSupport = true;
-      useOSProber = true;
-      default = "saved";
-      extraEntries = "GRUB_SAVEDEFAULT=true";
-      theme = themes.lenovo-yoga-grub;
-    };
+
+    grub.theme = pkgs.custom.themes.lenovo-yoga-grub;
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -57,29 +57,9 @@ in {
   networking = {
     hostName = "titan";
     networkmanager.enable = true;
-    enableIPv6 = true;
   };
 
   services.upower.enable = true;
-  services.tlp.enable = true;
-
-  hardware = {
-    nvidia = {
-      powerManagement = {
-        enable = true;
-        finegrained = true;
-      };
-
-      prime = {
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
-        intelBusId = "PCI:0:2:0";
-        nvidiaBusId = "PCI:1:0:0";
-      };
-    };
-  };
 
   system.stateVersion = "24.05";
 }

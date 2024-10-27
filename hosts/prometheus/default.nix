@@ -1,10 +1,10 @@
-{ username, ... }: {
+{username, ...}: {
   imports = [
-    ../../modules/nixos/base.nix
-    ../../modules/nixos/locale.nix
+    ../common/global
 
-    ../../modules/nixos/shell.nix
-    ../../modules/nixos/users.nix
+    ../common/users/ozoku
+
+    ../common/optional/locale/finnish.nix
   ];
 
   wsl = {
