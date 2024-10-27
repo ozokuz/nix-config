@@ -32,5 +32,4 @@
     # stylua
   ];
 
-  xdg.configFile."npm/npmrc".source = ./npmrc;
 }

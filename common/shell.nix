@@ -1,22 +1,29 @@
 {
   packages = pkgs:
     with pkgs; [
-      unstable.neovim
+      # Base tools
+      file
       curl
       wget
       tree
-      git
-      ripgrep
-      fd
-      gcc
-      gnumake
-      unzip
-      zip
       psmisc
       lshw
-      file
-      nh
-      nvd
+      # File searching
+      ripgrep
+      fd
+      # Editor
+      unstable.neovim
+      # Version Control
+      git
+      # Archive tools
+      unzip
+      zip
+      # Compiling
+      gcc
+      gnumake
+      # Nix tools
+      nh # Nix Helper
+      nvd # Nix Version Differ
       nix-output-monitor
     ];
 

@@ -1,8 +1,14 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
+  imports = [
+    ./theming.nix
+  ];
+
+  home.sessionVariables = {
+    # Defaults
+    BROWSER = "flatpak run io.github.zen_browser.zen";
+    TERMINAL = "kitty";
+  };
+
   home.packages = with pkgs; [
     brave
     firefox
@@ -19,15 +25,15 @@
     obsidian
     podman-desktop
     distrobox
-    pkgs-unstable.vscode-fhs
-    pkgs-unstable.jetbrains-toolbox
-    pkgs-unstable.gitkraken
-    pkgs-unstable.vesktop
+    unstable.vscode-fhs
+    unstable.jetbrains-toolbox
+    unstable.gitkraken
+    unstable.vesktop
   ];
 
   programs.alacritty = {
     enable = true;
-    package = pkgs-unstable.alacritty;
+    package = pkgs.unstable.alacritty;
     settings = {
       window.opacity = 0.9;
       font = {
@@ -52,7 +58,7 @@
 
   programs.kitty = {
     enable = true;
-    package = pkgs-unstable.kitty;
+    package = pkgs.unstable.kitty;
     theme = "Tokyo Night Storm";
     font = {
       name = "FiraCode Nerd Font";
@@ -69,4 +75,23 @@
 
   programs.mpv.enable = true;
   programs.zathura.enable = true;
+
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+  };
+
+  xdg.mimeApps = {
+    enable = false;
+    defaultApplications = {
+      "text/plain" = ["nvim.desktop"];
+      "x-scheme-handler/http" = ["firefox.desktop"];
+      "x-scheme-handler/https" = ["firefox.desktop"];
+      "x-scheme-handler/webcal" = ["firefox.desktop"];
+      "text/html" = ["firefox.desktop"];
+      "application/pdf" = ["org.pwmt.zathura.desktop"];
+      "inode/directory" = ["org.gnome.Nautilus.desktop"];
+      "x-scheme-handler/jetbrains" = ["JetBrains Toolbox.desktop"];
+    };
+  };
 }

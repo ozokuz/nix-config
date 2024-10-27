@@ -22,6 +22,7 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     systems,
     ...
   } @ inputs: let
@@ -56,7 +57,14 @@
       };
     };
 
-    homeConfigurations = {};
+    homeConfigurations = {
+      # Home Manager on other systems
+      "ozoku@other" = home-manager.lib.homeManagerConfiguration {
+        modules = [./home/ozoku/other.nix];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = specialArgs;
+      };
+    };
 
     formatter = forEachSystem (pkgs: pkgs.alejandra);
   };
