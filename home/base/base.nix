@@ -1,7 +1,7 @@
-{username, ...}: {
+{...}: {
   home = {
-    username = username;
-    homeDirectory = "/home/${username}";
+    username = "ozoku";
+    homeDirectory = "/home/ozoku";
 
     stateVersion = "24.05";
   };

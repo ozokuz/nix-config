@@ -1,4 +1,4 @@
-{username, ...}: {
+{
   imports = [
     ./base.nix
     ./environment.nix
