@@ -1,4 +1,4 @@
-{username, ...}: {
+{
   imports = [
     ../common/global
 
@@ -10,7 +10,7 @@
   wsl = {
     enable = true;
     useWindowsDriver = true;
-    defaultUser = username;
+    defaultUser = "ozoku";
     startMenuLaunchers = false;
     docker-desktop.enable = true;
   };

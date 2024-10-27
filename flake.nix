@@ -27,8 +27,6 @@
   } @ inputs: let
     inherit (self) outputs;
 
-    username = "ozoku";
-
     pkgsFor = nixpkgs.lib.genAttrs (import systems) (system:
       import nixpkgs {
         inherit system;
@@ -37,7 +35,7 @@
     forEachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f pkgsFor.${system});
 
     specialArgs = {
-      inherit inputs outputs username;
+      inherit inputs outputs;
     };
   in {
     packages = forEachSystem (pkgs: import ./pkgs pkgs);
