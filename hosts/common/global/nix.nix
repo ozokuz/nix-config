@@ -13,6 +13,4 @@
       options = "--delete-older-than +3";
     };
   };
-
-  nixpkgs.config.allowUnfree = true;
 }
