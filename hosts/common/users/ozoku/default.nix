@@ -17,5 +17,5 @@
     ];
   };
 
-  home-manager.users.ozoku = import ../../home/ozoku/${config.networking.hostName}.nix;
+  home-manager.users.ozoku = import ../../../../home/ozoku/${config.networking.hostName}.nix;
 }
