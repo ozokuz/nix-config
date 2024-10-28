@@ -93,7 +93,7 @@ in {
       plugins = [(lib.mkIf cfg.perDisplay pkgs.unstable.hyprlandPlugins.hyprsplit)];
       settings = {
         workspace = let
-          workspaceList = lib.concatMap (display: lib.map (workspace: "${workspace}, monitor:${display.name}") display.value) utils.displayWorkspaces;
+          workspaceList = lib.concatMap (display: lib.map (workspace: "${toString workspace}, monitor:${display.name}") display.value) utils.displayWorkspaces;
         in
           lib.mkMerge [
             (lib.mkIf cfg.perDisplay workspaceList)
