@@ -10,6 +10,6 @@
       fileSystems = ["/"];
     };
 
-    services.docker.storageDriver = lib.mkfIf config.services.docker.enable "btrfs";
+    services.docker.storageDriver = lib.mkIf config.services.docker.enable "btrfs";
   };
 }
