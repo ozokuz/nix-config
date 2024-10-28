@@ -5,37 +5,39 @@
 }: let
   cfg = config.ozoku;
   displayType = lib.types.submodule {
-    port = lib.mkOption {
-      type = lib.types.str;
-      default = "";
-      example = "DP-1";
-      description = ''
-        The port to connect the display to.
-      '';
-    };
-    resolution = lib.mkOption {
-      type = lib.types.str;
-      default = "preferred";
-      example = "1920x1080@60";
-      description = ''
-        The resolution of the display.
-      '';
-    };
-    position = lib.mkOption {
-      type = lib.types.str;
-      default = "auto";
-      example = "0x0";
-      description = ''
-        The position of the display in the format "XxY".
-      '';
-    };
-    scale = lib.mkOption {
-      type = lib.types.int;
-      default = 1;
-      example = 1;
-      description = ''
-        The scale of the display.
-      '';
+    options = {
+      port = lib.mkOption {
+        type = lib.types.str;
+        default = "";
+        example = "DP-1";
+        description = ''
+          The port to connect the display to.
+        '';
+      };
+      resolution = lib.mkOption {
+        type = lib.types.str;
+        default = "preferred";
+        example = "1920x1080@60";
+        description = ''
+          The resolution of the display.
+        '';
+      };
+      position = lib.mkOption {
+        type = lib.types.str;
+        default = "auto";
+        example = "0x0";
+        description = ''
+          The position of the display in the format "XxY".
+        '';
+      };
+      scale = lib.mkOption {
+        type = lib.types.int;
+        default = 1;
+        example = 1;
+        description = ''
+          The scale of the display.
+        '';
+      };
     };
   };
 in {

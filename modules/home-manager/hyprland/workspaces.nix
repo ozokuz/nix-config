@@ -8,11 +8,13 @@
   ozoku = config.ozoku;
   utils = import ../graphics/utils.nix {inherit config lib;};
   special = lib.types.submodule {
-    exec = {
-      type = lib.types.str;
-    };
-    keybind = {
-      type = lib.types.str;
+    options = {
+      exec = {
+        type = lib.types.str;
+      };
+      keybind = {
+        type = lib.types.str;
+      };
     };
   };
 in {
