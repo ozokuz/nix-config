@@ -3,4 +3,6 @@
     podman
     podman-compose
   ];
+
+  virtualisation.podman.enable = true;
 }
