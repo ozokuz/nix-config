@@ -9,10 +9,10 @@
   utils = import ../graphics/utils.nix {inherit config lib;};
   special = lib.types.submodule {
     options = {
-      exec = {
+      exec = lib.mkOption {
         type = lib.types.str;
       };
-      keybind = {
+      keybind = lib.mkOption {
         type = lib.types.str;
       };
     };
