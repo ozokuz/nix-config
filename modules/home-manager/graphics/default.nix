@@ -89,8 +89,8 @@ in {
         message = "The number of workspaces must be greater than 0.";
       }
       {
-        assertion = cfg.workspaces <= 10;
-        message = "The number of workspaces must be less than or equal to 10.";
+        assertion = cfg.workspaces <= 9;
+        message = "The number of workspaces must be less than or equal to 9.";
       }
     ];
   };

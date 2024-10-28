@@ -28,7 +28,7 @@
   ozoku = {
     graphics.enable = true;
 
-    workspaces = 6;
+    workspaces = 9;
 
     waybar.enable = true;
 
