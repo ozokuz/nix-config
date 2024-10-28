@@ -114,8 +114,8 @@ in {
             if cfg.perDisplay
             then "split:movetoworkspace${silently}"
             else "movetoworkspace${silently}";
-          switchBinds = lib.map (workspaceNumber: "${mod}, ${workspaceNumber}, ${workspaceCmd}, ${workspaceNumber}") (lib.range 1 ozoku.workspaces);
-          moveBinds = lib.map (workspaceNumber: "${mod} ${shift}, ${workspaceNumber}, ${movetoworkspaceCmd}, ${workspaceNumber}") (lib.range 1 ozoku.workspaces);
+          switchBinds = lib.map (workspaceNumber: "${mod}, ${toString workspaceNumber}, ${workspaceCmd}, ${toString workspaceNumber}") (lib.range 1 ozoku.workspaces);
+          moveBinds = lib.map (workspaceNumber: "${mod} ${shift}, ${toString workspaceNumber}, ${movetoworkspaceCmd}, ${toString workspaceNumber}") (lib.range 1 ozoku.workspaces);
           specialBinds = lib.mapAttrsToList (name: value: "${value.keybind}, togglespecialworkspace, ${name}") cfg.special;
         in
           switchBinds ++ moveBinds ++ specialBinds;
