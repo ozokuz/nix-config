@@ -19,10 +19,10 @@
     emote
     wtype
     syncthingtray
-    scripts.ode-awake-toggle
-    scripts.ode-toggle-widget
-    scripts.ode-lock
-    scripts.scrsht
+    custom.scripts.ode-awake-toggle
+    custom.scripts.ode-toggle-widget
+    custom.scripts.ode-lock
+    custom.scripts.scrsht
   ];
 
   ozoku = {

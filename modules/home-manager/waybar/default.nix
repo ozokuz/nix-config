@@ -38,14 +38,14 @@ in {
           };
           "custom/awake" = {
             format = "{} ";
-            exec = "${pkgs.scripts.ode-awake-status}/bin/ode_awake_status";
+            exec = "${pkgs.custom.scripts.ode-awake-status}/bin/ode_awake_status";
             interval = "once";
-            on-click = "${pkgs.scripts.ode-awake-toggle}/bin/ode_awake_toggle";
+            on-click = "${pkgs.custom.scripts.ode-awake-toggle}/bin/ode_awake_toggle";
             signal = 8;
           };
           "custom/weather" = {
             format = "{}   ";
-            exec = "${pkgs.scripts.ode-weather-status}/bin/ode_weather_status";
+            exec = "${pkgs.custom.scripts.ode-weather-status}/bin/ode_weather_status";
             interval = 3600;
             return-type = "json";
           };
