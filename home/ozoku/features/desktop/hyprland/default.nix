@@ -35,8 +35,6 @@
     hyprland = {
       enable = true;
 
-      package = pkgs.unstable.hyprland;
-
       workspaces = {
         perDisplay = true;
 

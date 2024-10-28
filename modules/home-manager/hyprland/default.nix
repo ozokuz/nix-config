@@ -12,7 +12,6 @@ in {
 
   options.ozoku.hyprland = {
     enable = lib.mkEnableOption "Ozoku's extended Hyprland configuration";
-    package = lib.mkPackageOption pkgs "hyprland" {};
   };
 
   config = lib.mkIf cfg.hyprland.enable {
@@ -20,7 +19,7 @@ in {
 
     wayland.windowManager.hyprland = {
       enable = true;
-      package = cfg.hyprland.package;
+      package = pkgs.unstable.hyprland;
       systemd = {
         enable = true;
         variables = ["--all"];

@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   lib,
   ...
@@ -82,7 +83,7 @@ in {
 
   config = lib.mkIf ozoku.hyprland.enable {
     wayland.windowManager.hyprland = {
-      plugins = [lib.mkIf cfg.perDisplay ozoku.hyprland.package.pkgs.hyprlandPlugins.hyprsplit];
+      plugins = [lib.mkIf cfg.perDisplay pkgs.unstable.hyprlandPlugins.hyprsplit];
       settings = {
         workspace = let
           workspaceList = lib.concatMap (display: lib.map (workspace: "${workspace}, monitor:${display.name}") display.value) utils.displayWorkspaces;
