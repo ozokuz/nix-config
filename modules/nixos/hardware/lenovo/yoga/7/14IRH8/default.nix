@@ -1,10 +1,4 @@
-{inputs, ...}: {
-  imports = [
-    inputs.hardware.nixosModules.common-cpu-intel
-    inputs.hardware.nixosModules.common-gpu-nvidia
-    inputs.hardware.nixosModules.common-pc-ssd
-  ];
-
+{...}: {
   services.tlp.enable = true;
 
   hardware = {
