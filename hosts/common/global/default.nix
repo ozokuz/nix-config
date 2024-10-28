@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   outputs,
   ...
@@ -12,7 +13,7 @@
       ./shell.nix
       ./sops.nix
     ]
-    ++ outputs.nixosModules;
+    ++ (lib.attrValues outputs.nixosModules);
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
