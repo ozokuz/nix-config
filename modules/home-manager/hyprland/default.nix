@@ -7,7 +7,6 @@
   cfg = config.ozoku;
 in {
   imports = [
-    ../graphics
     ./workspaces.nix
   ];
 
