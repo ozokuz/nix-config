@@ -1,11 +1,8 @@
 {
   pkgs,
-  pkgs-unstable,
   lib,
   ...
-}: let
-  scripts = pkgs.callPackage ../../../../pkgs/scripts.nix { inherit pkgs-unstable; };
-in {
+}: {
   # Notifications
   services.mako = {
     enable = true;
@@ -30,7 +27,7 @@ in {
       Type = "exec";
       ExecStart = "${pkgs.eww}/bin/eww daemon --no-daemonize";
       Restart = "on-failure";
-      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash pkgs-unstable.hyprland eww scripts.ode-lock]}\"";
+      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd scripts.ode-toggle-widget bash unstable.hyprland eww scripts.ode-lock]}\"";
     };
     Install = {WantedBy = ["graphical-session.target"];};
   };
@@ -49,7 +46,7 @@ in {
       }
       {
         timeout = 600;
-        command = "${scripts.ode-lock}/bin/ode_lock --grace 5";
+        command = "${pkgs.custom.scripts.ode-lock}/bin/ode_lock --grace 5";
       }
       {
         timeout = 660;
@@ -63,7 +60,7 @@ in {
       }
       {
         event = "before-sleep";
-        command = "${scripts.ode-lock}/bin/ode_lock";
+        command = "${pkgs.custom.scripts.ode-lock}/bin/ode_lock";
       }
       {
         event = "after-resume";

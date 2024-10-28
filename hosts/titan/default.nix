@@ -2,8 +2,7 @@
   pkgs,
   outputs,
   ...
-}: let
-in {
+}: {
   imports = [
     ./hardware-configuration.nix
 
