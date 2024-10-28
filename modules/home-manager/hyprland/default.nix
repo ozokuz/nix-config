@@ -20,7 +20,7 @@ in {
 
     wayland.windowManager.hyprland = {
       enable = true;
-      package = cfg.package;
+      package = cfg.hyprland.package;
       systemd = {
         enable = true;
         variables = ["--all"];
