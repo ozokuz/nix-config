@@ -7,6 +7,14 @@
   cfg = config.ozoku.hyprland.workspaces;
   ozoku = config.ozoku;
   utils = import ../graphics/utils.nix {inherit config lib;};
+  special = lib.types.submodule {
+    exec = {
+      type = lib.types.str;
+    };
+    keybind = {
+      type = lib.types.str;
+    };
+  };
 in {
   options.ozoku.hyprland.workspaces = {
     perDisplay = lib.mkOption {
@@ -28,7 +36,7 @@ in {
     };
 
     primaryModifier = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       default = "";
       example = "SUPER";
       description = ''
@@ -38,7 +46,7 @@ in {
     };
 
     secondaryModifier = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       default = "";
       example = "SHIFT";
       description = ''
@@ -48,10 +56,7 @@ in {
     };
 
     special = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.attrs {
-        exec = lib.types.string;
-        keybind = lib.types.string;
-      });
+      type = lib.types.attrsOf special;
       default = {};
       example = {
         pwmanager = {
@@ -83,7 +88,7 @@ in {
 
   config = lib.mkIf ozoku.hyprland.enable {
     wayland.windowManager.hyprland = {
-      plugins = [lib.mkIf cfg.perDisplay pkgs.unstable.hyprlandPlugins.hyprsplit];
+      plugins = [(lib.mkIf cfg.perDisplay pkgs.unstable.hyprlandPlugins.hyprsplit)];
       settings = {
         workspace = let
           workspaceList = lib.concatMap (display: lib.map (workspace: "${workspace}, monitor:${display.name}") display.value) utils.displayWorkspaces;

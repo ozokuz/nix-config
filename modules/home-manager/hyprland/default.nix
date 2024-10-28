@@ -24,7 +24,7 @@ in {
         enable = true;
         variables = ["--all"];
       };
-      settings.monitor = lib.map (d: "${d.port}, ${d.resolution}, ${d.position}, ${d.scale}") cfg.ozoku.displays;
+      settings.monitor = lib.map (d: "${d.port}, ${d.resolution}, ${d.position}, ${d.scale}") cfg.displays;
     };
   };
 }
