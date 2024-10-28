@@ -34,31 +34,34 @@
 
     hyprland = {
       enable = true;
-      perDisplayWorkspaces = true;
 
-      primaryModifier = "SUPER";
-      secondaryModifier = "SHIFT";
+      workspaces = {
+        perDisplay = true;
 
-      specialWorkspaces = {
-        pwmanager = {
-          exec = "bitwarden";
-          keybind = "SUPER, S";
-        };
-        processes = {
-          exec = "$TERMINAL -e btop";
-          keybind = "SUPER, R";
-        };
-        audiomixer = {
-          exec = "$TERMINAL -e pulsemixer";
-          keybind = "SUPER, A";
-        };
-        scratchpad = {
-          exec = "$TERMINAL";
-          keybind = "SUPER, minus";
-        };
-        networkmanager = {
-          exec = "$TERMINAL -e nmtui";
-          keybind = "SUPER SHIFT, W";
+        primaryModifier = "SUPER";
+        secondaryModifier = "SHIFT";
+
+        special = {
+          pwmanager = {
+            exec = "bitwarden";
+            keybind = "SUPER, S";
+          };
+          processes = {
+            exec = "$TERMINAL -e btop";
+            keybind = "SUPER, R";
+          };
+          audiomixer = {
+            exec = "$TERMINAL -e pulsemixer";
+            keybind = "SUPER, A";
+          };
+          scratchpad = {
+            exec = "$TERMINAL";
+            keybind = "SUPER, minus";
+          };
+          networkmanager = {
+            exec = "$TERMINAL -e nmtui";
+            keybind = "SUPER SHIFT, W";
+          };
         };
       };
     };
