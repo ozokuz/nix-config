@@ -10,13 +10,13 @@
 
   ode-awake-status = writeShellApplication {
     name = "ode_awake_status";
-    runtimeInputs = with pkgs; [systemd];
+    runtimeInputs = with pkgs; [procps];
     text = builtins.readFile ./scripts/ode_awake_status.sh;
   };
 
   ode-awake-toggle = writeShellApplication {
     name = "ode_awake_toggle";
-    runtimeInputs = with pkgs; [systemd procps];
+    runtimeInputs = with pkgs; [psmisc procps];
     text = builtins.readFile ./scripts/ode_awake_toggle.sh;
   };
 
