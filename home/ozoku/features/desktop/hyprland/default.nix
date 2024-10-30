@@ -112,6 +112,5 @@
     xwayland.force_zero_scaling = true;
   };
 
-  xdg.configFile."hypr/hyprpaper.conf".source = ../../../configs/hyprpaper.conf;
   xdg.configFile."tofi/config".source = ../../../configs/tofi/config;
 }

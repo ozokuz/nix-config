@@ -1,7 +1,5 @@
 # TODO
 
-- swaylock to hyprlock
-- swayidle to hypridle
 - waybar to AGS
 - EWW to AGS
 - mako to AGS

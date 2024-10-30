@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   wayland.windowManager.hyprland = {
     settings = {
       input = {
@@ -38,7 +38,7 @@
         # Script Runner
         "$mod SHIFT, space, exec, tofi-run | xargs hyprctl dispatch exec --"
         # Screen Lock
-        "$mod, X, exec, hyprlock --immediate"
+        "$mod, X, exec, ${pkgs.hyprlock}/bin/hyprlock --immediate"
         # Switch Keyboard Layout
         "$mod, B, exec, hyprctl switchxkblayout, at-translated-set-2-keyboard next"
         # Emoji Picker
