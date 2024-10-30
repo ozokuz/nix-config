@@ -15,13 +15,13 @@
     };
 
     input-field = {
-      size = "200, 50";
-      outline_thickness = 2;
+      size = "320, 60";
+      outline_thickness = 4;
       dots_size = 0.4;
       dots_spacing = 0.15;
       dots_rounding = -1;
       dots_fade_time = 200;
-      outer_color = "rgb(200, 100, 200)";
+      outer_color = "rgb(100, 200, 200)";
       inner_color = "rgb(10, 10, 10)";
       font_color = "rgb(200, 200, 200)";
       font_family = "Noto Sans";
@@ -39,14 +39,14 @@
     };
 
     label = {
-      text = "$TIME";
+      text = "<b>$TIME</b>";
       text_align = "center";
       color = "rgb(200, 200, 200)";
-      font_size = 40;
+      font_size = 80;
       font_family = "Noto Sans";
       halign = "center";
       valign = "top";
-      position = "0, 50";
+      position = "0, -200";
     };
   };
 }
