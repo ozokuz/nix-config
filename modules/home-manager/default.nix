@@ -3,4 +3,5 @@
   graphics = import ./graphics;
   hyprland = import ./hyprland;
   waybar = import ./waybar;
+  emote = import ./emote;
 }

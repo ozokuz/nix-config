@@ -31,6 +31,7 @@
     workspaces = 9;
 
     waybar.enable = true;
+    emote.enable = true;
 
     hyprland = {
       enable = true;

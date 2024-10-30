@@ -36,9 +36,6 @@
       # clipboard persist
       "wl-clip-persist --clipboard regular"
 
-      # Emoji Picker
-      "emote"
-
       # Syncthing Tray
       "bash -c 'sleep 2; syncthingtray --wait'"
     ];

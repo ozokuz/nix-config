@@ -8,7 +8,6 @@
       "noinitialfocus,class:^(xwaylandvideobridge)$"
 
       # Don't Focus Emoji Picker
-      "noinitialfocus, class:^(emote)$"
 
       # Tearing
       "immediate, class:^(Golf With Your Friends.x86_64)$"
