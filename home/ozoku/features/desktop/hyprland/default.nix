@@ -34,6 +34,8 @@
     waybar.enable = true;
     emote.enable = true;
 
+    wallpaper = ../../../wallpaper.png;
+
     hyprland = {
       enable = true;
 
