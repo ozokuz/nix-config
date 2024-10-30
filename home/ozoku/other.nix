@@ -2,7 +2,7 @@
   shell = import ../../common/shell.nix;
 in {
   imports = [
-    ./global
+    ./core
   ];
 
   home.sessionVariables = shell.environment;

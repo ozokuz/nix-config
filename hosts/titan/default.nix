@@ -6,7 +6,7 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../common/global
+    ../common/core
 
     ../common/users/ozoku
 

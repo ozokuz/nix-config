@@ -1,6 +1,6 @@
 {
   imports = [
-    ../common/global
+    ../common/core
 
     ../common/users/ozoku
 
