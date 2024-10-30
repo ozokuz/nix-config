@@ -1,15 +1,36 @@
 # TODO
 
+- swaylock to hyprlock
+- swayidle to hypridle
+- waybar to AGS
+- EWW to AGS
+- mako to AGS
+- tofi to AGS
+  - App Launcher
+  - Calculator
+  - Folders
+  - Music
+  - Notes
+  - Settings
+  - Terminal Sessions
+  - Web Search
+  - File Search
+  - Unit Converter / Unit based calculations
+  - System Info
+  - Weather
+  - URL Handler
+  - Clipboard Manager
+  - Password Manager
+  - Emoji Picker
+  - Color Picker
+- Better Screenshot tool?
+- Sops
+- SDDM to Greetd + Hyprland + AGS
+- Plymouth?
+
 - Better screenshots with grimblast + custom uploader script
 - Setup Tmux
 - Switch from fish to nushell
-- Switch from waybar & eww to quickshell / ags
-- Switch from mako to dunst / quickshell / ags
-- Switch from swayidle to hypridle
-- Switch lockscreen from swaylock to hyprlock / quickshell
 - Consider using swww
-- Consider using plymouth
-- Consider using greetd + tuigreet / qtgreet
-- Sops
 - Impermanence
 - Encrypted drive
