@@ -1,6 +1,8 @@
 {
+  pkgs,
   lib,
   config,
+  writeShellApplication,
   ...
 }: let
   cfg = config.ozoku;
@@ -76,6 +78,16 @@ in {
         this number will be per each display.
       '';
     };
+
+    autostart.enable = lib.mkEnableOption "Enable autostarting of graphical applications.";
+    autostart.applications = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [];
+      example = ["firefox" "alacritty"];
+      description = ''
+        List of applications to autostart.
+      '';
+    };
   };
 
   config = {
@@ -92,6 +104,42 @@ in {
         assertion = cfg.graphics.enable -> cfg.workspaces <= 9;
         message = "The number of workspaces must be less than or equal to 9.";
       }
+      {
+        assertion = cfg.autostart.enable -> cfg.autostart.applications != [];
+        message = "At least one application must be configured to autostart.";
+      }
     ];
+
+    systemd.user.services.autostart = lib.mkIf cfg.autostart.enable {
+      Unit = {
+        Description = "Autostart graphical applications.";
+        After = ["graphical-session.target"];
+        PartOf = ["graphical-session.target"];
+      };
+
+      Service = {
+        Type = "forking";
+        ExecStart = let
+          autostarter = writeShellApplication {
+            name = "autostarter";
+            runtimeInputs = lib.map (a: pkgs.${a}) cfg.autostart.applications;
+            text = ''
+              #!/usr/bin/env bash
+
+              for app in ${lib.concatStringsSep " " cfg.autostart.applications}; do
+                if ! pgrep -x $app > /dev/null; then
+                  $app &
+                fi
+              done
+            '';
+          };
+        in ''
+          ${autostarter}/bin/autostarter
+        '';
+        RemainAfterExit = "yes";
+      };
+
+      Install = {WantedBy = ["graphical-session.target"];};
+    };
   };
 }

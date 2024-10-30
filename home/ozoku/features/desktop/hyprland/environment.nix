@@ -33,9 +33,6 @@
       # Wallpaper
       "hyprpaper"
 
-      # Password Manager
-      "bitwarden"
-
       # clipboard persist
       "wl-clip-persist --clipboard regular"
 
@@ -44,10 +41,13 @@
 
       # Syncthing Tray
       "bash -c 'sleep 2; syncthingtray --wait'"
-
-      # Apps
-      "discord"
-      "spotify"
     ];
   };
+
+  ozoku.autostart.enable = true;
+  ozoku.autostart.applications = [
+    "bitwarden"
+    "discord"
+    "spotify"
+  ];
 }
