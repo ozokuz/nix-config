@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs.unstable; [
     nodejs_22
     bun
@@ -26,10 +26,11 @@
     ghc
     crystal
     dart
+    nixd
+    alejandra
     # lua-language-server
     # clang-tools_17
     # marksman
     # stylua
   ];
-
 }
