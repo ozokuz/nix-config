@@ -3,7 +3,7 @@
     libsForQt5.polkit-kde-agent
   ];
 
-  security.pam.services.swaylock = {};
+  security.pam.services.hyprlock = {};
 
   xdg.portal = {
     enable = true;

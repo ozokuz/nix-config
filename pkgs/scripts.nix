@@ -8,12 +8,6 @@
     text = builtins.readFile ./scripts/ode_toggle_widget.sh;
   };
 
-  ode-lock = writeShellApplication {
-    name = "ode_lock";
-    runtimeInputs = with pkgs; [swaylock-effects];
-    text = builtins.readFile ./scripts/ode_lock.sh;
-  };
-
   ode-awake-status = writeShellApplication {
     name = "ode_awake_status";
     runtimeInputs = with pkgs; [systemd];

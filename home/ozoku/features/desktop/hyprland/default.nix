@@ -23,7 +23,6 @@
     syncthingtray
     custom.scripts.ode-awake-toggle
     custom.scripts.ode-toggle-widget
-    custom.scripts.ode-lock
     custom.scripts.scrsht
   ];
 
