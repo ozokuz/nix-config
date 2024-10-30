@@ -1,6 +1,9 @@
 {...}: {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
+      # Emote
+      "noinitialfocus, class:^(emote)$"
+
       # Tearing
       "immediate, class:^(Golf With Your Friends.x86_64)$"
       "immediate, class:^(overwatch.exe)$"

@@ -1,7 +1,7 @@
 {
-  cleaner-home = import ./cleaner-home;
-  graphics = import ./graphics;
-  hyprland = import ./hyprland;
-  waybar = import ./waybar;
-  emote = import ./emote;
+  cleaner-home = import ./misc/cleaner-home.nix;
+  graphical = import ./graphical/base;
+  hyprland = import ./graphical/hyprland;
+  waybar = import ./graphical/programs/waybar;
+  emote = import ./graphical/programs/emote.nix;
 }

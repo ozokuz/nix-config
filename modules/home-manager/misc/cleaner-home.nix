@@ -37,6 +37,9 @@ in {
       "${vars.XDG_DATA_HOME}/npm/bin"
     ];
 
-    xdg.configFile."npm/npmrc".source = ./npmrc;
+    xdg.configFile."npm/npmrc".text = ''
+      cache=${vars.XDG_CACHE_HOME}/npm
+      prefix=${vars.XDG_DATA_HOME}/npm
+    '';
   };
 }
