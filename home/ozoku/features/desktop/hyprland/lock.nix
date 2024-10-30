@@ -7,7 +7,7 @@
     };
 
     background = {
-      path = config.ozoku.wallpaper;
+      path = "/home/${config.home.username}/.local/wallpaper.png";
       blur_passes = 1;
       blur_size = 2;
       brightness = 0.5;
