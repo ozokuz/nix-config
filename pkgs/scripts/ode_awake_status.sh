@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if pgrep -x ozokuidle; then
-	echo ""
+if pgrep -x ozokuidle >/dev/null; then
+  echo ""
 else
-	echo ""
+  echo ""
 fi
