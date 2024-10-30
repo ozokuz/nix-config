@@ -28,7 +28,7 @@
       Type = "exec";
       ExecStart = "${pkgs.eww}/bin/eww daemon --no-daemonize";
       Restart = "on-failure";
-      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd custom.scripts.ode-toggle-widget bash unstable.hyprland eww hyprlock]}\"";
+      Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd custom.scripts.ode-toggle-widget bash unstable.hyprland eww]}\"";
     };
     Install = {WantedBy = ["graphical-session.target"];};
   };

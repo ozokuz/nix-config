@@ -21,7 +21,7 @@
     )
     (button
       :class "powerbutton lock"
-      :onclick "ode_toggle_widget powermenu && hyprctl dispatch exec hyprlock --immediate"
+      :onclick "ode_toggle_widget powermenu && hyprctl dispatch exec loginctl lock-session"
       "󰌾"
     )
     (button
