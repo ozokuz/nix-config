@@ -90,56 +90,63 @@ in {
     };
   };
 
-  config = {
-    assertions = [
-      {
-        assertion = cfg.graphics.enable -> !(cfg.displays == null || cfg.displays == []);
-        message = "At least one display must be configured.";
-      }
-      {
-        assertion = cfg.graphics.enable -> cfg.workspaces > 0;
-        message = "The number of workspaces must be greater than 0.";
-      }
-      {
-        assertion = cfg.graphics.enable -> cfg.workspaces <= 9;
-        message = "The number of workspaces must be less than or equal to 9.";
-      }
-      {
-        assertion = cfg.autostart.enable -> cfg.autostart.applications != [];
-        message = "At least one application must be configured to autostart.";
-      }
-    ];
+  config = lib.mkIF cfg.graphical.enable (lib.mkMerge [
+    {
+      assertions = [
+        {
+          assertion = !(cfg.displays == null || cfg.displays == []);
+          message = "At least one display must be configured.";
+        }
+        {
+          assertion = cfg.workspaces > 0;
+          message = "The number of workspaces must be greater than 0.";
+        }
+        {
+          assertion = cfg.workspaces <= 9;
+          message = "The number of workspaces must be less than or equal to 9.";
+        }
+      ];
 
-    systemd.user.services.autostart = lib.mkIf cfg.autostart.enable {
-      Unit = {
-        Description = "Autostart graphical applications.";
-        After = ["graphical-session.target"];
-        PartOf = ["graphical-session.target"];
+    }
+    (lib.mkIf cfg.autostart.enable {
+      assertions = [
+        {
+          assertion = cfg.autostart.applications != [];
+          message = "At least one application must be configured to autostart.";
+        }
+      ];
+
+      systemd.user.services.autostart = lib.mkIf cfg.autostart.enable {
+        Unit = {
+          Description = "Autostart graphical applications.";
+          After = ["graphical-session.target"];
+          PartOf = ["graphical-session.target"];
+        };
+
+        Service = {
+          Type = "forking";
+          ExecStart = let
+            autostarter = writeShellApplication {
+              name = "autostarter";
+              runtimeInputs = lib.map (a: pkgs.${a}) cfg.autostart.applications;
+              text = ''
+                #!/usr/bin/env bash
+
+                for app in ${lib.concatStringsSep " " cfg.autostart.applications}; do
+                  if ! pgrep -x $app > /dev/null; then
+                    $app &
+                  fi
+                done
+              '';
+            };
+          in ''
+            ${autostarter}/bin/autostarter
+          '';
+          RemainAfterExit = "yes";
+        };
+
+        Install = {WantedBy = ["graphical-session.target"];};
       };
-
-      Service = {
-        Type = "forking";
-        ExecStart = let
-          autostarter = writeShellApplication {
-            name = "autostarter";
-            runtimeInputs = lib.map (a: pkgs.${a}) cfg.autostart.applications;
-            text = ''
-              #!/usr/bin/env bash
-
-              for app in ${lib.concatStringsSep " " cfg.autostart.applications}; do
-                if ! pgrep -x $app > /dev/null; then
-                  $app &
-                fi
-              done
-            '';
-          };
-        in ''
-          ${autostarter}/bin/autostarter
-        '';
-        RemainAfterExit = "yes";
-      };
-
-      Install = {WantedBy = ["graphical-session.target"];};
-    };
-  };
+    })
+  ]);
 }
