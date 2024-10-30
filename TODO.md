@@ -10,3 +10,6 @@
 - Consider using swww
 - Consider using plymouth
 - Consider using greetd + tuigreet / qtgreet
+- Sops
+- Impermanence
+- Encrypted drive
