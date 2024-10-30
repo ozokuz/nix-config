@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  utils = import ../graphics/utils.nix {inherit config lib;};
+  utils = import ../../lib.nix {inherit config lib;};
 in {
   options.ozoku.waybar.enable = lib.mkEnableOption "Enable waybar";
 

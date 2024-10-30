@@ -6,7 +6,7 @@
 }: let
   cfg = config.ozoku.hyprland.workspaces;
   ozoku = config.ozoku;
-  utils = import ../graphics/utils.nix {inherit config lib;};
+  utils = import ../lib.nix {inherit config lib;};
   special = lib.types.submodule {
     options = {
       exec = lib.mkOption {

@@ -79,6 +79,14 @@ in {
       '';
     };
 
+    wallpaper = lib.mkOption {
+      type = lib.types.path;
+      example = "/path/to/wallpaper.png";
+      description = ''
+        Path to the wallpaper image.
+      '';
+    };
+
     autostart.enable = lib.mkEnableOption "Enable autostarting of graphical applications.";
     autostart.applications = lib.mkOption {
       type = lib.types.listOf lib.types.str;
@@ -86,14 +94,6 @@ in {
       example = ["firefox" "alacritty"];
       description = ''
         List of applications to autostart.
-      '';
-    };
-
-    wallpaper = lib.mkOption {
-      type = lib.types.path;
-      example = "/path/to/wallpaper.png";
-      description = ''
-        Path to the wallpaper image.
       '';
     };
   };
