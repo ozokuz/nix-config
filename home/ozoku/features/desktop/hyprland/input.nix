@@ -38,7 +38,7 @@
         # Script Runner
         "$mod SHIFT, space, exec, tofi-run | xargs hyprctl dispatch exec --"
         # Screen Lock
-        "$mod, X, exec, ode_lock"
+        "$mod, X, exec, hyprlock --immediate"
         # Switch Keyboard Layout
         "$mod, B, exec, hyprctl switchxkblayout, at-translated-set-2-keyboard next"
         # Emoji Picker

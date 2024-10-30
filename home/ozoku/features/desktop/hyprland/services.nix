@@ -35,40 +35,6 @@
   # Volume / Brightness OSD
   services.avizo.enable = true;
 
-  # Idle Manager
-  services.swayidle = {
-    enable = true;
-    timeouts = [
-      {
-        timeout = 300;
-        command = "${pkgs.brightnessctl}/bin/brightnessctl -s && ${pkgs.brightnessctl}/bin/brightnessctl set 5%";
-        resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl -r";
-      }
-      {
-        timeout = 600;
-        command = "${pkgs.custom.scripts.ode-lock}/bin/ode_lock --grace 5";
-      }
-      {
-        timeout = 660;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
-      }
-    ];
-    events = [
-      {
-        event = "before-sleep";
-        command = "${pkgs.playerctl}/bin/playerctl pause";
-      }
-      {
-        event = "before-sleep";
-        command = "${pkgs.custom.scripts.ode-lock}/bin/ode_lock";
-      }
-      {
-        event = "after-resume";
-        command = "${pkgs.brightnessctl}/bin/brightnessctl -r";
-      }
-    ];
-  };
-
   # Color Temperature
   services.gammastep = {
     enable = true;

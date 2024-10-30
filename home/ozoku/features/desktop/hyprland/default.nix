@@ -5,6 +5,8 @@
     ./input.nix
     ./services.nix
     ./windowrules.nix
+    ./lock.nix
+    ./idle.nix
   ];
 
   home.packages = with pkgs; [
