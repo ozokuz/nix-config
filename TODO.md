@@ -25,6 +25,7 @@
 - Sops
 - SDDM to Greetd + Hyprland + AGS
 - Plymouth?
+- Zen Browser as nix flake
 
 - Better screenshots with grimblast + custom uploader script
 - Setup Tmux
