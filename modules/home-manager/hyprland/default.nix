@@ -15,7 +15,7 @@ in {
   };
 
   config = lib.mkIf cfg.hyprland.enable {
-    ozoku.graphics.enable = true;
+    ozoku.graphical.enable = true;
 
     wayland.windowManager.hyprland = {
       enable = true;

@@ -42,7 +42,7 @@
   };
 in {
   options.ozoku = {
-    graphics.enable = lib.mkEnableOption "Enable graphics configuration.";
+    graphical.enable = lib.mkEnableOption "Enable graphical configuration.";
 
     displays = lib.mkOption {
       type = lib.types.nullOr (lib.types.listOf displayType);
@@ -78,18 +78,18 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.graphics.enable {
+  config = {
     assertions = [
       {
-        assertion = !(cfg.displays == null || cfg.displays == []);
+        assertion = cfg.graphics.enable -> !(cfg.displays == null || cfg.displays == []);
         message = "At least one display must be configured.";
       }
       {
-        assertion = cfg.workspaces > 0;
+        assertion = cfg.graphics.enable -> cfg.workspaces > 0;
         message = "The number of workspaces must be greater than 0.";
       }
       {
-        assertion = cfg.workspaces <= 9;
+        assertion = cfg.graphics.enable -> cfg.workspaces <= 9;
         message = "The number of workspaces must be less than or equal to 9.";
       }
     ];

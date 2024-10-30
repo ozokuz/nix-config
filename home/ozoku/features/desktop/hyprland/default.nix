@@ -26,7 +26,7 @@
   ];
 
   ozoku = {
-    graphics.enable = true;
+    graphical.enable = true;
 
     workspaces = 9;
 
