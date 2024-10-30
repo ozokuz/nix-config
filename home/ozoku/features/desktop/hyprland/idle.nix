@@ -1,8 +1,9 @@
 {pkgs, ...}: {
   services.hypridle.enable = true;
+  services.hypridle.package = pkgs.unstable.hypridle;
   services.hypridle.settings = {
     general = {
-      lock_cmd = "pidof hyprlock || hyprlock --immediate";
+      lock_cmd = "pidof hyprlock || hyprlock --immediate && loginctl unlock-session";
       before_sleep_cmd = "${pkgs.playerctl}/bin/playerctl pause && loginctl lock-session";
       after_sleep_cmd = "${pkgs.brightnessctl}/bin/brightnessctl -r";
     };
