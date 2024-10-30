@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  writeShellApplication,
   ...
 }: let
   cfg = config.ozoku;
@@ -135,7 +134,7 @@ in {
         Service = {
           Type = "forking";
           ExecStart = let
-            autostarter = writeShellApplication {
+            autostarter = pkgs.writeShellApplication {
               name = "autostarter";
               runtimeInputs = lib.map (a: pkgs.${a}) cfg.autostart.applications;
               text = ''
