@@ -98,7 +98,7 @@ in {
     };
   };
 
-  config = lib.mkIF cfg.graphical.enable (lib.mkMerge [
+  config = lib.mkIf cfg.graphical.enable (lib.mkMerge [
     {
       assertions = [
         {
