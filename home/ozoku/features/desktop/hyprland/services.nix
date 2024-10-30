@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   lib,
   ...
 }: {
@@ -30,6 +31,18 @@
       Environment = "\"PATH=${with pkgs; lib.makeBinPath [systemd custom.scripts.ode-toggle-widget bash unstable.hyprland eww custom.scripts.ode-lock]}\"";
     };
     Install = {WantedBy = ["graphical-session.target"];};
+  };
+
+  # Wallpaper
+  services.hyprpaper = {
+    enable = true;
+
+    settings = let
+      wallpaper = "/home/${config.home.username}/.local/wallpaper.png";
+    in {
+      preload = [wallpaper];
+      wallpaper = [",${wallpaper}"];
+    };
   };
 
   # Volume / Brightness OSD

@@ -88,6 +88,14 @@ in {
         List of applications to autostart.
       '';
     };
+
+    wallpaper = lib.mkOption {
+      type = lib.types.path;
+      example = "/path/to/wallpaper.png";
+      description = ''
+        Path to the wallpaper image.
+      '';
+    };
   };
 
   config = lib.mkIF cfg.graphical.enable (lib.mkMerge [
@@ -107,6 +115,7 @@ in {
         }
       ];
 
+      home.file.".local/wallpaper.png".source = cfg.wallpaper;
     }
     (lib.mkIf cfg.autostart.enable {
       assertions = [

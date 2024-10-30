@@ -112,7 +112,6 @@
     xwayland.force_zero_scaling = true;
   };
 
-  home.file.".local/wallpaper.png".source = ../../../wallpaper.png;
   xdg.configFile."hypr/hyprpaper.conf".source = ../../../configs/hyprpaper.conf;
   xdg.configFile."tofi/config".source = ../../../configs/tofi/config;
 }
