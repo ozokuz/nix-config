@@ -2,6 +2,7 @@
   imports = [
     ./core
     ./features/desktop/hyprland
+    ./features/desktop/ags
   ];
 
   ozoku.displays = [
