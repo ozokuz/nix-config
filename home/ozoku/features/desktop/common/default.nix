@@ -18,6 +18,7 @@
     pulsemixer
     nvtopPackages.full
     nsxiv
+    ciscoPacketTracer8
     gnome.nautilus
     gnome.sushi
     discord
