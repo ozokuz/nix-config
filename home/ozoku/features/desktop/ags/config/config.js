@@ -1,26 +1,20 @@
-const time = Variable('', {
-    poll: [1000, function() {
-        return Date().toString()
-    }],
-})
+const entry = App.configDir + "/src/main.ts";
+const outdir = "/tmp/ags/js";
 
-const Bar = (/** @type {number} */ monitor) => Widget.Window({
-    monitor,
-    name: `bar${monitor}`,
-    anchor: ['top', 'left', 'right'],
-    exclusivity: 'exclusive',
-    child: Widget.CenterBox({
-        start_widget: Widget.Label({
-            hpack: 'center',
-            label: 'Welcome to AGS!',
-        }),
-        end_widget: Widget.Label({
-            hpack: 'center',
-            label: time.bind(),
-        }),
-    }),
-})
+try {
+  await Utils.execAsync([
+    "bun",
+    "build",
+    entry,
+    "--outdir",
+    outdir,
+    "--external",
+    "resource://*",
+    "--external",
+    "gi://*",
+  ]);
+  await import(`file://${outdir}/main.js`);
+} catch (error) {
+  console.error(error);
+}
 
-App.config({
-    windows: [Bar(0)],
-})
