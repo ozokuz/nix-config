@@ -40,6 +40,7 @@
 
   ozoku.autostart.enable = true;
   ozoku.autostart.applications = [
+    "obsidian"
     "bitwarden"
     "discord"
     "spotify"
