@@ -41,6 +41,7 @@
 
       workspaces = {
         perDisplay = true;
+        moveSilently = true;
 
         primaryModifier = "SUPER";
         secondaryModifier = "SHIFT";
