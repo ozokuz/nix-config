@@ -4,7 +4,6 @@
     bun
     deno
     pkgs.go
-    opam
     rustup
     poetry
     python312
@@ -32,5 +31,15 @@
     # clang-tools_17
     # marksman
     # stylua
+    (buildFHSUserEnv {
+      name = "opam-env";
+      targetPkgs = pkgs: with pkgs; [
+        opam
+        bubblewrap
+        gcc
+        gnumake
+      ];
+      runScript = "${pkgs.fish}/bin/fish";
+    })
   ];
 }

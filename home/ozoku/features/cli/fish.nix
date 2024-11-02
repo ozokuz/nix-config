@@ -44,7 +44,9 @@
 
     shellInit = ''
       # OPAM
-      source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+      if command -v opam; and test -d $HOME/.opam
+        eval (opam env)
+      end
     '';
 
     interactiveShellInit = ''
