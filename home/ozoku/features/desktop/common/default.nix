@@ -20,8 +20,8 @@
     nvtopPackages.full
     nsxiv
     ciscoPacketTracer8
-    gnome.nautilus
-    gnome.sushi
+    unstable.nautilus
+    unstable.sushi
     discord
     nautilus-open-any-terminal
     obsidian
