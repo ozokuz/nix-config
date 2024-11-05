@@ -19,8 +19,7 @@
   - URL Handler
   - Clipboard Manager
   - Password Manager
-  - Emoji Picker
-  - Color Picker
+- Color Picker
 - Better Screenshot tool?
 - Sops
 - SDDM to Greetd + Hyprland + AGS
