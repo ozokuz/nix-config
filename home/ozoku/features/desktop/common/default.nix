@@ -5,7 +5,7 @@
 
   home.sessionVariables = {
     # Defaults
-    BROWSER = "flatpak run io.github.zen_browser.zen";
+    BROWSER = "zen";
     TERMINAL = "kitty";
   };
 
@@ -83,16 +83,20 @@
     createDirectories = true;
   };
 
+  xdg.mime.enable = true;
   xdg.mimeApps = {
-    enable = false;
+    enable = true;
     defaultApplications = {
-      "text/plain" = ["nvim.desktop"];
-      "x-scheme-handler/http" = ["firefox.desktop"];
-      "x-scheme-handler/https" = ["firefox.desktop"];
-      "x-scheme-handler/webcal" = ["firefox.desktop"];
-      "text/html" = ["firefox.desktop"];
-      "application/pdf" = ["org.pwmt.zathura.desktop"];
       "inode/directory" = ["org.gnome.Nautilus.desktop"];
+
+      "text/plain" = ["nvim.desktop"];
+
+      "x-scheme-handler/http" = ["zen.desktop"];
+      "x-scheme-handler/https" = ["zen.desktop"];
+      "text/html" = ["zen.desktop"];
+
+      "application/pdf" = ["org.pwmt.zathura.desktop"];
+
       "x-scheme-handler/jetbrains" = ["JetBrains Toolbox.desktop"];
     };
   };
