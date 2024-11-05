@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs,...}: {
   imports = [
     ./theming.nix
   ];
@@ -10,6 +10,7 @@
   };
 
   home.packages = with pkgs; [
+    inputs.zen-browser.packages.${system}.specific
     brave
     firefox
     floorp

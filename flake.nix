@@ -18,6 +18,9 @@
     ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
     ags.inputs.systems.follows = "systems-linux";
 
+    zen-browser.url = "github:fufexan/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     impermanence.url = "github:nix-community/impermanence";
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix";
