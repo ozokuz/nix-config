@@ -6,6 +6,7 @@
 }: let
   vars = config.home.sessionVariables;
   cfg = config.ozoku.home;
+  home = config.home.homeDirectory;
 in {
   options.ozoku.home.cleaner-home = {
     enable = lib.mkEnableOption "Enable Cleaner Home";
@@ -14,10 +15,10 @@ in {
   config = lib.mkIf cfg.cleaner-home.enable {
     home.sessionVariables = {
       # XDG
-      XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_CACHE_HOME = "$HOME/.cache";
-      XDG_DATA_HOME = "$HOME/.local/share";
-      XDG_STATE_HOME = "$HOME/.local/state";
+      XDG_CONFIG_HOME = "${home}/.config";
+      XDG_CACHE_HOME = "${home}/.cache";
+      XDG_DATA_HOME = "${home}/.local/share";
+      XDG_STATE_HOME = "${home}/.local/state";
 
       # Cleaner Home
       GOPATH = "${vars.XDG_DATA_HOME}/go";
