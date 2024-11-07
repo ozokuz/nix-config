@@ -24,7 +24,7 @@
     windowrulev2 = [
       "workspace 7 silent,class:(obsidian)"
       "workspace 8 silent,class:(discord)"
-      "workspace 9 silent,class:(Spotify)"
+      "workspace 9 silent,title:(Spotify)"
     ];
   };
 }
