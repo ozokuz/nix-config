@@ -26,5 +26,9 @@ in {
       };
       settings.monitor = lib.map (d: "${d.port}, ${d.resolution}, ${d.position}, ${toString d.scale}") cfg.displays;
     };
+
+    home.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
   };
 }
