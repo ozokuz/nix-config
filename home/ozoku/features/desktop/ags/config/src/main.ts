@@ -1,5 +1,12 @@
 const hyprland = await Service.import("hyprland");
 const systemtray = await Service.import("systemtray");
+const battery = await Service.import("battery");
+const network = await Service.import("network");
+const audio = await Service.import("audio");
+
+const date = Variable("", {
+  poll: [1000, 'date "+%a, %d.%m.%y | %H:%M:%S"'],
+});
 
 const Workspaces = () => {
   const active = hyprland.active.workspace.bind("id");
@@ -45,15 +52,17 @@ const LeftArea = () =>
     children: [Workspaces(), ActiveWindow()],
   });
 
+const Media = () =>
+  Widget.Label({
+    className: "media-controls",
+    label: "Media",
+  });
+
 const CenterArea = () =>
   Widget.Box({
     spacing: 8,
-    children: [Widget.Label("Hello"), Widget.Label("Hello")],
+    children: [Media()],
   });
-
-const date = Variable("", {
-  poll: [1000, 'date "+%a, %d.%m.%y | %H:%M:%S"'],
-});
 
 const SysTray = () =>
   Widget.Box({
@@ -70,17 +79,126 @@ const SysTray = () =>
     ),
   });
 
+const Language = () => Widget.Label("Language");
+const Weather = () => Widget.Label("Weather");
+const Awake = () => Widget.Label("Awake");
+const Volume = () => {
+  const volumeIcon = Utils.merge(
+    [audio.speaker.bind("volume"), audio.speaker.bind("is_muted")],
+    (volume, muted) => {
+      if (muted) return "󰝟";
+
+      const vol = volume * 100;
+      if (vol >= 66) return "󰕾";
+      if (vol >= 33) return "󰖀";
+      return "󰕿";
+    },
+  );
+
+  return Widget.Label({
+    label: volumeIcon,
+  });
+};
+
+const WifiIndicator = () => {
+  const wifiIcon = Utils.merge(
+    [network.wifi.bind("internet"), network.wifi.bind("strength")],
+    (internet, strength) => {
+      if (internet === "connected") {
+        if (strength >= 75) return "󰤨";
+        if (strength >= 50) return "󰤥";
+        if (strength >= 25) return "󰤢";
+        return "󰤟";
+      }
+      if (internet === "connecting") return "󱛇";
+      return "󰤭";
+    },
+  );
+
+  return Widget.Label({
+    marginRight: 4,
+    label: wifiIcon,
+  });
+};
+
+const WiredIndicator = () => {
+  const wiredIcon = network.wired.bind("internet").as((internet) => {
+    if (internet === "connected") return "󰛳";
+    if (internet === "connecting") return "󰛵";
+    return "󰅛";
+  });
+
+  return Widget.Label({
+    label: wiredIcon,
+  });
+};
+
+const Network = () =>
+  Widget.Stack({
+    children: {
+      wifi: WifiIndicator(),
+      wired: WiredIndicator(),
+    },
+    shown: network.bind("primary").as((p) => p || "wifi"),
+  });
+
+const Battery = () => {
+  const batteryIcon = Utils.merge(
+    [battery.bind("charging"), battery.bind("percent")],
+    (charging, percent) => {
+      if (charging) return "󰂄";
+      if (percent >= 100) return "󰁹";
+      if (percent >= 90) return "󰂂";
+      if (percent >= 80) return "󰂁";
+      if (percent >= 70) return "󰂀";
+      if (percent >= 60) return "󰁿";
+      if (percent >= 50) return "󰁾";
+      if (percent >= 40) return "󰁽";
+      if (percent >= 30) return "󰁼";
+      if (percent >= 20) return "󰁻";
+      if (percent >= 10) return "󰁺";
+      return "󰂎";
+    },
+  );
+
+  return Widget.Label({
+    marginRight: 4,
+    visible: battery.bind("available"),
+    label: batteryIcon,
+  });
+};
+
+const Status = () =>
+  Widget.Box({
+    className: "status",
+    spacing: 12,
+    children: [Language(), Weather(), Awake(), Volume(), Network(), Battery()],
+  });
+
 const Clock = () =>
   Widget.Label({
-    className: "clock",
     label: date.bind(),
+  });
+
+const Notifications = () =>
+  Widget.Label({
+    marginLeft: 2,
+    marginRight: 2,
+    label: "󰂚",
+  });
+
+const ClockGroup = () =>
+  Widget.Box({
+    className: "clock",
+    spacing: 8,
+    children: [Clock(), Notifications()],
   });
 
 const RightArea = () =>
   Widget.Box({
     hpack: "end",
     spacing: 8,
-    children: [SysTray(), Widget.Label("Hello"), Clock()],
+    children: [SysTray(), Status(), ClockGroup()],
   });
 
 const Bar = (monitor: number) =>
