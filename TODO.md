@@ -2,7 +2,22 @@
 
 - waybar to AGS
 - EWW to AGS
+  - Media
+  - Clock & Calendar
+  - Power Menu
+  - Battery Info
+  - Network Info
+  - Volume Control
+  - Brightness Control
+  - Weather
 - mako to AGS
+  - Notifications
+  - Notification Center
+- Avizo to AGS
+  - Brightness Display
+  - Volume Display
+  - Mic Mute Display
+  - Airplane Mode Display
 - tofi to AGS
   - App Launcher
   - Calculator
