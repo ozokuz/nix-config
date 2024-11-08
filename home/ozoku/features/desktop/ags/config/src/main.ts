@@ -62,17 +62,29 @@ const Media = (player: MprisPlayer) =>
     className: "media-controls",
     children: [
       Widget.Box({
+        className: "media-buttons",
         children: [
-          Widget.Button({ child: Widget.Label("󰒮") }),
-          Widget.Button({ child: Widget.Label("󰐍") }),
-          Widget.Button({ child: Widget.Label("󰒭") }),
+          Widget.Button({ className: "media-prev", child: Widget.Label("󰒮") }),
+          Widget.Button({ className: "media-play", child: Widget.Label("󰐍") }),
+          Widget.Button({ className: "media-next", child: Widget.Label("󰒭") }),
         ],
       }),
       Widget.Box({
         css: player
           .bind("cover_path")
-          .transform((p) => `background-image: url('${p}');`),
-        children: [Widget.Label("Song - Artist")],
+          .transform(
+            (p) =>
+              `background-image: linear-gradient(0deg, #777, #777), url('${p}');`,
+          ),
+        className: "player-cover",
+        children: [
+          Widget.Label({
+            label: Utils.merge(
+              [player.bind("track_title"), player.bind("track_artists")],
+              (title, artists) => `${title} - ${artists.join(", ")}`,
+            ),
+          }),
+        ],
       }),
     ],
   });
@@ -80,7 +92,9 @@ const Media = (player: MprisPlayer) =>
 const CenterArea = () =>
   Widget.Box({
     spacing: 8,
-    children: players.as((p) => p.map(Media)),
+    children: players.as((p) =>
+      p.filter((f) => f.name === "playerctld").map(Media),
+    ),
   });
 
 const SysTray = () =>
@@ -115,6 +129,7 @@ const Volume = () => {
   );
 
   return Widget.Label({
+    className: "icon",
     label: volumeIcon,
   });
 };
@@ -136,6 +151,7 @@ const WifiIndicator = () => {
 
   return Widget.Label({
     marginRight: 4,
+    className: "icon",
     label: wifiIcon,
   });
 };
@@ -148,6 +164,7 @@ const WiredIndicator = () => {
   });
 
   return Widget.Label({
+    className: "icon",
     label: wiredIcon,
   });
 };
@@ -182,6 +199,7 @@ const Battery = () => {
 
   return Widget.Label({
     marginRight: 4,
+    className: "icon",
     visible: battery.bind("available"),
     label: batteryIcon,
   });
@@ -203,6 +221,7 @@ const Notifications = () =>
   Widget.Label({
     marginLeft: 2,
     marginRight: 2,
+    className: "icon",
     label: "󰂚",
   });
 

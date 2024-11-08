@@ -20,6 +20,8 @@
 
   services.gvfs = {
     enable = true;
-    package = pkgs.unstable.gvfs;
+    package = pkgs.unstable.gvfs.override {
+      gnomeSupport = true;
+    };
   };
 }
