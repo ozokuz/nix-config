@@ -17,4 +17,9 @@
     package = pkgs.unstable.hyprland;
     xwayland.enable = true;
   };
+
+  services.gvfs = {
+    enable = true;
+    package = pkgs.unstable.gvfs;
+  };
 }

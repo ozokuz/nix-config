@@ -47,6 +47,10 @@ window.bar {
   padding: 0 12px;
 }
 
+.media-controls button {
+  background-color: #333;
+}
+
 .tray button {
   background: #333;
   padding: 0 4px;

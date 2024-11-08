@@ -1,8 +1,11 @@
+import { MprisPlayer } from "types/service/mpris";
+
 const hyprland = await Service.import("hyprland");
 const systemtray = await Service.import("systemtray");
 const battery = await Service.import("battery");
 const network = await Service.import("network");
 const audio = await Service.import("audio");
+const mpris = await Service.import("mpris");
 
 const date = Variable("", {
   poll: [1000, 'date "+%a, %d.%m.%y | %H:%M:%S"'],
@@ -52,16 +55,32 @@ const LeftArea = () =>
     children: [Workspaces(), ActiveWindow()],
   });
 
-const Media = () =>
-  Widget.Label({
+const players = mpris.bind("players");
+
+const Media = (player: MprisPlayer) =>
+  Widget.Box({
     className: "media-controls",
-    label: "Media",
+    children: [
+      Widget.Box({
+        children: [
+          Widget.Button({ child: Widget.Label("󰒮") }),
+          Widget.Button({ child: Widget.Label("󰐍") }),
+          Widget.Button({ child: Widget.Label("󰒭") }),
+        ],
+      }),
+      Widget.Box({
+        css: player
+          .bind("cover_path")
+          .transform((p) => `background-image: url('${p}');`),
+        children: [Widget.Label("Song - Artist")],
+      }),
+    ],
   });
 
 const CenterArea = () =>
   Widget.Box({
     spacing: 8,
-    children: [Media()],
+    children: players.as((p) => p.map(Media)),
   });
 
 const SysTray = () =>
