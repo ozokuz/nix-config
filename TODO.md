@@ -36,6 +36,9 @@
   - Password Manager
 - Color Picker
 - Better Screenshot tool?
+  - scrsht / grimshot / hyprshot
+  - satty
+  - uploader
 - Sops
 - SDDM to Greetd + Hyprland + AGS
 - Plymouth?
