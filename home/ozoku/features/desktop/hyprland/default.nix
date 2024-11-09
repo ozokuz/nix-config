@@ -23,7 +23,10 @@
     syncthingtray
     custom.scripts.ode-awake-toggle
     custom.scripts.ode-toggle-widget
+    custom.scripts.ode-weather-status
+    custom.scripts.ode-awake-status
     custom.scripts.scrsht
+    custom.scripts.awakectl
   ];
 
   ozoku = {

@@ -1,0 +1,6 @@
+* {
+  font-family: Noto Sans;
+  font-size: 13.333333px;
+}
+
+@import url("./bar/style.css");
