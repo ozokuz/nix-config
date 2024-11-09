@@ -1,4 +1,4 @@
-import { Bar } from "./bar/index";
+import { Bar } from "./bar/bar";
 
 App.config({
   windows: [Bar(0)],

@@ -1,9 +1,8 @@
 import { MprisPlayer } from "types/service/mpris";
 
 const mpris = await Service.import("mpris");
-const players = mpris.bind("players");
 
-const Media = (player: MprisPlayer) =>
+const MediaInternal = (player: MprisPlayer) =>
   Widget.Box({
     className: "media-controls",
     children: [
@@ -35,10 +34,9 @@ const Media = (player: MprisPlayer) =>
     ],
   });
 
-export const CenterArea = () =>
+export const Media = () =>
   Widget.Box({
-    spacing: 8,
-    children: players.as((p) =>
-      p.filter((f) => f.name === "playerctld").map(Media)
-    ),
+    children: mpris
+      .bind("players")
+      .as((p) => p.filter((f) => f.name === "playerctld").map(MediaInternal)),
   });

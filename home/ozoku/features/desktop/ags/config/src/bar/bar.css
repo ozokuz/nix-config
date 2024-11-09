@@ -1,0 +1,31 @@
+@import url("./widgets/media.css");
+@import url("./widgets/systray.css");
+@import url("./widgets/workspaces.css");
+
+label.icon {
+  font-size: 16px;
+}
+
+window.bar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.bar {
+  min-height: 36px;
+}
+
+.pill {
+  background-color: #333;
+  border-radius: 18px;
+  padding: 0 12px;
+}
+
+.pill.pill-left {
+  padding: 0 8px 0 12px;
+  border-radius: 18px 0 0 18px;
+}
+
+.pill.pill-right {
+  padding: 0 12px 0 8px;
+  border-radius: 0 18px 18px 0;
+}

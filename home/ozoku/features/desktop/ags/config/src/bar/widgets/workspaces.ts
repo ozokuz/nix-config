@@ -1,6 +1,6 @@
 const hyprland = await Service.import("hyprland");
 
-const Workspaces = () => {
+export const Workspaces = () => {
   const active = hyprland.active.workspace.bind("id");
   const workspaceClasses = (id: number) =>
     Utils.merge([active, hyprland.bind("workspaces")], (a, w) => {
@@ -23,23 +23,3 @@ const Workspaces = () => {
     children: workspaces,
   });
 };
-
-const maxTitleLength = 50;
-
-const ActiveWindow = () =>
-  Widget.Label({
-    class_name: "active-window",
-    label: hyprland.active.client
-      .bind("title")
-      .as((title) =>
-        title.length > maxTitleLength
-          ? title.substring(0, maxTitleLength) + "..."
-          : title
-      ),
-  });
-
-export const LeftArea = () =>
-  Widget.Box({
-    spacing: 8,
-    children: [Workspaces(), ActiveWindow()],
-  });
