@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if pgrep -x ozokuidle >/dev/null; then
+if [ "$(awakectl get)" == "keep-awake" ]; then
   echo ""
 else
   echo ""

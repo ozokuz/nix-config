@@ -1,5 +1,6 @@
 {
   pkgs,
+  stdenv,
   writeShellApplication,
 }: {
   ode-toggle-widget = writeShellApplication {
@@ -32,5 +33,10 @@
     text = builtins.readFile ./scripts/scrsht.sh;
   };
 
-  awakectl = pkgs.writers.writeJS "awakectl" {} (builtins.readFile ./scripts/awakectl.js);
+  awakectl = stdenv.mkDerivation {
+    name = "awakectl";
+    propagatedBuildInputs = [pkgs.nodejs];
+    dontUnpack = true;
+    installPhase = "install -Dm755 ${./scripts/awakectl.js} $out/bin/awakectl";
+  };
 }
