@@ -31,4 +31,6 @@
     runtimeInputs = with pkgs; [xdg-user-dirs slurp unstable.hyprland jq grim libnotify wl-clipboard curl gawk coreutils];
     text = builtins.readFile ./scripts/scrsht.sh;
   };
+
+  awakectl = pkgs.writers.writeJS "awakectl" {} (builtins.readFile ./scripts/awakectl.js);
 }
