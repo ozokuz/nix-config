@@ -9,7 +9,11 @@ const MediaInternal = (player: MprisPlayer) =>
       Widget.Box({
         className: "media-buttons",
         children: [
-          Widget.Button({ on_clicked: () => player.previous(), className: "media-prev", child: Widget.Label("󰒮") }),
+          Widget.Button({
+            on_clicked: () => player.previous(),
+            className: "media-prev",
+            child: Widget.Label("󰒮"),
+          }),
           Widget.Button({
             on_clicked: () => player.playPause(),
             className: "media-play",
@@ -19,7 +23,11 @@ const MediaInternal = (player: MprisPlayer) =>
                 .as((p) => (p === "Playing" ? "󰏦" : "󰐍")),
             }),
           }),
-          Widget.Button({ on_clicked: () => player.next(), className: "media-next", child: Widget.Label("󰒭") }),
+          Widget.Button({
+            on_clicked: () => player.next(),
+            className: "media-next",
+            child: Widget.Label("󰒭"),
+          }),
         ],
       }),
       Widget.Box({

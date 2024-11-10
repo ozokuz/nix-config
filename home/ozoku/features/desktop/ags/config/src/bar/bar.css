@@ -29,3 +29,11 @@ window.bar {
   padding: 0 12px 0 8px;
   border-radius: 0 18px 18px 0;
 }
+
+.pill-left button:first-child {
+  border-radius: 18px 0 0 18px;
+}
+
+.pill-right button:last-child {
+  border-radius: 0 18px 18px 0;
+}

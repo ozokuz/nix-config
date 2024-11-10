@@ -13,8 +13,12 @@ export const Volume = () => {
     }
   );
 
-  return Widget.Label({
-    className: "icon",
-    label: volumeIcon,
+  return Widget.Button({
+    className: "base",
+    onSecondaryClick: () => console.log("Volume"),
+    child: Widget.Label({
+      className: "icon",
+      label: volumeIcon,
+    }),
   });
 };

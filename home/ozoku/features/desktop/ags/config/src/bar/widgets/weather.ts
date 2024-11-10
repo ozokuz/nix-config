@@ -4,9 +4,13 @@ const weather = Variable("", {
 
 // TODO: make weather a proper service & use an api instead of wttr.in and a script
 export const Weather = () =>
-  Widget.Label({
-    label: weather.bind().as((w) => JSON.parse(w || "{}").text || ""),
-    tooltip_markup: weather
-      .bind()
-      .as((w) => JSON.parse(w || "{}").tooltip || ""),
+  Widget.Button({
+    onSecondaryClick: () => console.log("weather"),
+    className: "base",
+    child: Widget.Label({
+      label: weather.bind().as((w) => JSON.parse(w || "{}").text || ""),
+      tooltip_markup: weather
+        .bind()
+        .as((w) => JSON.parse(w || "{}").tooltip || ""),
+    }),
   });

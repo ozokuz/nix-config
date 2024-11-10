@@ -15,6 +15,10 @@ class AwakeService extends Service {
     Utils.execAsync(`awakectl set ${value ? "keep-awake" : "allow-sleep"}`);
   }
 
+  toggle() {
+    this.state = !this.state;
+  }
+
   constructor() {
     super();
 

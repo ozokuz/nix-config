@@ -1,6 +1,10 @@
 import awake from "../../services/awake";
 
 export const Awake = () =>
-  Widget.Label({
-    label: awake.bind("state").as((state) => (state ? "" : "")),
+  Widget.Button({
+    className: "base",
+    onSecondaryClick: () => awake.toggle(),
+    child: Widget.Label({
+      label: awake.bind("state").as((state) => (state ? "" : "")),
+    }),
   });

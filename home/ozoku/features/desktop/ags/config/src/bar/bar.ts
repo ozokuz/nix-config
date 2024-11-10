@@ -15,10 +15,10 @@ import { Battery } from "./widgets/battery";
 import { Clock } from "./widgets/clock";
 import { Notifications } from "./widgets/notifications";
 
-const Left1 = () =>
+const Left1 = (monitor: number) =>
   Widget.Box({
     className: "pill pill-right",
-    children: [Workspaces()],
+    children: [Workspaces(monitor)],
   });
 
 const Left2 = () =>
@@ -27,10 +27,10 @@ const Left2 = () =>
     children: [ActiveWindow()],
   });
 
-const Left = () =>
+const Left = (monitor: number) =>
   Widget.Box({
     spacing: 8,
-    children: [Left1(), Left2()],
+    children: [Left1(monitor), Left2()],
   });
 
 const Center = () =>
@@ -40,10 +40,11 @@ const Center = () =>
     children: [Media()],
   });
 
-const Right1 = () => Widget.Box({
-  className: "pill",
-  children: [SysTray()],
-});
+const Right1 = () =>
+  Widget.Box({
+    className: "pill",
+    children: [SysTray()],
+  });
 
 const Status = () =>
   Widget.Box({
@@ -59,7 +60,7 @@ const Right2 = () =>
     children: [Clock(), Notifications()],
   });
 
-export const Right = () =>
+const Right = () =>
   Widget.Box({
     hpack: "end",
     spacing: 8,
@@ -69,13 +70,14 @@ export const Right = () =>
 export const Bar = (monitor: number) =>
   Widget.Window({
     name: `bar-${monitor}`,
+    monitor: monitor,
     class_name: "bar",
     anchor: ["top", "left", "right"],
     margins: [8, 0, 0, 0],
     exclusivity: "exclusive",
     child: Widget.CenterBox({
       class_name: "bar",
-      start_widget: Left(),
+      start_widget: Left(monitor),
       center_widget: Center(),
       end_widget: Right(),
     }),

@@ -19,10 +19,14 @@ export const Battery = () => {
     }
   );
 
-  return Widget.Label({
-    marginRight: 4,
-    className: "icon",
-    visible: battery.bind("available"),
-    label: batteryIcon,
+  return Widget.Button({
+    onSecondaryClick: () => console.log("Battery clicked"),
+    className: "base",
+    child: Widget.Label({
+      marginRight: 4,
+      className: "icon",
+      visible: battery.bind("available"),
+      label: batteryIcon,
+    }),
   });
 };

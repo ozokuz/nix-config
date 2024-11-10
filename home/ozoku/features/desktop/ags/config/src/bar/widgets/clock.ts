@@ -3,6 +3,10 @@ const date = Variable("", {
 });
 
 export const Clock = () =>
-  Widget.Label({
-    label: date.bind(),
+  Widget.Button({
+    className: "base",
+    onClicked: () => console.log("Clock clicked"),
+    child: Widget.Label({
+      label: date.bind(),
+    }),
   });

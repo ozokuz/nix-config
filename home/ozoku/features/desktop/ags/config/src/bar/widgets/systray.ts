@@ -1,7 +1,7 @@
 const systemtray = await Service.import("systemtray");
 
-// const excluded = ["spotify-client", "gammastep", "nm-applet", "Bitwarden"];
-const excluded = [] as string[];
+const excluded = ["spotify-client", "gammastep", "Bitwarden"];
+// const excluded = [] as string[];
 
 export const SysTray = () =>
   Widget.Box({
