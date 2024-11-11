@@ -4,6 +4,7 @@
 }
 
 @import url("./bar/bar.css");
+@import url("./widgets.css");
 
 button.base {
   padding: 0;

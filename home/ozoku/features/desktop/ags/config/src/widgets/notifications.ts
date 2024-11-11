@@ -14,7 +14,7 @@ function NotificationIcon({ app_entry, app_icon, image }: AGSNotification) {
     });
   }
 
-  let icon = "dialog-information-symbolic";
+  let icon = "help-about";
   if (Utils.lookUpIcon(app_icon)) icon = app_icon;
 
   if (app_entry && Utils.lookUpIcon(app_entry)) icon = app_entry;
@@ -73,7 +73,7 @@ const Notification = (n: AGSNotification) => {
     onPrimaryClick: n.dismiss,
     child: Widget.Box({
       vertical: true,
-      className: ["notification", "notification-" + n.urgency].join(" "),
+      className: ["notification", n.urgency].join(" "),
       children: [
         Widget.Box({
           children: [
@@ -112,5 +112,10 @@ list
 export const NotificationPopups = NamedWidget("notifications", {
   className: "notification-popups",
   anchor: ["top", "right"],
-  child: list,
+  child: Widget.Box({
+    css: "min-width: 2px; min-height: 2px;",
+    class_name: "notifications",
+    vertical: true,
+    child: list,
+  }),
 });
