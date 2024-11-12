@@ -1,5 +1,5 @@
 import { Notification as AGSNotification } from "types/service/notifications";
-import { NamedWidget } from "../lib/widget";
+import { currentMonitor, NamedWidget } from "../lib/widget";
 
 const notifications = await Service.import("notifications");
 
@@ -95,20 +95,6 @@ const list = Widget.Box({
   children: notifications.popups.map(Notification),
 });
 
-function onNotified(_, id: number) {
-  const n = notifications.getNotification(id);
-  if (!n) return;
-  list.children = [Notification(n), ...list.children];
-}
-
-function onDismissed(_, id: number) {
-  list.children.find((c) => c.attribute.id === id)?.destroy();
-}
-
-list
-  .hook(notifications, onNotified, "notified")
-  .hook(notifications, onDismissed, "dismissed");
-
 export const NotificationPopups = NamedWidget("notifications", {
   className: "notification-popups",
   anchor: ["top", "right"],
@@ -119,3 +105,18 @@ export const NotificationPopups = NamedWidget("notifications", {
     child: list,
   }),
 });
+
+function onNotified(_, id: number) {
+  const n = notifications.getNotification(id);
+  if (!n) return;
+  NotificationPopups.monitor = currentMonitor();
+  list.children = [Notification(n), ...list.children];
+}
+
+function onDismissed(_, id: number) {
+  list.children.find((c) => c.attribute.id === id)?.destroy();
+}
+
+list
+  .hook(notifications, onNotified, "notified")
+  .hook(notifications, onDismissed, "dismissed");

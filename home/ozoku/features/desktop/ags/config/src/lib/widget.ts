@@ -1,3 +1,7 @@
+const hyprland = await Service.import("hyprland");
+
+export let currentMonitor = () => hyprland.active.monitor.id;
+
 export type NamedWidget<Name> = ReturnType<typeof Widget.Window> & {
   readonly name: Name;
 };

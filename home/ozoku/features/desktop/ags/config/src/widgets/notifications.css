@@ -1,16 +1,23 @@
 window.notification-popups box.notifications {
-  padding: 0.5em;
+  padding: 2px;
 }
 
 .notification-icon {
   min-width: 64px;
   min-height: 64px;
   margin-right: 1em;
+  padding-top: 0.5em;
 }
 
 .notification-icon image {
   font-size: 60px;
   margin: 2px;
+}
+
+.notification-icon box {
+  min-width: 64px;
+  min-height: 64px;
+  border-radius: 8px;
 }
 
 .notification {
@@ -19,7 +26,7 @@ window.notification-popups box.notifications {
   margin: 0.5em;
   background-color: #333;
   border-radius: 12px;
-  border: 2px solid @wm_borders_edge;
+  border: 2px solid #444;
 }
 
 .notification.critical {
@@ -28,6 +35,7 @@ window.notification-popups box.notifications {
 }
 
 .notification-title {
+  margin-top: -6px;
   font-size: 1.4em;
 }
 
@@ -37,4 +45,12 @@ window.notification-popups box.notifications {
 
 .notification-action {
   margin: 0 0.4em;
+}
+
+.notification-action:first-child {
+  margin-left: 0;
+}
+
+.notification-action:last-child {
+  margin-right: 0;
 }
