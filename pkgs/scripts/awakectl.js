@@ -58,8 +58,7 @@ async function main() {
   }
 
   const set = async (newStatus) => {
-    const currentStatus = await getStatus();
-    if (newStatus === currentStatus) return;
+    if (newStatus === awake) return;
 
     if (newStatus) {
       spawn(
@@ -68,6 +67,8 @@ async function main() {
     } else {
       execSync("killall awakeidler");
     }
+
+    await write(newStatus);
   };
 
   switch (operation) {
@@ -75,12 +76,10 @@ async function main() {
       console.log(awake ? "keep-awake" : "allow-sleep");
       break;
     case "toggle":
-      awake = !awake;
-      await write(awake);
+      await set(!awake);
       break;
     case "set":
-      awake = argv[3] === "keep-awake";
-      await write(awake);
+      await set(argv[3] === "keep-awake");
       break;
   }
 }

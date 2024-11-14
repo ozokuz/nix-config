@@ -34,9 +34,12 @@
   };
 
   awakectl = stdenv.mkDerivation {
-    name = "awakectl";
-    propagatedBuildInputs = [pkgs.nodejs];
+    pname = "awakectl";
+    version = "0.1.0";
+    buildInputs = with pkgs; [nodejs makeWrapper systemd procps psmisc perl];
     dontUnpack = true;
-    installPhase = "install -Dm755 ${./scripts/awakectl.js} $out/bin/awakectl";
+    installPhase = ''
+      install -Dm755 ${./scripts/awakectl.js} $out/bin/awakectl
+    '';
   };
 }
