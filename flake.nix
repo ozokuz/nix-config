@@ -21,6 +21,8 @@
     zen-browser.url = "github:fufexan/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
+
     impermanence.url = "github:nix-community/impermanence";
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix";

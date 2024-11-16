@@ -1,9 +1,12 @@
-{
+{ inputs, ... }: {
   imports = [
+    inputs.vscode-server.homeModules.default
     ./core
     ./features/desktop/hyprland
     ./features/desktop/ags
   ];
+
+  services.vscode-server.enable = true;
 
   ozoku.displays = [
     {
