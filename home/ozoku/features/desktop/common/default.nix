@@ -61,7 +61,7 @@
   programs.kitty = {
     enable = true;
     package = pkgs.kitty;
-    theme = "Tokyo Night Storm";
+    themeFile = "tokyo_night_storm";
     font = {
       name = "FiraCode Nerd Font";
       size = 11;
