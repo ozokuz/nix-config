@@ -9,7 +9,7 @@
     python312
     elixir_1_17
     dotnet-sdk_8
-    msbuild
+    # msbuild
     temurin-bin
     kotlin
     ruby_3_3
