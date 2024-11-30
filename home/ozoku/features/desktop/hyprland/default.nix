@@ -97,7 +97,9 @@
         passes = 1;
       };
 
-      drop_shadow = false;
+      shadow = {
+        enabled = true;
+      };
     };
 
     animations = {
