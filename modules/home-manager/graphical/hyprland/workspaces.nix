@@ -90,7 +90,7 @@ in {
 
   config = lib.mkIf ozoku.hyprland.enable {
     wayland.windowManager.hyprland = {
-      plugins = [(lib.mkIf cfg.perDisplay pkgs.unstable.hyprlandPlugins.hyprsplit)];
+      plugins = [(lib.mkIf cfg.perDisplay pkgs.hyprlandPlugins.hyprsplit)];
       settings = {
         workspace = let
           workspaceList = lib.concatMap (display: lib.map (workspace: "${toString workspace}, monitor:${display.name}") display.value) utils.displayWorkspaces;

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services.hypridle.enable = true;
-  services.hypridle.package = pkgs.unstable.hypridle;
+  services.hypridle.package = pkgs.hypridle;
   services.hypridle.settings = {
     general = {
       lock_cmd = "pidof hyprlock || hyprlock --immediate && loginctl unlock-session";

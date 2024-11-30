@@ -2,8 +2,7 @@
   description = "Ozoku's Nix Config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     systems.url = "github:nix-systems/default";
     systems-linux.url = "github:nix-systems/default-linux";
@@ -11,15 +10,15 @@
 
     hardware.url = "github:NixOS/nixos-hardware/master";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     ags.url = "github:Aylur/ags/v1";
-    ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    ags.inputs.nixpkgs.follows = "nixpkgs";
     ags.inputs.systems.follows = "systems-linux";
 
     zen-browser.url = "github:fufexan/zen-browser-flake";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     vscode-server.url = "github:nix-community/nixos-vscode-server";
 

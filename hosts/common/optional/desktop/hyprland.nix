@@ -14,13 +14,13 @@
 
   programs.hyprland = {
     enable = true;
-    package = pkgs.unstable.hyprland;
+    package = pkgs.hyprland;
     xwayland.enable = true;
   };
 
   services.gvfs = {
     enable = true;
-    package = pkgs.unstable.gvfs.override {
+    package = pkgs.gvfs.override {
       gnomeSupport = true;
     };
   };

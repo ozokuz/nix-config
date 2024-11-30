@@ -20,22 +20,22 @@
     nvtopPackages.full
     nsxiv
     ciscoPacketTracer8
-    unstable.nautilus
-    unstable.sushi
+    nautilus
+    sushi
     discord
     nautilus-open-any-terminal
     obsidian
     podman-desktop
     distrobox
-    unstable.vscode-fhs
-    unstable.jetbrains-toolbox
-    unstable.gitkraken
-    unstable.vesktop
+    vscode-fhs
+    jetbrains-toolbox
+    gitkraken
+    vesktop
   ];
 
   programs.alacritty = {
     enable = true;
-    package = pkgs.unstable.alacritty;
+    package = pkgs.alacritty;
     settings = {
       window.opacity = 0.9;
       font = {
@@ -60,7 +60,7 @@
 
   programs.kitty = {
     enable = true;
-    package = pkgs.unstable.kitty;
+    package = pkgs.kitty;
     theme = "Tokyo Night Storm";
     font = {
       name = "FiraCode Nerd Font";

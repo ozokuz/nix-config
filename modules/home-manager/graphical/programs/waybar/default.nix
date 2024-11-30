@@ -11,7 +11,7 @@ in {
   config = lib.mkIf config.ozoku.waybar.enable {
     programs.waybar = {
       enable = true;
-      package = pkgs.unstable.waybar;
+      package = pkgs.waybar;
       settings = {
         mainBar = {
           position = "top";

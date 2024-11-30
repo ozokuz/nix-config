@@ -1,10 +1,6 @@
-{pkgs, ...}: {
-  hardware.opengl = {
-    package = pkgs.unstable.mesa.drivers;
-    package32 = pkgs.unstable.pkgsi686Linux.mesa.drivers;
-
+{
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 }

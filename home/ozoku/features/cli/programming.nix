@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     nodejs_22
     bun
     deno
@@ -9,7 +9,7 @@
     python312
     elixir_1_17
     dotnet-sdk_8
-    msbuild
+    # msbuild
     temurin-bin
     kotlin
     ruby_3_3
@@ -42,4 +42,6 @@
       runScript = "${pkgs.fish}/bin/fish";
     })
   ];
+
+  # nixpkgs.config.permittedInsecurePackages = ["dotnet-sdk-6.0.428"];
 }

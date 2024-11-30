@@ -1,6 +1,6 @@
 {pkgs,config, ...}: {
   programs.hyprlock.enable = true;
-  programs.hyprlock.package = pkgs.unstable.hyprlock;
+  programs.hyprlock.package = pkgs.hyprlock;
   programs.hyprlock.settings = {
     general = {
       hide_cursor = true;

@@ -12,7 +12,7 @@
       ripgrep
       fd
       # Editor
-      unstable.neovim
+      neovim
       # Version Control
       git
       # Archive tools
