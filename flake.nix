@@ -14,7 +14,7 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    ags.url = "github:Aylur/ags";
+    ags.url = "github:Aylur/ags/v1";
     ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
     ags.inputs.systems.follows = "systems-linux";
 
