@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  mod = "SUPER";
+in {
   wayland.windowManager.hyprland = {
     settings = {
       input = {
@@ -28,33 +30,32 @@
         workspace_swipe_use_r = false;
       };
 
-      "$mod" = "SUPER";
       bind = [
         ## System
         # Powermenu
-        "$mod SHIFT, Q, exec, ode_toggle_widget powermenu"
+        "${mod} SHIFT, Q, exec, ode_toggle_widget powermenu"
         # App Launcher
-        "$mod, space, exec, tofi-drun | xargs hyprctl dispatch exec --"
+        "${mod}, space, exec, tofi-drun | xargs hyprctl dispatch exec --"
         # Script Runner
-        "$mod SHIFT, space, exec, tofi-run | xargs hyprctl dispatch exec --"
+        "${mod} SHIFT, space, exec, tofi-run | xargs hyprctl dispatch exec --"
         # Screen Lock
-        "$mod, X, exec, loginctl lock-session"
+        "${mod}, X, exec, loginctl lock-session"
         # Switch Keyboard Layout
-        "$mod, B, exec, hyprctl switchxkblayout, at-translated-set-2-keyboard next"
+        "${mod}, B, exec, hyprctl switchxkblayout, at-translated-set-2-keyboard next"
         # Emoji Picker
-        "$mod, period, exec, emote"
+        "${mod}, period, exec, emote"
         # Toggle Awake Mode
-        "$mod SHIFT, T, exec, ode_awake_toggle"
+        "${mod} SHIFT, T, exec, ode_awake_toggle"
 
         ## Apps
         # Terminal
-        "$mod, return, exec, $TERMINAL"
+        "${mod}, return, exec, $TERMINAL"
         # Terminal File Manager
-        "$mod, E, exec, $TERMINAL -e lf"
+        "${mod}, E, exec, $TERMINAL -e lf"
         # GUI File Manager
-        "$mod SHIFT, E, exec, nautilus -w"
+        "${mod} SHIFT, E, exec, nautilus -w"
         # Web Browser
-        "$mod, W, exec, $BROWSER"
+        "${mod}, W, exec, $BROWSER"
 
         ## Music
         # Play/Pause
@@ -82,32 +83,32 @@
 
         ## Window
         # Close
-        "$mod, Q, killactive"
+        "${mod}, Q, killactive"
         # Toggle Float
-        "$mod, F, togglefloating"
+        "${mod}, F, togglefloating"
 
         ## Screenshot
         # Area
-        "$mod, less, exec, scrsht area"
+        "${mod}, less, exec, scrsht area"
         # Current Window
-        "$mod SHIFT, less, exec, scrsht window"
+        "${mod} SHIFT, less, exec, scrsht window"
         # Current Screen
-        "$mod ALT, less, exec, scrsht screen"
+        "${mod} ALT, less, exec, scrsht screen"
 
         # Move focus with Super + hjkl
-        "$mod, h, movefocus, l"
-        "$mod, j, movefocus, d"
-        "$mod, k, movefocus, u"
-        "$mod, l, movefocus, r"
+        "${mod}, h, movefocus, l"
+        "${mod}, j, movefocus, d"
+        "${mod}, k, movefocus, u"
+        "${mod}, l, movefocus, r"
 
         # Move windows with Super + SHIFT + hjkl
-        "$mod SHIFT, h, movewindow, l"
-        "$mod SHIFT, j, movewindow, d"
-        "$mod SHIFT, k, movewindow, u"
-        "$mod SHIFT, l, movewindow, r"
+        "${mod} SHIFT, h, movewindow, l"
+        "${mod} SHIFT, j, movewindow, d"
+        "${mod} SHIFT, k, movewindow, u"
+        "${mod} SHIFT, l, movewindow, r"
 
         # Move active window to special workspace
-        "$mod SHIFT, minus, movetoworkspacesilent, special"
+        "${mod} SHIFT, minus, movetoworkspacesilent, special"
 
         # Global Shortcuts
         # Discord
@@ -117,18 +118,18 @@
 
       bindm = [
         # Move/resize windows with mod + LMB/RMB and dragging
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
+        "${mod}, mouse:272, movewindow"
+        "${mod}, mouse:273, resizewindow"
       ];
     };
 
     extraConfig = ''
       # Temp Hotkey Disabling
-      bind = $mod ALT SHIFT, p, submap, disabled
+      bind = ${mod} ALT SHIFT, p, submap, disabled
 
       submap = disabled
 
-      bind = $mod, escape, submap, reset
+      bind = ${mod}, escape, submap, reset
 
       submap = reset
     '';
