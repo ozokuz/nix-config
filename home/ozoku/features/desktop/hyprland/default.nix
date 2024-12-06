@@ -88,6 +88,8 @@
       layout = "dwindle";
     };
 
+    debug.disable_logs = false;
+
     decoration = {
       rounding = 10;
 
@@ -97,7 +99,9 @@
         passes = 1;
       };
 
-      drop_shadow = false;
+      shadow = {
+        enabled = true;
+      };
     };
 
     animations = {
