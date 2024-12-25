@@ -1,4 +1,6 @@
-{pkgs, ...}: let
+{pkgs, config, ...}: let
+  terminal = config.ozoku.defaults.terminal.binary;
+  browser = config.ozoku.defaults.browser.binary;
   mod = "SUPER";
 in {
   wayland.windowManager.hyprland = {
@@ -49,13 +51,13 @@ in {
 
         ## Apps
         # Terminal
-        "${mod}, return, exec, $TERMINAL"
+        "${mod}, return, exec, ${terminal}"
         # Terminal File Manager
-        "${mod}, E, exec, $TERMINAL -e lf"
+        "${mod}, E, exec, ${terminal} -e lf"
         # GUI File Manager
         "${mod} SHIFT, E, exec, nautilus -w"
         # Web Browser
-        "${mod}, W, exec, $BROWSER"
+        "${mod}, W, exec, ${browser}"
 
         ## Music
         # Play/Pause

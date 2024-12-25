@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: let
+  terminal = config.ozoku.defaults.terminal.binary;
+in {
   imports = [
     ../common
     ./environment.nix
@@ -55,19 +57,19 @@
             keybind = "SUPER, S";
           };
           processes = {
-            exec = "$TERMINAL -e btop";
+            exec = "${terminal} -e btop";
             keybind = "SUPER, R";
           };
           audiomixer = {
-            exec = "$TERMINAL -e pulsemixer";
+            exec = "${terminal} -e pulsemixer";
             keybind = "SUPER, A";
           };
           scratchpad = {
-            exec = "$TERMINAL";
+            exec = "${terminal}";
             keybind = "SUPER, minus";
           };
           networkmanager = {
-            exec = "$TERMINAL -e nmtui";
+            exec = "${terminal} -e nmtui";
             keybind = "SUPER SHIFT, W";
           };
         };

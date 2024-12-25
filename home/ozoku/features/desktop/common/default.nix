@@ -1,16 +1,16 @@
-{pkgs, inputs,...}: {
+{pkgs, inputs, ...}: {
   imports = [
     ./theming.nix
   ];
 
-  home.sessionVariables = {
-    # Defaults
-    BROWSER = "zen";
-    TERMINAL = "kitty";
+  ozoku.defaults = {
+    browser.binary = "zen";
+    browser.package = inputs.zen-browser.packages.${pkgs.system}.specific;
+    terminal.binary = "kitty";
+    terminal.package = pkgs.kitty;
   };
 
   home.packages = with pkgs; [
-    inputs.zen-browser.packages.${system}.specific
     brave
     firefox
     floorp

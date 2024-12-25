@@ -95,6 +95,27 @@ in {
         List of applications to autostart.
       '';
     };
+
+    defaults = {
+      terminal.binary = lib.mkOption {
+        type = lib.types.str;
+        default = "kitty";
+        example = "kitty";
+        description = ''
+          The terminal to use.
+        '';
+      };
+      terminal.package = lib.mkPackageOption pkgs "kitty" {};
+      browser.binary = lib.mkOption {
+        type = lib.types.str;
+        default = "firefox";
+        example = "firefox";
+        description = ''
+          The browser to use.
+        '';
+      };
+      browser.package = lib.mkPackageOption pkgs "firefox" {};
+    };
   };
 
   config = lib.mkIf cfg.graphical.enable (lib.mkMerge [
@@ -112,6 +133,11 @@ in {
           assertion = cfg.workspaces <= 9;
           message = "The number of workspaces must be less than or equal to 9.";
         }
+      ];
+
+      home.packages = [
+        cfg.defaults.terminal.package
+        cfg.defaults.browser.package
       ];
 
       home.file.".local/wallpaper.png".source = cfg.wallpaper;

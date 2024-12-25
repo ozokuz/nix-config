@@ -62,23 +62,23 @@ in {
       default = {};
       example = {
         pwmanager = {
-          exec = "$TERMINAL -e pass";
+          exec = "kitty -e pass";
           keybind = "SUPER, S";
         };
         processes = {
-          exec = "$TERMINAL -e btop";
+          exec = "kitty -e btop";
           keybind = "SUPER, R";
         };
         audiomixer = {
-          exec = "$TERMINAL -e pulsemixer";
+          exec = "kitty -e pulsemixer";
           keybind = "SUPER, A";
         };
         scratchpad = {
-          exec = "$TERMINAL";
+          exec = "kitty";
           keybind = "SUPER, minus";
         };
         networkmanager = {
-          exec = "$TERMINAL -e nmtui";
+          exec = "kitty -e nmtui";
           keybind = "SUPER SHIFT, W";
         };
       };
