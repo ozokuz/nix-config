@@ -20,10 +20,7 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       package = pkgs.hyprland;
-      systemd = {
-        enable = true;
-        variables = ["--all"];
-      };
+      systemd.enable = false;
       settings.monitor = lib.map (d: "${d.port}, ${d.resolution}, ${d.position}, ${toString d.scale}") cfg.displays;
     };
 

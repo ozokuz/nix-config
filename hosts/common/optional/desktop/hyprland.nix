@@ -5,17 +5,9 @@
 
   security.pam.services.hyprlock = {};
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
-  };
-
   programs.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
-    xwayland.enable = true;
+    withUWSM = true;
   };
 
   services.gvfs = {
