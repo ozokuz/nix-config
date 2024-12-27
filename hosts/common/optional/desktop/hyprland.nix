@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    libsForQt5.polkit-kde-agent
-  ];
-
   security.pam.services.hyprlock = {};
 
   programs.hyprland = {
