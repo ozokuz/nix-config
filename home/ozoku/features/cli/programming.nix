@@ -31,7 +31,7 @@
     # clang-tools_17
     # marksman
     # stylua
-    (buildFHSUserEnv {
+    (buildFHSEnv {
       name = "opam-env";
       targetPkgs = pkgs: with pkgs; [
         opam
