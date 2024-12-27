@@ -17,7 +17,7 @@
     ags.inputs.nixpkgs.follows = "nixpkgs";
     ags.inputs.systems.follows = "systems-linux";
 
-    zen-browser.url = "github:fufexan/zen-browser-flake";
+    zen-browser.url = "github:ozokuz/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     ghostty.url = "github:ghostty-org/ghostty";
