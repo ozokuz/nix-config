@@ -20,6 +20,8 @@
     zen-browser.url = "github:fufexan/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
+    ghostty.url = "github:ghostty-org/ghostty";
+
     vscode-server.url = "github:nix-community/nixos-vscode-server";
 
     impermanence.url = "github:nix-community/impermanence";

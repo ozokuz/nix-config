@@ -1,5 +1,6 @@
 # TODO
 
+- buildFHSUserEnv -> buildFHSEnv
 - waybar to AGS
 - EWW to AGS
   - Media

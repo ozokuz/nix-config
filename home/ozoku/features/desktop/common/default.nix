@@ -5,9 +5,9 @@
 
   ozoku.defaults = {
     browser.binary = "zen";
-    browser.package = inputs.zen-browser.packages.${pkgs.system}.specific;
-    terminal.binary = "kitty";
-    terminal.package = pkgs.kitty;
+    browser.package = inputs.zen-browser.packages.${pkgs.system}.default;
+    terminal.binary = "ghostty";
+    terminal.package = inputs.ghostty.packages.${pkgs.system}.default;
   };
 
   home.packages = with pkgs; [
