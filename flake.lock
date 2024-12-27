@@ -613,15 +613,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1735044813,
-        "narHash": "sha256-ZM0Xe8bISkwuZ5YVznB1inXuZT95EjrFkFR+P5RIKYE=",
-        "owner": "fufexan",
+        "lastModified": 1735299482,
+        "narHash": "sha256-o7SpXwGc8zXyKp3vVwQH8TcdHVVfQKw+1yA48YRwEQg=",
+        "owner": "ozokuz",
         "repo": "zen-browser-flake",
-        "rev": "2aee37b6cba97fc1fbec9bf7f64626f2e69982c6",
+        "rev": "c45679ff3f7b182519b9257fa69825060e390d1b",
         "type": "github"
       },
       "original": {
-        "owner": "fufexan",
+        "owner": "ozokuz",
         "repo": "zen-browser-flake",
         "type": "github"
       }
