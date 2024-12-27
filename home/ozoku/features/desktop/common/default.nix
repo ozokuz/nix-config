@@ -87,17 +87,26 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
+      # Directory
       "inode/directory" = ["org.gnome.Nautilus.desktop"];
-
+      # Text file
       "text/plain" = ["nvim.desktop"];
-
-      "x-scheme-handler/http" = ["zen.desktop"];
-      "x-scheme-handler/https" = ["zen.desktop"];
-      "text/html" = ["zen.desktop"];
-
+      # PDF
       "application/pdf" = ["org.pwmt.zathura.desktop"];
-
+      # Applications
       "x-scheme-handler/jetbrains" = ["JetBrains Toolbox.desktop"];
+
+      # Web Browser
+      "x-scheme-handler/http" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "x-scheme-handler/https" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "x-scheme-handler/chrome" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "text/html" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "application/x-extension-htm" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "application/x-extension-html" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "application/x-extension-shtml" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "application/xhtml+xml" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "application/x-extension-xhtml" = ["userapp-Zen Browser-V332Y2.desktop"];
+      "application/x-extension-xht" = ["userapp-Zen Browser-V332Y2.desktop"];
     };
   };
 }
