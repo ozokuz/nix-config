@@ -9,6 +9,8 @@ in {
 
   programs.fish.enable = true;
 
+  documentation.man.generateCaches = pkgs.lib.mkForce false;
+
   users.defaultUserShell = pkgs.fish;
 
   environment.systemPackages = shell.packages pkgs;
