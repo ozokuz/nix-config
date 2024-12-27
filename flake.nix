@@ -22,6 +22,9 @@
 
     ghostty.url = "github:ghostty-org/ghostty";
 
+    packwiz.url = "github:packwiz/packwiz";
+    packwiz.inputs.nixpkgs.follows = "nixpkgs";
+
     vscode-server.url = "github:nix-community/nixos-vscode-server";
 
     impermanence.url = "github:nix-community/impermanence";

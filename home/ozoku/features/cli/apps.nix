@@ -1,9 +1,10 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   home.packages = with pkgs; [
     neofetch
     trash-cli
     ouch
     xdg-ninja
+    inputs.packwiz.packages.${pkgs.system}.packwiz
   ];
 
   programs.command-not-found.enable = false;

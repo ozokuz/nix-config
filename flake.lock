@@ -382,6 +382,26 @@
         "type": "indirect"
       }
     },
+    "packwiz": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1728924593,
+        "narHash": "sha256-eAGfLUcyjDR2oJjLK3+DiuICTqoOcIwO5wL350w6vGw=",
+        "owner": "packwiz",
+        "repo": "packwiz",
+        "rev": "0626c00149a8d9a5e9f76e5640e7b8b95c064350",
+        "type": "github"
+      },
+      "original": {
+        "owner": "packwiz",
+        "repo": "packwiz",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "ags": "ags",
@@ -390,6 +410,7 @@
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs",
+        "packwiz": "packwiz",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "systems": "systems_3",
