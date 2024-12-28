@@ -17,9 +17,12 @@ in {
   config = lib.mkIf cfg.hyprland.enable {
     ozoku.graphical.enable = true;
 
+    home.packages = with pkgs; [
+      hyprland-qtutils
+    ];
+
     wayland.windowManager.hyprland = {
       enable = true;
-      package = pkgs.hyprland;
       systemd.enable = false;
       settings.monitor = lib.map (d: "${d.port}, ${d.resolution}, ${d.position}, ${toString d.scale}") cfg.displays;
     };
