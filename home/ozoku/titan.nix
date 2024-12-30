@@ -1,9 +1,13 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     inputs.vscode-server.homeModules.default
     ./core
     ./features/desktop/hyprland
     ./features/desktop/ags
+  ];
+
+  home.packages = with pkgs; [
+    archipelago
   ];
 
   services.vscode-server.enable = true;
