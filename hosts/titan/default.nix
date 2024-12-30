@@ -58,6 +58,11 @@
     networkmanager.enable = true;
   };
 
+  networking.firewall = {
+    allowedTCPPorts = [ 25565 ];
+    allowedUDPPorts = [ 25565 ];
+  };
+
   services.upower.enable = true;
 
   system.stateVersion = "24.11";
