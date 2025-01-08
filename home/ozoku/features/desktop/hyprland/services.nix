@@ -4,6 +4,14 @@
   lib,
   ...
 }: {
+  imports = [
+    {
+      systemd.user.services = lib.genAttrs ["hypridle" "hyprpaper" "waybar" "eww" "blueman-applet" "kdeconnect" "kdeconnect-indicator" "network-manager-applet"] (n: {
+        Unit.After = lib.mkForce "graphical-session.target";
+      });
+    }
+  ];
+
   # Notifications
   services.mako = {
     enable = true;
