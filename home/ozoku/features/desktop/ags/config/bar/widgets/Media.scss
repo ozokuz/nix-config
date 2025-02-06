@@ -1,0 +1,31 @@
+box.cover-art {
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 18px 18px 0;
+  background-blend-mode: darken;
+}
+
+.media {
+  padding-left: 4px;
+}
+
+.media-buttons {
+  padding-right: 8px;
+}
+
+.media-label {
+  padding: 0 12px;
+}
+
+.media button.base:hover {
+  color: #89b4fa;
+}
+
+
+button.base:first-child {
+  margin-right: -3px;
+}
+
+.play {
+  margin: 0 2px;
+}

@@ -1,0 +1,15 @@
+.workspaces button:hover {
+  background-color: #333;
+}
+
+.workspaces button.empty {
+  color: #222;
+}
+
+.workspaces button.focused {
+  color: #09f;
+}
+
+.workspaces button.base {
+  padding: 0 5px;
+}

@@ -27,6 +27,7 @@
     dart
     nixd
     alejandra
+    clang-tools
     # lua-language-server
     # clang-tools_17
     # marksman

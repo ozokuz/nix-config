@@ -13,11 +13,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    ags.url = "github:Aylur/ags/v1";
+    ags.url = "github:Aylur/ags";
     ags.inputs.nixpkgs.follows = "nixpkgs";
-    ags.inputs.systems.follows = "systems-linux";
 
-    zen-browser.url = "github:ozokuz/zen-browser-flake";
+    zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     ghostty.url = "github:ghostty-org/ghostty";

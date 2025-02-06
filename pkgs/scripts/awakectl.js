@@ -61,9 +61,17 @@ async function main() {
     if (newStatus === awake) return;
 
     if (newStatus) {
-      spawn(
-        `systemd-inhibit --who=awakeidler --why="Prevent idling" --what=idle --mode=block perl -MPOSIX -e '$0="awakeidler"; pause'`,
-      );
+      spawn("systemd-inhibit", [
+        "--who=awakeidler",
+        "--why=Prevent idling",
+        "--what=idle",
+        "--mode=block",
+        "--",
+        "perl",
+        "-MPOSIX",
+        "-e",
+        "$0='awakeidler'; pause",
+      ]);
     } else {
       execSync("killall awakeidler");
     }
