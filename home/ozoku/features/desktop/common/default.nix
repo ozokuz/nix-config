@@ -19,7 +19,7 @@
     pulsemixer
     nvtopPackages.full
     nsxiv
-    ciscoPacketTracer8
+    #ciscoPacketTracer8
     nautilus
     sushi
     discord
@@ -31,6 +31,7 @@
     jetbrains-toolbox
     gitkraken
     vesktop
+    code-cursor
   ];
 
   programs.alacritty = {
