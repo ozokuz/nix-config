@@ -14,7 +14,6 @@
   programs.direnv.enable = true;
   programs.zoxide.enable = true;
   programs.tmux.enable = true;
-  programs.zellij.enable = true;
   programs.fzf.enable = true;
   programs.jq.enable = true;
 
