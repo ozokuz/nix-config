@@ -11,20 +11,42 @@
   };
 
   home.packages = with pkgs; [
+    # Web Browsers
     brave
     firefox
-    floorp
-    spotify
-    bitwarden
+
+    # Base Apps
     pulsemixer
-    nvtopPackages.full
     nsxiv
-    #ciscoPacketTracer8
     nautilus
     sushi
-    discord
     nautilus-open-any-terminal
+
+    # Utilities
+    nvtopPackages.full
+
+    # Cross Platform
+    discord
+    spotify
     obsidian
+    bitwarden
+
+    # Emulators
+    ares
+    cemu
+    desmume
+    dolphin-emu
+    #lime3ds
+    melonDS
+    mgba
+    pcsx2
+    rpcs3
+    ryujinx
+    simple64
+    suyu
+    xemu
+
+    # Development
     podman-desktop
     distrobox
     vscode-fhs
@@ -32,6 +54,9 @@
     gitkraken
     vesktop
     code-cursor
+
+    # Other
+    #ciscoPacketTracer8
   ];
 
   programs.alacritty = {
