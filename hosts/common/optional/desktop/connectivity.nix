@@ -1,4 +1,5 @@
 {
+  programs.localsend.enable = true;
   programs.kdeconnect.enable = true;
   services.udisks2.enable = true;
 
