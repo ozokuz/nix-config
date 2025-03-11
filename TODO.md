@@ -1,5 +1,6 @@
 # TODO
 
+- Trackpad acceleration curve
 - waybar to AGS
 - EWW to AGS
   - Media
