@@ -14,12 +14,14 @@ export default function ActiveWindow({
   );
   bind(hyprland, "focusedClient").subscribe((client) => {
     if (client?.get_workspace().get_monitor().id === monitor.get()) {
-      activeWindow.set(client.title ?? "");
+      activeWindow.set(client?.title ?? "");
     }
   });
   bind(hyprland, "focusedWorkspace").subscribe((workspace) => {
     if (workspace.monitor.id === monitor.get()) {
-      activeWindow.set(workspace.lastClient?.title ?? "");
+      activeWindow.set(
+        workspace.lastClient?.title ?? workspace.clients[0]?.title ?? ""
+      );
     }
   });
   hyprland.connect("client-moved", () => {
@@ -29,7 +31,7 @@ export default function ActiveWindow({
     if (ws.get_clients().length === 0) {
       activeWindow.set("");
     } else {
-      activeWindow.set(ws.clients[0]?.title ?? "");
+      activeWindow.set(ws.clients[0].title);
     }
   });
 
