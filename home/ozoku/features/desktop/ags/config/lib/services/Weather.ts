@@ -1,7 +1,7 @@
 import GObject, { register, property } from "astal/gobject";
 import { readFile } from "astal/file";
 import { interval } from "astal/time";
-import { fetch } from "../lib/fetch";
+import { fetch } from "../fetch";
 
 @register()
 export class Weather extends GObject.Object {

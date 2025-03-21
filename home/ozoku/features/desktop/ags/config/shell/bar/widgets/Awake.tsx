@@ -1,5 +1,5 @@
 import { bind } from "astal";
-import { Awake } from "../../../services/Awake";
+import { Awake } from "../../../lib/services/Awake";
 import { App } from "astal/gtk4";
 import style from "./Awake.scss";
 
