@@ -1,12 +1,6 @@
 import { bind, Binding, Variable } from "astal";
 import Hyprland from "gi://AstalHyprland";
-
-function truncate(text: string) {
-  if (text.length > 50) {
-    return text.substring(0, 50) + "...";
-  }
-  return text;
-}
+import { truncate } from "../../utils";
 
 export default function ActiveWindow({
   monitor,
