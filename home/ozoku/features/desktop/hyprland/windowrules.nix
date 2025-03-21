@@ -5,14 +5,13 @@
       "noinitialfocus, class:^(emote)$"
 
       # Hearthstone
-      "float, class:(hearthstone deck tracker.exe)"
-      "center, class:(hearthstone deck tracker.exe)"
-      "nofocus, class:(hearthstone deck tracker.exe)"
-      "noinitialfocus, class:(hearthstone deck tracker.exe)"
-      "noborder, class:(hearthstone deck tracker.exe)"
-      "pin, class:(hearthstone deck tracker.exe)"
-      "opacity 0.2 0.1, class:(hearthstone deck tracker.exe)"
-      "stayfocused, class:(hearthstone.exe)"
+      "float, title:(HearthstoneOverlay)"
+      "center, title:(HearthstoneOverlay)"
+      "nofocus, title:(HearthstoneOverlay)"
+      "noinitialfocus, title:(HearthstoneOverlay)"
+      "noborder, title:(HearthstoneOverlay)"
+      "opacity 0.2, title:(HearthstoneOverlay)"
+      "stayfocused, title:^(Hearthstone)$"
 
       # Tearing
       "immediate, class:^(Golf With Your Friends.x86_64)$"
