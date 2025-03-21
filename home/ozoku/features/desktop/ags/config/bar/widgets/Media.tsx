@@ -18,7 +18,8 @@ App.apply_css(style);
 
 const songLabel = Variable.derive(
   [bind(player, "artist"), bind(player, "title")],
-  (artist, title) => `${title} - ${artist}`
+  (artist, title) =>
+    !artist && !title ? "Nothing is playing" : `${title} - ${artist}`
 );
 
 export default function Media() {
