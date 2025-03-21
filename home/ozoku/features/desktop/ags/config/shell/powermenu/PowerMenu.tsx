@@ -1,7 +1,7 @@
 import { Variable } from "astal";
 import { App, Astal, Gtk } from "astal/gtk4";
 import style from "./PowerMenu.scss";
-import { FlowBox } from "../../widgets/FlowBox";
+import { FlowBox } from "../../lib/widgets/FlowBox";
 
 export default function PowerMenu() {
   const visible = Variable(true);
@@ -12,16 +12,17 @@ export default function PowerMenu() {
   return (
     <window
       visible={visible()}
+      layer={Astal.Layer.TOP}
       exclusivity={Astal.Exclusivity.IGNORE}
       anchor={TOP | BOTTOM | LEFT | RIGHT}
     >
       <box
-        cssClasses={["powermenu"]}
+        cssClasses={["transparent"]}
         onButtonReleased={() => {
-          visible.set(false);
+          //visible.set(false);
         }}
       >
-        <centerbox>
+        <centerbox hexpand vexpand>
           <box vexpand hexpand></box>
           <centerbox orientation={Gtk.Orientation.VERTICAL}>
             <box vexpand hexpand></box>
@@ -30,12 +31,23 @@ export default function PowerMenu() {
               columnSpacing={6}
               maxChildrenPerLine={5}
               hexpand
+              cssClasses={["powermenu"]}
             >
-              <button cssClasses={["powerbutton", "poweroff"]}>󰐥</button>
-              <button cssClasses={["powerbutton", "reboot"]}></button>
-              <button cssClasses={["powerbutton", "suspend"]}>󰤄</button>
-              <button cssClasses={["powerbutton", "lock"]}>󰌾</button>
-              <button cssClasses={["powerbutton", "logout"]}></button>
+              <button cssClasses={["powerbutton", "poweroff"]}>
+                <label>󰐥</label>
+              </button>
+              <button cssClasses={["powerbutton", "reboot"]}>
+                <label></label>
+              </button>
+              <button cssClasses={["powerbutton", "suspend"]}>
+                <label>󰤄</label>
+              </button>
+              <button cssClasses={["powerbutton", "lock"]}>
+                <label>󰌾</label>
+              </button>
+              <button cssClasses={["powerbutton", "logout"]}>
+                <label></label>
+              </button>
             </FlowBox>
             <box vexpand hexpand></box>
           </centerbox>
