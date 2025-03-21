@@ -17,13 +17,19 @@ export default function ActiveWindow({
       activeWindow.set(client.title ?? "");
     }
   });
+  bind(hyprland, "focusedWorkspace").subscribe((workspace) => {
+    if (workspace.monitor.id === monitor.get()) {
+      activeWindow.set(workspace.lastClient?.title ?? "");
+    }
+  });
   hyprland.connect("client-moved", () => {
-    if (
-      hyprland.monitors
-        .find((m) => m.id === monitor.get())!
-        .activeWorkspace.get_clients().length === 0
-    ) {
+    const ws = hyprland.monitors.find(
+      (m) => m.id === monitor.get()
+    )!.activeWorkspace;
+    if (ws.get_clients().length === 0) {
       activeWindow.set("");
+    } else {
+      activeWindow.set(ws.clients[0]?.title ?? "");
     }
   });
 
