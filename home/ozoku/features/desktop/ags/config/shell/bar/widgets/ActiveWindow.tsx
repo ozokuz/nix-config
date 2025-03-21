@@ -1,6 +1,6 @@
 import { bind, Binding, Variable } from "astal";
 import Hyprland from "gi://AstalHyprland";
-import { truncate } from "../../utils";
+import { truncate } from "../../../lib/utils";
 
 export default function ActiveWindow({
   monitor,

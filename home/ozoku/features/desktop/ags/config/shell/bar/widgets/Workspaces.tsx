@@ -3,7 +3,7 @@ import Hyprland from "gi://AstalHyprland";
 import style from "./Workspaces.scss";
 import { App } from "astal/gtk4";
 import { ButtonProps } from "astal/gtk4/widget";
-import { range } from "../../utils";
+import { range } from "../../../lib/utils";
 
 type WorkspaceButtonProps = ButtonProps & {
   ws: Hyprland.Workspace;

@@ -1,5 +1,5 @@
 import { bind } from "astal";
-import { Weather } from "../../services/Weather";
+import { Weather } from "../../../services/Weather";
 
 const weather = new Weather();
 
