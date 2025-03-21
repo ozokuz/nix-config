@@ -9,20 +9,29 @@ export default function ActiveWindow({
 }) {
   const hyprland = Hyprland.get_default();
   const activeWindow = Variable(
-    truncate(
-      hyprland.monitors.find((m) => m.id === monitor.get())!.activeWorkspace
-        .lastClient?.title ?? ""
-    )
+    hyprland.monitors.find((m) => m.id === monitor.get())!.activeWorkspace
+      .lastClient?.title ?? ""
   );
   bind(hyprland, "focusedClient").subscribe((client) => {
     if (client?.get_workspace().get_monitor().id === monitor.get()) {
-      activeWindow.set(truncate(client.title));
+      activeWindow.set(client.title ?? "");
+    }
+  });
+  hyprland.connect("client-moved", () => {
+    if (
+      hyprland.monitors
+        .find((m) => m.id === monitor.get())!
+        .activeWorkspace.get_clients().length === 0
+    ) {
+      activeWindow.set("");
     }
   });
 
   return (
-    <box>
-      <label label={activeWindow()} />
+    <box
+      cssClasses={activeWindow().as((t) => [t ? "pill" : ""].filter(Boolean))}
+    >
+      <label label={activeWindow().as(truncate)} />
     </box>
   );
 }
