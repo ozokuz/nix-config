@@ -14,8 +14,6 @@ import Volume from "./widgets/Volume";
 import KeyboardLayout from "./widgets/Keyboard";
 import AwakeStatus from "./widgets/Awake";
 
-const time = Variable("").poll(1000, "date");
-
 export default function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
 
@@ -44,7 +42,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
           <box cssClasses={["pill", "pill-right"]}>
             <Workspaces monitor={monitor} />
           </box>
-          <box cssClasses={["pill"]}>
+          <box>
             <ActiveWindow monitor={monitor} />
           </box>
         </box>
