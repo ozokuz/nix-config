@@ -47,7 +47,7 @@
     grub.theme = pkgs.custom.themes.lenovo-yoga-grub;
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_6_11;
+  boot.kernelPackages = pkgs.linuxPackages;
   # boot.extraModprobeConfig = ''
   #   options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin
   # '';
