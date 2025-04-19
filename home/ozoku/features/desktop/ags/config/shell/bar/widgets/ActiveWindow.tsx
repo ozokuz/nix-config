@@ -24,7 +24,7 @@ export default function ActiveWindow({
       );
     }
   });
-  hyprland.connect("client-moved", () => {
+  function clientMoved() {
     const ws = hyprland.monitors.find(
       (m) => m.id === monitor.get()
     )!.activeWorkspace;
@@ -33,7 +33,9 @@ export default function ActiveWindow({
     } else {
       activeWindow.set(ws.clients[0].title);
     }
-  });
+  }
+  hyprland.connect("client-moved", clientMoved);
+  hyprland.connect("client-removed", clientMoved);
 
   return (
     <box
