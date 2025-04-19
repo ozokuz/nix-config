@@ -4,7 +4,7 @@ import style from "./PowerMenu.scss";
 import { FlowBox } from "../../lib/widgets/FlowBox";
 
 export default function PowerMenu() {
-  const visible = Variable(true);
+  const visible = Variable(false);
 
   App.apply_css(style);
 
@@ -26,13 +26,7 @@ export default function PowerMenu() {
           <box vexpand hexpand></box>
           <centerbox orientation={Gtk.Orientation.VERTICAL}>
             <box vexpand hexpand></box>
-            <FlowBox
-              rowSpacing={6}
-              columnSpacing={6}
-              maxChildrenPerLine={5}
-              hexpand
-              cssClasses={["powermenu"]}
-            >
+            <box spacing={12} cssClasses={["powermenu"]}>
               <button cssClasses={["powerbutton", "poweroff"]}>
                 <label>󰐥</label>
               </button>
@@ -48,7 +42,7 @@ export default function PowerMenu() {
               <button cssClasses={["powerbutton", "logout"]}>
                 <label></label>
               </button>
-            </FlowBox>
+            </box>
             <box vexpand hexpand></box>
           </centerbox>
           <box vexpand hexpand></box>
