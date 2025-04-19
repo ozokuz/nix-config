@@ -1,9 +1,9 @@
 {
-  "dependencies": {
-    "astal": "/nix/store/88kb2cyzj1hwad8s43wzdkafyp3hsh31-astal-gjs/share/astal/gjs"
-  },
-  "name": "astal-shell",
-  "devDependencies": {
-    "typescript": "5.7.2"
-  }
+    "dependencies": {
+        "astal": "/nix/store/33rq2l04zdc0ccbpvy31ximbjy9ldi9w-astal-gjs/share/astal/gjs"
+    },
+    "devDependencies": {
+        "typescript": "5.7.2"
+    },
+    "name": "astal-shell"
 }
