@@ -74,6 +74,7 @@ in {
       mkdir -p $out/share/Kvantum
 
       cp -r $src/src/KvLibadwaita $out/share/Kvantum/
+      cat $src/src/KvLibadwaita/KvLibadwaitaDark.kvconfig | sed -E 's/(transparent_.+=)true/\1false/g' $out/share/Kvantum/KvLibadwaita/KvLibadwaitaDark.kvconfig
 
       runHook postInstall
     '';
