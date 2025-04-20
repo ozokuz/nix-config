@@ -1,7 +1,6 @@
 # TODO
 
 - Trackpad acceleration curve
-- Cursor theme w/ hyprcursor
 - Add a systemd service to awakectl
 - waybar to AGS
 - EWW to AGS
