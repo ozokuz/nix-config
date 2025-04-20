@@ -40,7 +40,7 @@
 
   xdg.configFile = {
     "Kvantum/KvLibadwaita".source = "${pkgs.custom.themes.kvlibadwaita}/share/Kvantum/KvLibadwaita";
-    "Kvantum/kvantum.kvconfig".text = "[General]\ntheme=KvLibadwaitaDark"
+    "Kvantum/kvantum.kvconfig".text = "[General]\ntheme=KvLibadwaitaDark";
   };
 
   home.sessionVariables = {
