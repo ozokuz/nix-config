@@ -38,6 +38,10 @@
     style.name = "kvantum";
   };
 
+  xdg.configFile = {
+    "Kvantum/KvLibadwaita".source = "${pkgs.custom.themes.kvlibadwaita}/share/Kvantum/KvLibadwaita";
+  };
+
   home.sessionVariables = {
     HYPRCURSOR_THEME = "Bibata-modern";
     HYPRCURSOR_SIZE = "24";

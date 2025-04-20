@@ -61,4 +61,28 @@ in {
       hash = "sha256-j+BmvkbkeGUs7l+aF8MPlMF1KP7oqewQ4HQw20arULI=";
     };
   };
+
+  kvlibadwaita = stdenv.mkDerivation {
+    pname = "kvlibadwaita";
+    version = "1.0";
+
+    dontBuild = true;
+
+    installPhase = ''
+      runHook preInstall
+
+      mkdir -p $out/share/Kvantum
+
+      cp -r $src/src/KvLibadwaita $out/share/Kvantum/
+
+      runHook postInstall
+    '';
+
+    src = fetchFromGitHub {
+      owner = "GabePoel";
+      repo = "KvLibadwaita";
+      rev = "87c1ef9f44ec48855fd09ddab041007277e30e37";
+      hash = "sha256-xBl6zmpqTAH5MIT5iNAdW6kdOcB5MY0Dtrb95hdYpwA=";
+    };
+  };
 }
