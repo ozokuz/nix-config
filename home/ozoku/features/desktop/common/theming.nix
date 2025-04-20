@@ -1,10 +1,14 @@
 {pkgs, ...}: {
   home.pointerCursor = {
-    package = pkgs.numix-cursor-theme;
-    name = "Numix-Cursor-Light";
-    size = 24;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
     gtk.enable = true;
   };
+
+  home.packages = [
+    pkgs.custom.bibata-hyprcursor
+  ];
 
   gtk = {
     enable = true;
@@ -13,7 +17,7 @@
       size = 10;
     };
     iconTheme = {
-      package = pkgs.libsForQt5.breeze-icons;
+      package = pkgs.kdePackages.breeze-icons;
       name = "breeze-dark";
     };
     theme = {
@@ -21,7 +25,7 @@
       name = "adw-gtk3-dark";
     };
     gtk3 = {
-      bookmarks = ["file:///home/ozoku/src" "file:///files/Vault"];
+      bookmarks = ["file:///home/ozoku/Downloads" "file:///home/ozoku/src" "file:///files/Vault" "file:/// NixOS"];
       extraConfig.gtk-application-prefer-dark-theme = true;
     };
   };
@@ -31,6 +35,10 @@
   qt = {
     enable = true;
     platformTheme.name = "qtct";
-    style.package = pkgs.libsForQt5.breeze-qt5;
+    style.package = pkgs.kdePackages.breeze;
+  };
+
+  home.sessionVariables = {
+    HYPRCURSOR_THEME = "Bibata-modern";
   };
 }
