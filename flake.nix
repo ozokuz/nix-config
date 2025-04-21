@@ -19,8 +19,6 @@
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
-    ghostty.url = "github:ghostty-org/ghostty";
-
     packwiz.url = "github:packwiz/packwiz";
     packwiz.inputs.nixpkgs.follows = "nixpkgs";
 

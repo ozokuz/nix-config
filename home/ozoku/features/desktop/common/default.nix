@@ -7,7 +7,7 @@
     browser.binary = "zen";
     browser.package = inputs.zen-browser.packages.${pkgs.system}.default;
     terminal.binary = "ghostty";
-    terminal.package = inputs.ghostty.packages.${pkgs.system}.default;
+    terminal.package = pkgs.ghostty;
   };
 
   home.packages = with pkgs; [
