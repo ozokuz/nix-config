@@ -1,6 +1,5 @@
 # TODO
 
-- Trackpad acceleration curve
 - Add a systemd service to awakectl
 - waybar to AGS
 - EWW to AGS
@@ -44,8 +43,8 @@
 - Sops
 - SDDM to Greetd + Hyprland + AGS
 - Plymouth?
-- Zen Browser as nix flake
 
+- Trackpad acceleration curve
 - Better screenshots with grimblast + custom uploader script
 - Setup Tmux
 - Switch from fish to nushell
