@@ -21,7 +21,7 @@
     ../common/optional/virtualization/libvirt.nix
     ../common/optional/virtualization/podman.nix
     # ../common/optional/virtualization/quickemu.nix
-    ../common/optional/virtualization/vmware.nix
+    #../common/optional/virtualization/vmware.nix
     ../common/optional/virtualization/waydroid.nix
 
     ../common/optional/btrfs.nix
