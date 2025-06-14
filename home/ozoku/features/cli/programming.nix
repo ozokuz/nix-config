@@ -15,7 +15,7 @@
     ruby_3_3
     swift
     swiftPackages.swiftpm
-    gleam
+    #gleam
     nim
     nimble
     nim-atlas
