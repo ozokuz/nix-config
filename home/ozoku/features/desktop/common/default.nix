@@ -32,18 +32,14 @@
     bitwarden
 
     # Emulators
-    ares
     cemu
     desmume
     dolphin-emu
-    #lime3ds
     melonDS
     mgba
     pcsx2
     rpcs3
-    ryujinx
     simple64
-    suyu
     xemu
 
     # Development
