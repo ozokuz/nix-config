@@ -3,7 +3,7 @@
     ./base.nix
     ./audio.nix
     ./connectivity.nix
-    ./display-manager.nix
+    ./sddm.nix
     ./fonts.nix
     ./hyprland.nix
     ./packaging.nix
