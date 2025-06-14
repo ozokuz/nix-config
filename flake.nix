@@ -59,7 +59,7 @@
       inherit inputs outputs;
     };
   in {
-    packages = forEachSystem (pkgs: import ./pkgs pkgs);
+    packages = forEachSystem (pkgs: import ./pkgs pkgs inputs);
     overlays = import ./overlays {inherit inputs;};
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
