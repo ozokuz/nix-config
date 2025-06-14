@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     nodejs_22
     bun
-    deno
+    #deno
     pkgs.go
     rustup
     poetry
