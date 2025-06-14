@@ -1,5 +1,5 @@
 {inputs,...}: {
-  additions = final: _prev: import ../pkgs final.pkgs;
+  additions = final: _prev: import ../pkgs {pkgs = final.pkgs; inherit inputs;};
 
   modifications = final: prev: {};
 

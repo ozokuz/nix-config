@@ -1,4 +1,4 @@
-pkgs: inputs: {
+{pkgs, inputs}: {
   custom = {
     scripts = pkgs.callPackage ./scripts.nix {};
     fonts = pkgs.callPackage ./fonts.nix {};
@@ -10,7 +10,7 @@ pkgs: inputs: {
       name = "mygreet";
       entry = "app.ts";
 
-      extraPackages = with inputs.ags.packages.${system}; [
+      extraPackages = with inputs.ags.packages.${pkgs.system}; [
         battery
         network
         greet
