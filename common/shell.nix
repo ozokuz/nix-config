@@ -29,6 +29,6 @@
 
   environment = {
     EDITOR = "nvim";
-    FLAKE = "/home/ozoku/.local/src/nix-config";
+    NH_FLAKE = "/home/ozoku/.local/src/nix-config";
   };
 }
